@@ -2,13 +2,15 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="/static/header/logoPiotr.svg" alt="logoPiotr" />
+                <NuxtLink to="/">
+                    <img src="/static/header/logoPiotr.svg" alt="logoPiotr" />
+                </NuxtLink>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#" class="header-link">START</a></li>
+                    <li><NuxtLink to="/" class="header-link">START</NuxtLink></li>
                     <li><a href="#" class="header-link">O NAS</a></li>
-                    <li><a href="#" class="header-link">USLUGI</a></li>
+                    <li><NuxtLink to="/uslugi" class="header-link">USŁUGI</NuxtLink></li>
                     <li><a class="reservation-btn" href="#">REZERWACJA ONLINE</a></li>
                     <li><a href="#" class="header-link">TECHNOLOGIE</a></li>
                     <li><a href="#" class="header-link">CENNIK</a></li>
@@ -68,6 +70,11 @@ header {
     letter-spacing: 1%;
     line-height: 100%;
     display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: #BC9667;
 }
 
 .reservation-btn {
@@ -83,6 +90,11 @@ header {
     letter-spacing: 1.5px;
     line-height: 140%;
     display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-btn:hover {
+    background-color: #A88457;
 }
 
 .menu-toggle {
