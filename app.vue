@@ -2,7 +2,8 @@
   <div>
     <Header />
     <NuxtPage />
-    <!-- <Footer /> -->
+    <FirstVisitSection/>
+    <Footer />
   </div>
 </template>
 

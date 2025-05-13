@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import ServiceCard from '../components/Services/ServiceCard.vue'
-import ServicesHero from '../components/Services/ServicesHero.vue'
-import FirstVisitSection from '~/components/Services/FirstVisitSection.vue'
-import ServicesBanner from '~/components/Services/ServicesBanner.vue'
+import ServiceCard from '../components/Uslugi/ServiceCard.vue'
+import ServicesHero from '../components/Uslugi/ServicesHero.vue'
+import FirstVisitSection from '~/components/FirstVisitSection.vue'
+import ServicesBanner from '~/components/Uslugi/ServicesBanner.vue'
 
 const activeCat = ref('')
 

@@ -31,7 +31,8 @@
 
 .first-visit-section {
     background-color: #BC9667;
-    padding: 80px 0;
+    padding-top: 140px;
+    padding-bottom: 96px;
     position: relative;
     overflow: hidden;
 }
@@ -107,13 +108,12 @@
 }
 
 .reservation-btn:hover {
-    background-color: #f5f5f5;
-    transform: translateY(-2px);
+    transform: translateY(-8px);
 }
 
 .btn-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
 .btn-circle {

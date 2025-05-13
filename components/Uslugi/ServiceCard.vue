@@ -36,6 +36,15 @@ const idxStr = computed(() =>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500&family=Merriweather:ital,wght@1,300&family=Aboreto&display=swap');
 
+.description ul,
+.description ul li,
+ul {
+  padding-left: 5px !important;
+  margin-left: 0 !important;
+ 
+  
+}
+
 .card {
   display: grid;
   grid-template-columns: 704px 704px;
@@ -131,6 +140,7 @@ const idxStr = computed(() =>
   justify-content: center;
   font: 400 14px 'Aboreto', serif;
   color: #a9722d;
+  background-color: rgba(228, 213, 194, 0.5);
 }
 
 .heading {
@@ -144,7 +154,6 @@ const idxStr = computed(() =>
   color: #122548;
 }
 
-
 .description strong {
   color: #a9722d;
   font-weight: 600;
@@ -152,7 +161,6 @@ const idxStr = computed(() =>
 
 .description ul {
   margin: 16px 0 0;
-  padding-left: 20px;
   list-style: disc;
 }
 
@@ -162,18 +170,15 @@ const idxStr = computed(() =>
 
 .description p {
   margin: 0 0 16px;
+  color: #A9722D;
 }
 
 .description p:last-child {
   margin-bottom: 0;
 }
 
-.description p {
-  color: #A9722D !important;
-}
-
 .description ul li::marker {
-  color: #BC9667 !important;
+  color: #BC9667;
 }
 
 @media (max-width: 1023px) {
@@ -214,11 +219,9 @@ const idxStr = computed(() =>
   }
 }
 
-.description p {
-  color: #A9722D;
-}
-
-.description ul li::marker {
-  color: #BC9667;
+:deep(.description ul) {
+  padding-left: 0px !important;
+  margin-left: 0 !important;
+  list-style-position: outside !important;
 }
 </style>

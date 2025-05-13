@@ -9,12 +9,12 @@
             <nav class="main-nav">
                 <ul>
                     <li><NuxtLink to="/" class="header-link">START</NuxtLink></li>
-                    <li><a href="#" class="header-link">O NAS</a></li>
+                    <li><a href="/oNas" class="header-link">O NAS</a></li>
                     <li><NuxtLink to="/uslugi" class="header-link">USŁUGI</NuxtLink></li>
                     <li><a class="reservation-btn" href="#">REZERWACJA ONLINE</a></li>
-                    <li><a href="#" class="header-link">TECHNOLOGIE</a></li>
-                    <li><a href="#" class="header-link">CENNIK</a></li>
-                    <li><a href="#" class="header-link">KONTAKT</a></li>
+                    <li><a href="/technologie" class="header-link">TECHNOLOGIE</a></li>
+                    <li><a href="/cennik" class="header-link">CENNIK</a></li>
+                    <li><a href="/kontakt" class="header-link">KONTAKT</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle">
