@@ -10,8 +10,7 @@
           :id="`service-${srv.category}`" />
       </div>
     </section>
-    <ServicesBanner />
-    <FirstVisitSection />
+
   </div>
 </template>
 
