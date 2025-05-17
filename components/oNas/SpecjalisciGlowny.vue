@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import NasiSpecjalisci from './NasiSpecjalisci.vue';
+import NasiSpecjalisci from './BigBaroNas.vue';
 import ZespolSpecjalistow from './ZespolSpecjalistow.vue';
 </script>
 
