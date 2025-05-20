@@ -211,7 +211,7 @@ const categories = [
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 0px;
   border-bottom: 1px solid #D7C0A4;
   border-top: none;
 }
