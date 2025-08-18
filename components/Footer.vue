@@ -22,7 +22,7 @@
           </a>
         </div>
       </div>
-      
+
       <div class="footer-nav">
         <div class="nav-column">
           <h5>Na skróty</h5>
@@ -42,7 +42,7 @@
             </a>
           </div>
         </div>
-        
+
         <div class="nav-column">
           <h5>Blog</h5>
           <nav>
@@ -52,13 +52,13 @@
             <a href="#" class="a">BLOG POST</a>
           </nav>
         </div>
-        
+
         <div class="nav-column">
           <h5>Skontaktuj się z nami</h5>
           <div class="contact-info">
             <p class="mini-title">TELEFON:</p>
             <a href="tel:+48503529023">+48 503 529 023</a>
-            
+
             <p class="mini-title">ADRES:</p>
             <address>
               <a>JAROTY, UL. STAWIGUDZKA 7/D</a>
@@ -69,7 +69,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="footer-bottom">
       <div class="copyright">
         <p>© 2022 PIETRUSZCZAK STOMATOLOGIA & IMPLANTOLOGIA - Wszelkie prawa zastrzeżone | Design by Daria Georgie | Developer Aria Aman</p>
@@ -99,22 +99,25 @@ export default {
 }
 
 .footer-content {
-    max-width: 1600px;
-    padding: 64px 160px;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
+    max-width: 1200px;
+    /* width: 100%; */
+    padding: clamp(32px, 5vw, 64px) clamp(16px, 6vw, 160px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(0, 2fr);
+    gap: clamp(24px, 4vw, 64px);
 }
 
 .footer-logo {
   display: flex;
   flex-direction: column;
-  width: 460px;
+  width: 100%;
+  max-width: 520px;
 }
 
 .footer-logo img {
-  max-width: 230px;
-  height: 109px;
+  width: clamp(160px, 28vw, 230px);
+  height: auto;
   margin-bottom: 48px;
 }
 
@@ -151,15 +154,15 @@ export default {
 }
 
 .footer-nav {
-  display: flex;
-  margin-left: 100px;
-  gap: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 32px);
 }
 
 .nav-column {
   display: flex;
   flex-direction: column;
-  width: 316px;
+  min-width: 0;
 }
 
 .nav-column h5 {
@@ -265,13 +268,16 @@ address {
 }
 
 .footer-bottom {
-  max-width: 1600px;
-  padding: 0 160px 20px;
-  margin: 0px auto;
+  max-width: 1200px;
+  /* width: 100%; */
+  padding: 0 clamp(16px, 6vw, 160px) 20px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .copyright p {
@@ -309,5 +315,64 @@ address {
 
 .arrow-circle svg {
   color: #fff;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr; /* keep two columns on tablet to avoid excessive height */
+    padding: 40px 32px;
+    gap: 32px;
+    align-items: start;
+  }
+  .footer-logo img {
+    width: clamp(150px, 22vw, 200px);
+  }
+  .footer-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 28px;
+  }
+  .nav-column h5 {
+    margin-bottom: 20px;
+  }
+  .btn-appointment {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .footer-bottom {
+    padding: 0 32px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-content {
+    padding: clamp(28px, 6vw, 48px) clamp(14px, 5vw, 24px);
+  }
+  .footer-logo img {
+    width: clamp(150px, 45vw, 220px);
+    margin-bottom: 24px;
+  }
+  .footer-nav {
+    grid-template-columns: 1fr;
+  }
+  .nav-column h5 {
+    margin-bottom: 16px;
+  }
+  .btn-appointment {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .back-to-top {
+    gap: 16px;
+  }
+  .arrow-circle {
+    width: 40px;
+    height: 40px;
+  }
 }
 </style>

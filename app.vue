@@ -8,7 +8,6 @@
   </div>
 </template>
 
-
 <script setup>
 import ServicesBanner from './components/Uslugi/ServicesBanner.vue';
 </script>
