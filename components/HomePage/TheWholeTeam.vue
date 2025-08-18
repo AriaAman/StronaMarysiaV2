@@ -6,26 +6,26 @@
         <div class="team-image-frame">
           <img :src="teamImage" alt="Zespół stomatologiczny" class="team-image" />
         </div>
-        
+
         <!-- Section de texte en largeur complète -->
         <div class="team-text-section">
           <div class="team-text-row">
             <!-- Partie gauche: Titre -->
             <div class="team-heading-container">
               <h2 class="team-heading">
-                Jesteśmy zespołem 
+                Jesteśmy zespołem
                 <span class="team-heading-italic">doświadczonych specjalistów!</span>
               </h2>
             </div>
-            
+
             <!-- Partie droite: Description -->
             <div class="team-description-container">
               <p class="team-description">
-                Nasz zespół to wykwalifikowani lekarze stomatolodzy, chirurdzy i 
-                higieniści, którzy z pasją dbają o zdrowie i estetykę Twojego uśmiechu. 
-                Dzięki nowoczesnym metodom leczenia, indywidualnemu podejściu i 
-                wieloletniemu doświadczeniu zapewniamy najwyższy standard opieki 
-                stomatologicznej. Poznaj naszych specjalistów i przekonaj się, że wizyta 
+                Nasz zespół to wykwalifikowani lekarze stomatolodzy, chirurdzy i
+                higieniści, którzy z pasją dbają o zdrowie i estetykę Twojego uśmiechu.
+                Dzięki nowoczesnym metodom leczenia, indywidualnemu podejściu i
+                wieloletniemu doświadczeniu zapewniamy najwyższy standard opieki
+                stomatologicznej. Poznaj naszych specjalistów i przekonaj się, że wizyta
                 u dentysty może być komfortowa i bezstresowa!
               </p>
             </div>
@@ -34,12 +34,12 @@
       </div>
     </div>
   </template>
-  
+
   <script setup>
   const bgImage = '/static/HomePage/SectionOnasHomePage.png';
   const teamImage = '/static/HomePage/TheWholeTeamHomepage.png';
   </script>
-  
+
   <style scoped>
   .team-intro-container {
     width: 100%;
@@ -48,7 +48,7 @@
     background-position: center;
     background-repeat: no-repeat;
   }
-  
+
   .team-intro-content {
     max-width: 1440px;
     margin: 0 auto;
@@ -57,7 +57,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .team-image-frame {
     width: 960px;
     border: 1px solid #E4D5C2;
@@ -67,25 +67,25 @@
     margin-bottom: 60px;
     box-sizing: border-box;
   }
-  
+
   .team-image {
     width: 100%;
   }
-  
+
   .team-text-section {
     width: 100%;
   }
-  
+
   .team-text-row {
     display: flex;
     gap: 170px;
   }
-  
+
   .team-heading-container {
     width: 662px;
     flex-shrink: 0;
   }
-  
+
   .team-heading {
     font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 48px;
@@ -95,7 +95,7 @@
     text-align: left;
     margin: 0;
   }
-  
+
   .team-heading-italic {
     font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 48px;
@@ -105,11 +105,11 @@
     font-style: italic;
     display: block;
   }
-  
+
   .team-description-container {
     flex: 1;
   }
-  
+
   .team-description {
     font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 18px;
@@ -119,50 +119,64 @@
     text-align: left;
     margin: 0;
   }
-  
+
   /* Responsive */
   @media (max-width: 1200px) {
     .team-image-frame {
       width: 100%;
       max-width: 960px;
     }
-    
+
     .team-text-row {
       flex-direction: column;
       gap: 30px;
     }
-    
+
     .team-heading-container {
       width: 100%;
       max-width: 662px;
     }
   }
-  
+
   @media (max-width: 1024px) {
     .team-image-frame {
       padding: 20px;
     }
-    
+
     .team-heading {
       font-size: 36px;
     }
-    
+
     .team-description {
       font-size: 16px;
     }
+    .team-text-row {
+      gap: 24px;
+    }
   }
-  
+
   @media (max-width: 768px) {
     .team-intro-container {
       padding: 60px 0;
     }
-    
+
     .team-image-frame {
       padding: 10px;
     }
-    
+
     .team-heading {
       font-size: 32px;
+    }
+    .team-heading-italic {
+      font-size: 32px;
+      line-height: 120%;
+    }
+    .team-description {
+      font-size: 15px;
+      line-height: 165%;
+    }
+    .team-text-row {
+      gap: 16px;
     }
   }
   </style>

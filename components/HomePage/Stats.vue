@@ -6,12 +6,12 @@
         <div class="stat-label">Z NAMI OD 2016</div>
         <div class="stat-value">12 lat</div>
       </div>
-      
+
       <div class="stat-item">
         <div class="stat-label">ZADOWOLONYCH PACJENTÓW</div>
         <div class="stat-value">99,9%</div>
       </div>
-      
+
       <div class="stat-item">
         <div class="stat-label">WYKONANYCH ZABIEGÓW</div>
         <div class="stat-value">+60 tys.</div>
@@ -40,6 +40,7 @@
   gap: 64px;
   justify-content: space-between;
   padding: 0 20px;
+  flex-wrap: nowrap;
 }
 
 .stat-item {
@@ -66,25 +67,42 @@
 .stat-value {
   font-family: "Merriweather", system-ui;
   font-size: 80px;
-  font-style: italic;   
+  font-style: italic;
   font-weight: 300;
   color: #0B162B;
   letter-spacing: 0px;
   line-height: 110%;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat-item {
+    width: 300px;
+  }
+  .stat-value {
+    font-size: 56px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
     gap: 40px;
+    align-items: center;
   }
-  
+
   .stat-item {
     width: 100%;
   }
-  
+
   .stat-value {
-    font-size: 48px;
+    font-size: 44px;
   }
 }
-</style> 
+</style>

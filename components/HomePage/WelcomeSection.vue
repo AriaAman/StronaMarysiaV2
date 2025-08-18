@@ -338,6 +338,12 @@
     .title-italic {
         font-size: 56px;
     }
+    .card-title-big {
+        font-size: 40px;
+    }
+    .card {
+        padding: 24px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -349,6 +355,15 @@
 
     .action-buttons {
         flex-direction: column;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+    .card-title-big {
+        font-size: 32px;
+    }
+    .secondary-button, .primary-button {
+        font-size: 16px;
     }
 }
 </style>

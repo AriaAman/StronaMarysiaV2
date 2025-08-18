@@ -83,7 +83,7 @@ const services = [
     border: 1px solid #E4D5C2;
     border-radius: 2px;
     padding: 48px;
-    width: 345px;
+    width: 345px; /* desktop */
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -157,7 +157,8 @@ const services = [
 
     .service-card {
         padding: 30px;
-        max-width: 350px;
+        max-width: 650px;
+        width: 100%;
     }
 }
 
@@ -172,7 +173,7 @@ const services = [
     }
 
     .service-card {
-        max-width: 85%;
+    width: min(560px, 85%);
     }
 
     .service-title {

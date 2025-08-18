@@ -73,7 +73,7 @@ const navigateToTeam = () => {
 }
 
 .team-header {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto 32px;
     display: flex;
     gap: 265px;
@@ -232,6 +232,7 @@ const navigateToTeam = () => {
 @media (max-width: 768px) {
     .team-title {
         font-size: 32px;
+        width: auto;
     }
 
     .doctor-card {
