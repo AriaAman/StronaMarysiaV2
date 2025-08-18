@@ -7,7 +7,7 @@
       :tags="['STOMATOLOGIA', 'IMPLANTOLOGIA', 'PROTETYKA', 'ENDODONCJA', 'PRECYZJA', 'EMPATIA']"
       :isReversed="false"
     />
-    
+
     <SpecjalistaProfil
       title="LEKARZ STOMATOLOG"
       name="Agnieszka Rutkowska"
@@ -16,7 +16,7 @@
       :tags="['STOMATOLOGIA ZACHOWAWCZA', 'STOMATOLOGIA DZIECIĘCA', 'DENTOFOBIA', 'ORTODONCJA', 'EMPATIA']"
       :isReversed="true"
     />
-    
+
     <SpecjalistaProfil
       title="LEKARZ STOMATOLOG"
       name="Małgorzata Lech"
@@ -25,7 +25,7 @@
       :tags="['STOMATOLOGIA', 'STOMATOLOGIA ESTETYCZNA', 'PROTETYKA', 'ENDODONCJA', 'ESTETYCZNEODBUDOWY', 'EMPATIA']"
       :isReversed="false"
     />
-    
+
     <SpecjalistaProfil
       title="CHIRURG STOMATOLOGICZNY"
       name="Daria Kozak"
@@ -34,7 +34,7 @@
       :tags="['STOMATOLOGIA', 'CHIRURGIASTOMATOLOGICZNA', 'CHIRURGIASZCZĘKOWO-TWARZOWA', 'PRECYZJA']"
       :isReversed="true"
     />
-    
+
     <SpecjalistaProfil
       title="HIGIENISTKA STOMATOLOGICZNA"
       name="Amanda Duszak"
@@ -43,7 +43,7 @@
       :tags="['HIGIENA STOMATOLOGICZNA', 'PROFILAKTYKA', 'SKALING', 'PIASKOWANIE', 'FLUORYZACJA', 'WYBIELANIE ZĘBÓW']"
       :isReversed="false"
     />
-    
+
     <SpecjalistaProfil
       title="ASYSTENTKA STOMATOLOGICZNA"
       name="Sylwia Niklewicz-Grabowska"
@@ -79,4 +79,4 @@ const grabowskaBio = `Doświadczona asystentka stomatologiczna, która z zaanga�
   background-color: #f9f9f9;
   padding: 2rem 0;
 }
-</style> 
+</style>

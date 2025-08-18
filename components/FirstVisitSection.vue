@@ -11,9 +11,9 @@
                     Czas na pierwszy krok do perfekcyjnego uśmiechu.<br />
                     Umów swoją wizytę i zacznij dbać o zdrowie jamy ustnej.
                 </p>
-                <img src="/public/static/uslugi/circle-pietrus.png" alt="" class="btn-circle" />
+                <img src="/static/uslugi/circle-pietrus.png" alt="" class="btn-circle" />
                 <a href="#" class="reservation-btn">
-                    <img src="/public/static/icons/online-icon.png" alt="" class="btn-icon" />
+                    <img src="/static/icons/online-icon.png" alt="" class="btn-icon" />
                     REZERWACJA ONLINE
                 </a>
             </div>
@@ -28,6 +28,7 @@
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,300;1,400&display=swap');
 
 .first-visit-section {
     background-color: #BC9667;
@@ -40,7 +41,7 @@
 .first-visit-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +50,7 @@
 
 .content-left {
     flex: 1;
-    max-width: 600px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,28 +69,33 @@
 
 .main-title {
     font-family: 'Satoshi', sans-serif;
-    font-size: 96px;
+    font-size: clamp(40px, 8vw, 96px);
     font-weight: 300;
     line-height: 100%;
     color: #0B162B;
-    margin: 0 0 24px 0;
+    margin: 0 0 16px 0;
     text-align: center;
 }
 
 .subtitle {
-    font: italic 300 96px 'Merriweather', serif;
-    display: inline;
-    white-space: nowrap
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(36px, 7.5vw, 80px);
+    line-height: 110%;
+    display: block;
+    white-space: normal;
 }
 
 .description {
     font-family: 'Satoshi', sans-serif;
-    font-size: 20px;
-    line-height: 160%;
+    font-size: clamp(16px, 2.2vw, 20px);
+    line-height: 170%;
     font-weight: 300;
     color: #FFFFFF;
-    margin: 0 0 0 0;
+    margin: 16px 0 0 0;
     text-align: center;
+    max-width: 680px;
 }
 
 .reservation-btn {
@@ -97,10 +103,10 @@
     align-items: center;
     gap: 12px;
     color: #0B162B;
-    padding: 16px 24px;
+    padding: 14px 22px;
     text-decoration: none;
     font-family: 'Aboreto', sans-serif;
-    font-size: 18px;
+    font-size: clamp(14px, 1.8vw, 18px);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -114,18 +120,20 @@
 .btn-icon {
     width: 32px;
     height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 6px;
 }
 
 .btn-circle {
-    width: 15%;
-    height: 15%;
-    margin-left: 85%;
+    display: none; /* hidden to match clean style of reference image */
 }
 
 /* Responsive styles remain the same */
 @media (max-width: 1023px) {
-    .main-title {
-        font-size: 56px;
+    .first-visit-section {
+        padding-top: 100px;
+        padding-bottom: 80px;
     }
 }
 
@@ -138,17 +146,22 @@
         padding: 0 20px;
     }
 
-    .main-title {
-        font-size: 40px;
-    }
-
-    .description {
-        font-size: 18px;
-    }
-
     .reservation-btn {
-        font-size: 16px;
-        padding: 14px 20px;
+        padding: 12px 18px;
+    }
+}
+
+/* Desktop safeguard to preserve original spacing */
+@media (min-width: 1200px) {
+    .first-visit-container {
+        padding: 0 40px;
+    }
+    .main-title {
+        margin-bottom: 24px;
+    }
+    .reservation-btn {
+        font-size: 18px;
+        padding: 16px 24px;
     }
 }
 </style>

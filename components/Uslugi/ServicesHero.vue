@@ -179,32 +179,123 @@ const categories = [
     height: 52px;
   }
 
-  .filters {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .hero {
-    margin: 60px auto 32px;
-  }
-
-  .title,
-  .title-italic {
-    font-size: 40px;
-  }
-
-  .tagline-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .tagline {
     font-size: 18px;
   }
 
   .filters {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+  }
+}
+
+/* Mobile - iPhone 12 et similaires (390px - 768px) */
+@media (max-width: 768px) {
+  .hero {
+    margin: 0px auto 24px;
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 110%;
+    margin-bottom: 20px;
+  }
+
+  .title-italic {
+    font-size: 32px;
+    line-height: 110%;
+  }
+
+  .tagline-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .tagline {
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 100%;
+  }
+
+  .filters {
     grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  .filter-btn {
+    padding: 16px 20px;
+    font-size: 12px;
+    gap: 16px;
+  }
+
+  .cat-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .arrow {
+    width: 12px;
+    height: 12px;
+    margin-left: auto;
+  }
+}
+
+/* Très petit mobile - iPhone SE et similaires (jusqu'à 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 12px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .title-italic {
+    font-size: 28px;
+  }
+
+  .tagline-box {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .filters {
+    row-gap: 10px;
+  }
+
+  .filter-btn {
+    padding: 14px 16px;
+    font-size: 11px;
+    gap: 12px;
+  }
+
+  .cat-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
   }
 }
 </style>

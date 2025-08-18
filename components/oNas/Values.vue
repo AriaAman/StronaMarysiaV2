@@ -17,7 +17,7 @@
         </div>
         <h4 class="value-title">Troska o każdego pacjenta</h4>
         <p class="value-description">
-          Zależy nam na tym, aby każdy czuł się u nas wyjątkowo. Słuchamy potrzeb pacjentów, 
+          Zależy nam na tym, aby każdy czuł się u nas wyjątkowo. Słuchamy potrzeb pacjentów,
           dbamy o ich komfort i staramy się, aby każda wizyta była przyjemna i bezstresowa.
         </p>
       </div>
@@ -28,7 +28,7 @@
         </div>
         <h4 class="value-title">Pasja i zaangażowanie</h4>
         <p class="value-description">
-          Stomatologia to nasza pasja. Robimy to, co kochamy, i podchodzimy do każdego 
+          Stomatologia to nasza pasja. Robimy to, co kochamy, i podchodzimy do każdego
           pacjenta z pełnym zaangażowaniem, by zapewnić mu jak najlepszą opiekę.
         </p>
       </div>
@@ -39,7 +39,7 @@
         </div>
         <h4 class="value-title">Najwyższy standard opieki</h4>
         <p class="value-description">
-          Dbamy o to, aby stosować nowoczesne metody leczenia i najlepsze materiały, dzięki 
+          Dbamy o to, aby stosować nowoczesne metody leczenia i najlepsze materiały, dzięki
           którym pacjenci czują się bezpiecznie i komfortowo.
         </p>
       </div>
@@ -50,8 +50,8 @@
         </div>
         <h4 class="value-title">Wsparcie w każdej sytuacji</h4>
         <p class="value-description">
-          Jesteśmy zawsze do dyspozycji pacjentów, gotowi pomóc, doradzić i wesprzeć na 
-          każdym etapie leczenia. Niezależnie od tego, czy to drobna procedura, czy 
+          Jesteśmy zawsze do dyspozycji pacjentów, gotowi pomóc, doradzić i wesprzeć na
+          każdym etapie leczenia. Niezależnie od tego, czy to drobna procedura, czy
           poważniejszy zabieg, możesz liczyć na nasze pełne wsparcie.
         </p>
       </div>
@@ -63,14 +63,14 @@
           <img src="/public/static/oNas/acolad.svg" alt="Wsparcie w każdej sytuacji" />
         </div>
         <p class="quote-text">
-          Każdy z nas wnosi unikalne umiejętności i specjalizacje, dzięki czemu kompleksowo dbamy o 
-          zdrowie Twoich zębów — od profilaktyki, przez leczenie zachowawcze i endodoncję, aż po 
-          zaawansowaną chirurgię i implantologię. Niezależnie od tego, czy potrzebujesz delikatnego 
-          podejścia podczas wizyty kontrolnej, precyzji w leczeniu kanałowym czy profesjonalnej 
+          Każdy z nas wnosi unikalne umiejętności i specjalizacje, dzięki czemu kompleksowo dbamy o
+          zdrowie Twoich zębów — od profilaktyki, przez leczenie zachowawcze i endodoncję, aż po
+          zaawansowaną chirurgię i implantologię. Niezależnie od tego, czy potrzebujesz delikatnego
+          podejścia podczas wizyty kontrolnej, precyzji w leczeniu kanałowym czy profesjonalnej
           odbudowy uśmiechu, możesz mieć pewność, że trafiłeś w dobre ręce.
         </p>
         <p class="quote-text">
-          Z nami wizyta u dentysty przestaje być stresującym doświadczeniem — to krok w stronę 
+          Z nami wizyta u dentysty przestaje być stresującym doświadczeniem — to krok w stronę
           zdrowego i pięknego uśmiechu, który będziesz dumnie prezentować każdego dnia!
         </p>
         <div class="quote-signature">
@@ -250,53 +250,189 @@
   color: #BC9667;
 }
 
-@media (max-width: 1440px) {
+/* Tablette (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
   .values-container,
   .quote-section,
   .values-header {
     max-width: 100%;
+    padding: 0 32px;
   }
-}
 
-@media (max-width: 1200px) {
   .main-title, .title-italic {
     font-size: 96px;
   }
-}
 
-@media (max-width: 992px) {
-  .main-title, .title-italic {
-    font-size: 72px;
+  .values-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
-  
+
   .value-card {
-    width: 100%;
+    padding: 32px;
   }
-  
+
+  .value-title {
+    font-size: 22px;
+  }
+
+  .value-description {
+    font-size: 15px;
+  }
+
   .quote-section {
-    flex-direction: column;
+    margin: 60px auto 0;
+    padding: 40px 32px;
+    flex-direction: row;
   }
-  
+
   .quote-content {
-    padding: 60px 20px 40px;
+    padding-right: 32px;
   }
-  
-  .doctor-image {
-    margin-top: 30px;
+
+  .doctor-img {
+    width: 450px;
+    height: 315px;
+  }
+
+  .signature-img {
+    height: 70px;
+    width: 380px;
   }
 }
 
+/* Mobile (jusqu'à 768px) */
 @media (max-width: 768px) {
+  .values-section {
+    padding: 50px 0;
+  }
+
+  .values-header {
+    margin-bottom: 50px;
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
   .main-title, .title-italic {
     font-size: 48px;
   }
-  
-  .values-section {
-    padding: 60px 0;
+
+  .values-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
   }
-  
+
+  .value-card {
+    padding: 24px;
+  }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .value-title {
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .value-description {
+    font-size: 14px;
+    line-height: 170%;
+  }
+
+  .quote-section {
+    flex-direction: column;
+    margin: 50px auto 0;
+    padding: 32px 16px;
+  }
+
+  .quote-mark img {
+    height: 50px;
+    width: 35px;
+  }
+
+  .quote-content {
+    padding-right: 0;
+  }
+
+  .quote-text {
+    font-size: 14px;
+    line-height: 170%;
+  }
+
+  .doctor-image {
+    margin-top: 24px;
+  }
+
+  .doctor-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 617/430;
+  }
+
+  .quote-signature {
+    margin-top: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .signature-img {
+    height: 60px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/* Très petit mobile (jusqu'à 480px) */
+@media (max-width: 480px) {
+  .values-section {
+    padding: 40px 0;
+  }
+
   .values-header {
     margin-bottom: 40px;
   }
+
+  .main-title, .title-italic {
+    font-size: 36px;
+  }
+
+  .value-card {
+    padding: 20px;
+  }
+
+  .value-title {
+    font-size: 18px;
+  }
+
+  .value-description {
+    font-size: 13px;
+  }
+
+  .quote-section {
+    margin: 40px auto 0;
+    padding: 24px 16px;
+  }
+
+  .quote-text {
+    font-size: 13px;
+  }
+
+  .doctor-img {
+    max-width: 350px;
+  }
+
+  .signature-img {
+    height: 50px;
+  }
 }
-</style> 
+</style>

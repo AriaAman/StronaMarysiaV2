@@ -1,5 +1,5 @@
 <template>
-    <div id="map" style="height: 400px;"></div>
+    <div id="map" class="map-container"></div>
 </template>
 
 <script setup>
@@ -26,5 +26,68 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* Ajoutez ici votre style CSS si nécessaire */
+.map-container {
+  height: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Desktop large (1441px+) */
+@media screen and (min-width: 1441px) {
+  .map-container {
+    height: 450px;
+  }
+}
+
+/* Desktop standard (1200px - 1440px) */
+@media screen and (max-width: 1440px) and (min-width: 1201px) {
+  .map-container {
+    height: 400px;
+  }
+}
+
+/* Tablet large (1025px - 1200px) */
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  .map-container {
+    height: 380px;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .map-container {
+    height: 350px;
+    margin: 0px;
+  }
+}
+
+/* Mobile large (481px - 768px) */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .map-container {
+    height: 300px;
+    margin: 0px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+/* Mobile standard (321px - 480px) */
+@media screen and (max-width: 480px) and (min-width: 321px) {
+  .map-container {
+    height: 250px;
+    margin: 0px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+}
+
+/* Mobile small (320px and below) */
+@media screen and (max-width: 320px) {
+  .map-container {
+    height: 220px;
+    margin: 0px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
 </style>

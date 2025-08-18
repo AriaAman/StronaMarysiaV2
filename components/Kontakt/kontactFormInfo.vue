@@ -91,7 +91,7 @@
     </div>
       </div>
     </div>
-    
+
   </section>
 </template>
 
@@ -104,10 +104,12 @@
   padding: 40px 0 0 0;
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
+
 .contact-bg-title {
   position: absolute;
-  max-width: 1440px;
   font-family: 'Aboreto', 'Aboreto';
   top: 0;
   left: 0;
@@ -117,8 +119,10 @@
   opacity: 0.2;
   width: 100%;
   letter-spacing: 0.1em;
-  z-index: -1;
+  z-index: -2;
+  pointer-events: none;
 }
+
 .contact-content {
   display: flex;
   justify-content: center;
@@ -128,7 +132,8 @@
   z-index: 1;
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 120px;
+  padding: 120px 20px 0 20px;
+  box-sizing: border-box;
 }
 .contact-info {
   position: relative;
@@ -379,38 +384,386 @@
   background: #f3e7d7;
   box-shadow: 0 4px 16px #0002;
 }
-@media (max-width: 700px) {
-  .contact-socials {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    max-width: 95vw;
+/* Large Desktop (1440px+) */
+@media (min-width: 1441px) {
+  .contact-content {
+    padding: 120px 40px 0 40px;
   }
 }
-@media (max-width: 1100px) {
+
+/* Desktop (1200px - 1440px) */
+@media (max-width: 1440px) and (min-width: 1201px) {
+  .contact-content {
+    padding: 120px 32px 0 32px;
+    gap: 40px;
+  }
+
+  .contact-info__image {
+    display: none;
+  }
+
+  .contact-bg-title {
+    font-size: 220px;
+  }
+}
+
+/* Tablet Large (1024px - 1200px) */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .contact-content {
+    padding: 100px 24px 0 24px;
+    gap: 32px;
+  }
+
+  .contact-bg-title {
+    font-size: 180px;
+    top: -20px;
+  }
+
+  .contact-info {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .contact-info__image {
+    width: 100%;
+    max-width: 350px;
+    height: 280px;
+  }
+
+  .contact-info__card {
+    width: 100%;
+    max-width: 400px;
+    padding: 32px;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 580px;
+    padding: 40px 32px 0 32px;
+  }
+
+  .contact-socials {
+    width: 100%;
+    max-width: 580px;
+  }
+}
+
+/* Tablette (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .contact-bg-title {
+    font-size: 160px;
+    top: -20px;
+  }
+
+  .contact-content {
+    gap: 32px;
+    padding: 80px 20px 0 20px;
+  }
+
+  .contact-info {
+    display: none; /* Masquer l'image et la carte d'info sur tablette */
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 750px; /* Élargir le formulaire */
+    padding: 32px;
+  }
+
+  .contact-form__title {
+    font-size: 40px;
+  }
+
+  .contact-socials {
+    width: 100%;
+    max-width: 750px; /* Élargir les réseaux sociaux */
+  }
+}
+
+/* Mobile Large (481px - 768px) */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 16px 0 0 0;
+    min-height: auto;
+  }
+
+  .contact-bg-title {
+    font-size: 100px;
+    top: -10px;
+    left: -20px;
+  }
+
   .contact-content {
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
+    padding: 60px 16px 0 16px;
+  }
+
+  .contact-info {
+    display: none; /* Masquer l'image et la carte d'info sur mobile */
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 100%; /* Utiliser toute la largeur disponible */
+    padding: 24px 20px 0 20px;
+  }
+
+  .contact-form__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .contact-form__group input,
+  .contact-form__group textarea {
+    padding: 14px 16px;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .contact-form__group input::placeholder,
+  .contact-form__group textarea::placeholder {
+    font-size: 16px;
+  }
+
+  .contact-form__consent {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form__consent label {
+    font-size: 13px;
+  }
+
+  .contact-form__submit {
+    font-size: 16px;
+    padding: 14px 0;
+    margin-bottom: 32px;
+  }
+
+  .contact-socials {
+    width: 100%;
+    max-width: 100%; /* Utiliser toute la largeur disponible */
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 80px;
+  }
+
+  .contact-social {
+    height: 50px;
+    padding: 0 16px;
+  }
+
+  .contact-social__text {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Medium (321px - 480px) */
+@media (max-width: 480px) {
+  .contact-bg-title {
+    font-size: 60px;
+    display: none; /* Masquer sur très petits écrans pour éviter l'encombrement */
+  }
+
+  .contact-content {
+    padding: 40px 12px 0 12px;
+  }
+
+  .contact-form {
+    padding: 20px 16px 0 16px;
+  }
+
+  .contact-form__title {
+    font-size: 28px;
+  }
+
+  .contact-form__group input,
+  .contact-form__group textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .contact-form__group input::placeholder,
+  .contact-form__group textarea::placeholder {
+    font-size: 14px;
+  }
+
+  .contact-form__submit {
+    font-size: 14px;
+  }
+
+  .contact-social {
+    height: 46px;
+    padding: 0 12px;
+  }
+
+  .contact-social__text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Small (jusqu'à 320px) */
+@media (max-width: 320px) {
+  .contact-content {
+    padding: 30px 8px 0 8px;
+  }
+
+  .contact-form {
+    padding: 16px 12px 0 12px;
+  }
+
+  .contact-form__title {
+    font-size: 24px;
+  }
+
+  .contact-form__group input,
+  .contact-form__group textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .contact-form__submit {
+    font-size: 13px;
+    padding: 12px 0;
+  }
+
+  .contact-social {
+    height: 44px;
+    padding: 0 10px;
+  }
+
+  .contact-social__text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (jusqu'à 768px) */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 20px 0 0 0;
+  }
+
+  .contact-bg-title {
+    font-size: 120px;
+    top: -10px;
+    left: -20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
     padding-top: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
-  .contact-info,
-  .contact-form-wrapper {
+
+  .contact-info {
+    display: none; /* Masquer l'image et la carte d'info sur mobile */
+  }
+
+  .contact-form {
     width: 100%;
-    max-width: 700px;
+    max-width: 750px; /* Utiliser toute la largeur disponible jusqu'à 750px */
+    padding: 24px 20px 0 20px;
   }
-  .contact-info__image {
-    height: 300px;
-    border-radius: 10px 10px 0 0;
-    left: 0;
-    top: 0;
+
+  .contact-form__title {
+    font-size: 32px;
+    margin-bottom: 24px;
   }
-  .contact-info__card {
-    margin-left: 0;
-    margin-top: 0;
+
+  .contact-form__group input,
+  .contact-form__group textarea {
+    padding: 14px 16px;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .contact-form__group input::placeholder,
+  .contact-form__group textarea::placeholder {
+    font-size: 16px;
+  }
+
+  .contact-form__consent {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form__consent label {
+    font-size: 13px;
+  }
+
+  .contact-form__submit {
+    font-size: 16px;
+    padding: 14px 0;
+    margin-bottom: 32px;
+  }
+
+  .contact-socials {
     width: 100%;
-    left: 0;
-    top: 0;
+    max-width: 750px;
+    height: 100px;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 80px;
+  }
+
+  .contact-social {
+    height: 50px;
+    padding: 0 16px;
+  }
+
+  .contact-social__text {
+    font-size: 16px;
+  }
+}
+
+/* Très petit mobile (jusqu'à 480px) */
+@media (max-width: 480px) {
+  .contact-bg-title {
+    font-size: 80px;
+    display: none; /* Masquer sur très petits écrans */
+  }
+
+  .contact-content {
+    padding-top: 40px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .contact-form {
+    padding: 20px 16px 0 16px;
+  }
+
+  .contact-form__title {
+    font-size: 28px;
+  }
+
+  .contact-form__group input,
+  .contact-form__group textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .contact-form__group input::placeholder,
+  .contact-form__group textarea::placeholder {
+    font-size: 14px;
+  }
+
+  .contact-form__submit {
+    font-size: 14px;
+  }
+
+  .contact-social {
+    height: 46px;
+    padding: 0 12px;
+  }
+
+  .contact-social__text {
+    font-size: 14px;
   }
 }
 </style>

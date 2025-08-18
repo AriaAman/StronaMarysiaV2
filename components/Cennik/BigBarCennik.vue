@@ -2,7 +2,7 @@
     <div class="specialists-section">
       <div class="specialists-content">
         <h2 class="specialists-title">
-          Cennik usług 
+          Cennik usług
           <span class="specialists-subtitle">stomatologicznych</span>
         </h2>
         <p class="specialists-description">
@@ -19,11 +19,11 @@
       </div>
     </div>
   </template>
-  
+
   <script setup>
   // Aucune logique nécessaire pour ce composant statique
   </script>
-  
+
   <style scoped>
   .specialists-section {
     background-color: #D7C0A4;
@@ -32,12 +32,12 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .specialists-content {
     max-width: 900px;
     text-align: center;
   }
-  
+
   .specialists-title {
     font-family: 'Satoshi Variable ', 'Satoshi';
     font-weight: 100;
@@ -46,7 +46,7 @@
     color: #0B162B;
     margin-bottom: 0;
   }
-  
+
   .specialists-subtitle {
     display: block;
     font-family: 'Merriweatther', 'Merriweather';
@@ -56,7 +56,7 @@
     line-height: 100%;
     color: #0B162B;
   }
-  
+
   .specialists-description {
     font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 20px;
@@ -66,7 +66,7 @@
     margin: 2rem 0;
     color: #122548;
   }
-  
+
   .specialists-button {
     display: inline-flex;
     align-items: center;
@@ -81,7 +81,7 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
   }
-  
+
   .button-icon {
     display: flex;
     align-items: center;
@@ -91,14 +91,92 @@
     background-color: white;
     border-radius: 50%;
   }
-  
-  @media (max-width: 768px) {
-    .specialists-title, .specialists-subtitle {
-      font-size: 60px;
+
+  /* Tablette (768px - 1024px) */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .specialists-section {
+      padding: 3rem 1.5rem;
     }
-    
+
+    .specialists-content {
+      max-width: 700px;
+    }
+
+    .specialists-title, .specialists-subtitle {
+      font-size: 64px;
+    }
+
     .specialists-description {
+      font-size: 18px;
+      margin: 1.5rem 0;
+    }
+
+    .specialists-button {
       font-size: 16px;
     }
+
+    .button-icon {
+      width: 42px;
+      height: 42px;
+    }
   }
-  </style> 
+
+  /* Mobile (jusqu'à 768px) */
+  @media (max-width: 768px) {
+    .specialists-section {
+      padding: 2.5rem 1rem;
+    }
+
+    .specialists-content {
+      max-width: 100%;
+    }
+
+    .specialists-title, .specialists-subtitle {
+      font-size: 48px;
+      line-height: 110%;
+    }
+
+    .specialists-description {
+      font-size: 16px;
+      line-height: 160%;
+      margin: 1.5rem 0;
+    }
+
+    .specialists-button {
+      font-size: 14px;
+      gap: 0.75rem;
+    }
+
+    .button-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  /* Très petit mobile (jusqu'à 480px) */
+  @media (max-width: 480px) {
+    .specialists-section {
+      padding: 2rem 0.75rem;
+    }
+
+    .specialists-title, .specialists-subtitle {
+      font-size: 36px;
+    }
+
+    .specialists-description {
+      font-size: 14px;
+      line-height: 150%;
+      margin: 1.25rem 0;
+    }
+
+    .specialists-button {
+      font-size: 13px;
+      gap: 0.5rem;
+    }
+
+    .button-icon {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  </style>

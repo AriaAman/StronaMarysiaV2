@@ -109,6 +109,10 @@ defineProps({
   flex-direction: row-reverse;
 }
 
+.specialist-photo{
+  width: 100%;
+}
+
 .specialist-photo img {
   width: 430px;
   height: 430px;
@@ -175,6 +179,10 @@ defineProps({
     height: auto;
     margin: 0 0 1.5rem 0;
   }
+
+  .specialist-body-reversed .specialist-photo img {
+  margin-right: 0px;
+}
   
   .specialist-name {
     font-size: 36px;

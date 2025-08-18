@@ -149,7 +149,7 @@ const categories = [
 
 .price-section {
   margin: 0 auto;
-  padding: 40px 20px; 
+  padding: 40px 20px;
   background-color: #EEEBEA;
 }
 .test{
@@ -235,18 +235,152 @@ const categories = [
   font-weight: 400;
 }
 
-@media (max-width: 768px) {
+/* Tablette (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .price-section {
+    padding: 32px 16px;
+  }
+
+  .test {
+    margin: 1.5rem auto;
+  }
+
+  .price-category {
+    padding: 40px;
+    margin-bottom: 32px;
+    flex-direction: column;
+    gap: 24px;
+  }
+
   .category-title {
     font-size: 28px;
   }
 
-  .price-item {
-    padding: 15px 20px;
+  .category-description {
+    font-size: 15px;
+    margin-bottom: 16px;
   }
 
-  .service-name,
+  .price-items {
+    width: 100%;
+  }
+
+  .price-item {
+    padding: 16px 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .service-name {
+    font-size: 13px;
+    flex: 1;
+    text-align: left;
+  }
+
+  .service-price {
+    font-size: 15px;
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile (jusqu'à 768px) */
+@media (max-width: 768px) {
+  .price-section {
+    padding: 24px 12px;
+  }
+
+  .test {
+    margin: 1rem auto;
+  }
+
+  .price-category {
+    padding: 24px;
+    margin-bottom: 24px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .category-number {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .category-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .category-description {
+    font-size: 14px;
+    line-height: 160%;
+    margin-bottom: 12px;
+  }
+
+  .price-items {
+    width: 100%;
+  }
+
+  .price-item {
+    padding: 14px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .service-name {
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 1px;
+    width: 100%;
+  }
+
   .service-price {
     font-size: 14px;
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+  }
+}
+
+/* Très petit mobile (jusqu'à 480px) */
+@media (max-width: 480px) {
+  .price-section {
+    padding: 20px 8px;
+  }
+
+  .price-category {
+    padding: 20px;
+    margin-bottom: 20px;
+    gap: 16px;
+  }
+
+  .category-number {
+    font-size: 11px;
+  }
+
+  .category-title {
+    font-size: 20px;
+  }
+
+  .category-description {
+    font-size: 13px;
+    line-height: 150%;
+  }
+
+  .price-item {
+    padding: 12px 0;
+    gap: 6px;
+  }
+
+  .service-name {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+
+  .service-price {
+    font-size: 13px;
   }
 }
 </style>

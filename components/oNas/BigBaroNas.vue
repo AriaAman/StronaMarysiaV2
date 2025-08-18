@@ -98,9 +98,9 @@
   .specialists-title, .specialists-subtitle {
     font-size: 60px;
   }
-  
+
   .specialists-description {
     font-size: 16px;
   }
 }
-</style> 
+</style>

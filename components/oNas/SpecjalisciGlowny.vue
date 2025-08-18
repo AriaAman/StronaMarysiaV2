@@ -22,4 +22,4 @@ import ZespolSpecjalistow from './ZespolSpecjalistow.vue';
   padding: 2rem 1rem;
   background-color: #EEEBEA;
 }
-</style> 
+</style>

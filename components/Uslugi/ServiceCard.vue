@@ -41,8 +41,8 @@ const idxStr = computed(() =>
 ul {
   padding-left: 5px !important;
   margin-left: 0 !important;
- 
-  
+
+
 }
 
 .card {
