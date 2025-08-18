@@ -17,8 +17,6 @@
 <script setup lang="ts">
 import ServiceCard from '../components/Uslugi/ServiceCard.vue'
 import ServicesHero from '../components/Uslugi/ServicesHero.vue'
-import FirstVisitSection from '~/components/FirstVisitSection.vue'
-import ServicesBanner from '~/components/Uslugi/ServicesBanner.vue'
 
 const activeCat = ref('')
 
@@ -41,17 +39,17 @@ const services = ref([
     category: 'implanty',
     description: `
     <p style="color: #A9722D;">
-      To zaawansowana dziedzina stomatologii, zajmująca się odbudową braków w uzębieniu poprzez 
-      <strong>  wszczepianie tytanowych implantów </strong>, które zastępują korzenie utraconych zębów. Implanty są 
-      biokompatybilne, co oznacza, że integrują się z kością, tworząc stabilną podstawę dla sztucznych 
+      To zaawansowana dziedzina stomatologii, zajmująca się odbudową braków w uzębieniu poprzez
+      <strong>  wszczepianie tytanowych implantów </strong>, które zastępują korzenie utraconych zębów. Implanty są
+      biokompatybilne, co oznacza, że integrują się z kością, tworząc stabilną podstawę dla sztucznych
       zębów, a także zapobiegają zanikowi kości, co często występuje po utracie zęba.
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> Implanty można dostosować do różnych sytuacji klinicznych – 
+        <li><span style="color: #A9722D;">•</span> Implanty można dostosować do różnych sytuacji klinicznych –
         <strong> od pojedynczych braków zębowych po pełną rekonstrukcję łuków zębowych.</strong></li>
-        <li><span style="color: #A9722D;">•</span> Proces leczenia obejmuje <strong> diagnostykę, zabieg chirurgiczny, 
+        <li><span style="color: #A9722D;">•</span> Proces leczenia obejmuje <strong> diagnostykę, zabieg chirurgiczny,
         gojenie oraz zamocowanie korony, mostu lub protezy.</strong> </li>
-        <li><span style="color: #A9722D;">•</span> Dzięki nowym technologiom, takim jak <strong> tomografia CBCT, 
+        <li><span style="color: #A9722D;">•</span> Dzięki nowym technologiom, takim jak <strong> tomografia CBCT,
         implanty można precyzyjnie zaplanować </strong> , co zwiększa skuteczność i bezpieczeństwo zabiegu..</li>
       </ul>`
   },
@@ -62,11 +60,11 @@ const services = ref([
     category: 'endodoncja',
     description: `
     <p style="color: #A9722D;">
-      Dział stomatologii zajmujący się <strong> leczeniem chorób miazgi zęba </strong>, głównie spowodowanych 
+      Dział stomatologii zajmujący się <strong> leczeniem chorób miazgi zęba </strong>, głównie spowodowanych
       przez bakterie wnikające do miazgi przez ubytki próchnicowe, <strong> powodując stan zapalny. </strong>
-      Miazga zęba może także ucierpieć wskutek urazów. Celem leczenia endodontycznego jest 
-      eliminacja bakterii z kanałów korzeniowych, ich mechaniczne i chemiczne opracowanie 
-      oraz szczelne wypełnienie. 
+      Miazga zęba może także ucierpieć wskutek urazów. Celem leczenia endodontycznego jest
+      eliminacja bakterii z kanałów korzeniowych, ich mechaniczne i chemiczne opracowanie
+      oraz szczelne wypełnienie.
     </p>
       <ul style="list-style: none;">
         <li><span style="color: #A9722D;">•</span> <strong> Mikroskop do leczenia kanałowego </strong> umożliwia dokładne określenie liczby, lokalizacji oraz ewentualnych zwężeń, zarośnięć i perforacji kanałów.</li>
@@ -81,13 +79,13 @@ const services = ref([
     category: 'protetyka',
     description: `
     <p style="color: #A9722D;">
-      Dziedzina stomatologii zajmująca się <strong> uzupełnianiem braków zębowych oraz poprawą wyglądu 
-      zębów </strong>, mająca na celu przywrócenie pacjentowi funkcji żucia i poprawę jakości życia, 
-      zwłaszcza w zakresie estetyki. W naszym gabinecie oferujemy uzupełnienia kombinowane – 
+      Dziedzina stomatologii zajmująca się <strong> uzupełnianiem braków zębowych oraz poprawą wyglądu
+      zębów </strong>, mająca na celu przywrócenie pacjentowi funkcji żucia i poprawę jakości życia,
+      zwłaszcza w zakresie estetyki. W naszym gabinecie oferujemy uzupełnienia kombinowane –
       <strong> połączenie uzupełnień ruchomych ze stałymi </strong>, dostosowane do warunków i oczekiwań pacjenta.
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> Przy planowaniu leczenia szczegółowo omawiamy wszystkie możliwe warianty, 
+        <li><span style="color: #A9722D;">•</span> Przy planowaniu leczenia szczegółowo omawiamy wszystkie możliwe warianty,
         uwzględniając stan zdrowia pacjenta, rodzaj braków zębowych oraz szacowany kosztorys.</li>
         <li><span style="color: #A9722D;">•</span> Każda praca protetyczna jest doprecyzowana i starannie dobrana do indywidualnych potrzeb pacjenta.</li>
       </ul>`
@@ -99,15 +97,15 @@ const services = ref([
     category: 'estetyczna',
     description: `
     <p style="color: #A9722D;">
-      <strong> Stomatologia estetyczna </strong> to dziedzina stomatologii, która skupia się na <strong> poprawie wyglądu zębów, 
-      dziąseł i ogólnego uśmiechu pacjenta, łącząc aspekty zdrowotne z estetycznymi. </strong> Jej celem jest 
-      osiągnięcie harmonii w uśmiechu poprzez zabiegi, które poprawiają kształt, kolor, ustawienie i 
+      <strong> Stomatologia estetyczna </strong> to dziedzina stomatologii, która skupia się na <strong> poprawie wyglądu zębów,
+      dziąseł i ogólnego uśmiechu pacjenta, łącząc aspekty zdrowotne z estetycznymi. </strong> Jej celem jest
+      osiągnięcie harmonii w uśmiechu poprzez zabiegi, które poprawiają kształt, kolor, ustawienie i
       proporcje zębów, zapewniając naturalny i atrakcyjny wygląd.
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> W ramach stomatologii estetycznej stosuje się różnorodne techniki, takie jak <strong> wybielanie zębów, 
+        <li><span style="color: #A9722D;">•</span> W ramach stomatologii estetycznej stosuje się różnorodne techniki, takie jak <strong> wybielanie zębów,
         licówki porcelanowe, korony pełnoceramiczne, a także konturowanie dziąseł </strong>, które pozwalają na osiągnięcie idealnego uśmiechu. .</li>
-        <li><span style="color: #A9722D;">•</span> Zaawansowane technologie, jak <strong> cyfrowe projektowanie uśmiechu (DSD) </strong>, umożliwiają 
+        <li><span style="color: #A9722D;">•</span> Zaawansowane technologie, jak <strong> cyfrowe projektowanie uśmiechu (DSD) </strong>, umożliwiają
         precyzyjne planowanie i realizację zabiegów, które spełniają najwyższe standardy estetyczne</li>
       </ul>`
   },
@@ -118,14 +116,14 @@ const services = ref([
     category: 'zachowawcza',
     description: `
     <p style="color: #A9722D;">
-      Dziedzina stomatologii koncentrująca się <strong> na zapobieganiu i leczeniu chorób zębów, 
-      głównie próchnicy oraz niewielkich uszkodzeń tkanek twardych zębów. </strong> Jej celem jest 
-      zachowanie naturalnych zębów pacjenta w jak najlepszym stanie poprzez usuwanie ubytków 
-      próchnicowych i odbudowę uszkodzonych zębów za pomocą materiałów kompozytowych, które 
+      Dziedzina stomatologii koncentrująca się <strong> na zapobieganiu i leczeniu chorób zębów,
+      głównie próchnicy oraz niewielkich uszkodzeń tkanek twardych zębów. </strong> Jej celem jest
+      zachowanie naturalnych zębów pacjenta w jak najlepszym stanie poprzez usuwanie ubytków
+      próchnicowych i odbudowę uszkodzonych zębów za pomocą materiałów kompozytowych, które
       imitują naturalną strukturę zęba.
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> W ramach stomatologii zachowawczej stosuje się różne techniki, takie jak remineralizacja szkliwa, 
+        <li><span style="color: #A9722D;">•</span> W ramach stomatologii zachowawczej stosuje się różne techniki, takie jak remineralizacja szkliwa,
         leczenie endodontyczne (kanałowe) oraz stosowanie nowoczesnych wypełnień, które zapewniają estetyczny wygląd i długotrwałą ochronę zębów.</li>
         <li><span style="color: #A9722D;">•</span> Regularne wizyty kontrolne i profilaktyczne zabiegi, takie jak fluoryzacja czy lakowanie bruzd, są kluczowe w utrzymaniu zdrowych zębów.</li>
       </ul>`
@@ -137,18 +135,18 @@ const services = ref([
     category: 'diagnostyka',
     description: `
     <p style="color: #A9722D;">
-      <strong> Diagnostyka w stomatologii to proces oceny stanu zdrowia jamy ustnej, </strong> który obejmuje wywiad 
+      <strong> Diagnostyka w stomatologii to proces oceny stanu zdrowia jamy ustnej, </strong> który obejmuje wywiad
       z pacjentem, badanie kliniczne oraz zaawansowane metody obrazowania, takie jak <strong> RTG i tomografia CBCT. </strong>
-      Dzięki tym narzędziom możliwe jest <strong> wykrycie próchnicy, chorób dziąseł, zmian w kościach, a 
+      Dzięki tym narzędziom możliwe jest <strong> wykrycie próchnicy, chorób dziąseł, zmian w kościach, a
       także niewidocznych gołym okiem schorzeń, takich jak torbiele czy nowotwory. </strong>
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> 
-          Można również stosować specjalistyczne badania, takie jak <strong> testy żywotności miazgi, 
-          diagnostykę laserową czy cyfrowe skanowanie 3D, które pomagają precyzyjnie ocenić 
+        <li><span style="color: #A9722D;">•</span>
+          Można również stosować specjalistyczne badania, takie jak <strong> testy żywotności miazgi,
+          diagnostykę laserową czy cyfrowe skanowanie 3D, które pomagają precyzyjnie ocenić
           stan zębów i tkanek przyzębia. </strong>
         </li>
-        <li><span style="color: #A9722D;">•</span> 
+        <li><span style="color: #A9722D;">•</span>
           Dzięki dokładnej diagnostyce możliwe jest nie tylko zapobieganie poważnym schorzeniom, ale także precyzyjne planowanie leczenia.
         </li>
       </ul>`
@@ -160,17 +158,17 @@ const services = ref([
     category: 'profilaktyka',
     description: `
     <p style="color: #A9722D;">
-      Kluczowa dziedzina stomatologii, która koncentruje się na zapobieganiu chorobom zębów i dziąseł 
-      oraz utrzymaniu zdrowia jamy ustnej na najwyższym poziomie. Jej celem jest minimalizowanie ryzyka 
-      wystąpienia próchnicy, choroby przyzębia czy ubytki, poprzez regularne wizyty kontrolne, odpowiednią 
+      Kluczowa dziedzina stomatologii, która koncentruje się na zapobieganiu chorobom zębów i dziąseł
+      oraz utrzymaniu zdrowia jamy ustnej na najwyższym poziomie. Jej celem jest minimalizowanie ryzyka
+      wystąpienia próchnicy, choroby przyzębia czy ubytki, poprzez regularne wizyty kontrolne, odpowiednią
       higienę jamy ustnej i stosowanie specjalistycznych zabiegów profilaktycznych.
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> 
-          W ramach profilaktyki stomatologicznej stosuje się różnorodne zabiegi, 
+        <li><span style="color: #A9722D;">•</span>
+          W ramach profilaktyki stomatologicznej stosuje się różnorodne zabiegi,
           takie jak <strong> profesjonalne czyszczenie zębów, fluoryzacja, lakowanie bruzd u dzieci,
-          a także edukacja pacjentów w zakresie właściwej techniki szczotkowania, nitkowania 
-          i wyboru odpowiednich produktów do higieny jamy ustnej. </strong> 
+          a także edukacja pacjentów w zakresie właściwej techniki szczotkowania, nitkowania
+          i wyboru odpowiednich produktów do higieny jamy ustnej. </strong>
          </li>
         <li><span style="color: #A9722D;">•</span> Profilaktyka stomatologiczna <strong> odgrywa kluczową rolę w długotrwałym utrzymaniu zdrowych zębów i dziąseł. </strong> </li>
       </ul>`
@@ -182,9 +180,9 @@ const services = ref([
     category: 'chirurgia',
     description: `
     <p style="color: #A9722D;">
-    To zaawansowana dziedzina stomatologii, zajmująca się odbudową braków w uzębieniu poprzez 
-    <strong> wszczepianie tytanowych implantów, </strong> które zastępują korzenie utraconych zębów. Implanty są 
-    biokompatybilne, co oznacza, że <strong> integrują się z kością, </strong> tworząc stabilną podstawę dla sztucznych 
+    To zaawansowana dziedzina stomatologii, zajmująca się odbudową braków w uzębieniu poprzez
+    <strong> wszczepianie tytanowych implantów, </strong> które zastępują korzenie utraconych zębów. Implanty są
+    biokompatybilne, co oznacza, że <strong> integrują się z kością, </strong> tworząc stabilną podstawę dla sztucznych
     zębów, a także <strong> zapobiegają zanikowi kości </strong>, co często występuje po utracie zęba.
     </p>
       <ul style="list-style: none;">
