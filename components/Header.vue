@@ -3,7 +3,13 @@
         <div class="container">
             <div class="logo">
                 <NuxtLink to="/">
-                    <img src="/static/header/logoPiotr.svg" alt="logoPiotr" />
+                    <NuxtImg 
+                        src="/static/header/logoPiotr.svg" 
+                        alt="Cabinet Dentaire Dr. Pietruszczak - Logo" 
+                        width="200"
+                        height="60"
+                        loading="eager"
+                    />
                 </NuxtLink>
             </div>
             <nav class="main-nav">
@@ -31,7 +37,14 @@
             <nav class="mobile-nav" @click.stop>
                 <div class="mobile-nav-header">
                     <div class="mobile-logo">
-                        <img src="/static/header/logoPiotr.svg" alt="logoPiotr" />
+                        <NuxtImg 
+                            src="/static/header/logoPiotr.svg" 
+                            alt="Cabinet Dentaire Dr. Pietruszczak - Logo Mobile" 
+                            width="150"
+                            height="45"
+                            loading="eager"
+                            format="svg"
+                        />
                     </div>
                     <button class="close-btn" @click="closeMobileMenu">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -46,10 +59,10 @@
                     <li><a href="/technologie" class="mobile-link" @click="closeMobileMenu">TECHNOLOGIE</a></li>
                     <li><a href="/cennik" class="mobile-link" @click="closeMobileMenu">CENNIK</a></li>
                     <li><a href="/kontakt" class="mobile-link" @click="closeMobileMenu">KONTAKT</a></li>
-                </ul>
-                <div class="mobile-cta">
+                    <div class="mobile-cta">
                     <a class="mobile-reservation-btn" href="/reservation" @click="closeMobileMenu">REZERWACJA ONLINE</a>
                 </div>
+                </ul>
             </nav>
         </div>
     </header>
@@ -135,9 +148,10 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 8px;
+    gap: 4px;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap;
 }
 
 .header-link {
@@ -145,13 +159,14 @@ header {
     text-decoration: none;
     font-family: 'Aboreto', system-ui;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
-    padding: 8px 20px;
+    padding: 8px 12px;
     letter-spacing: 1%;
     line-height: 100%;
     display: inline-block;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .header-link:hover {
@@ -162,16 +177,18 @@ header {
     background-color: #BC9667;
     color: white;
     border-radius: 4px;
-    padding: 10px 16px;
+    padding: 10px 14px;
     font-family: 'Satoshi', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
     line-height: 140%;
     display: inline-block;
     transition: background-color 0.3s ease;
+    white-space: nowrap;
+    margin: 0 4px;
 }
 
 .reservation-btn:hover {
@@ -310,12 +327,10 @@ header {
 .mobile-cta {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
 }
 
 .mobile-reservation-btn {
     display: block;
-    width: 100%;
     background-color: #BC9667;
     color: white;
     border-radius: 4px;
@@ -335,21 +350,59 @@ header {
     background-color: #A88457;
 }
 
-/* Tablet large (1024px - 1200px) */
-@media (max-width: 1200px) and (min-width: 1025px) {
+/* Desktop large (1400px+) */
+@media (min-width: 1400px) {
     .container {
-        padding: 0 24px;
+        max-width: 1600px;
         gap: 12px;
     }
 
     .header-link {
+        font-size: 17px;
+        padding: 8px 16px;
+    }
+
+    .reservation-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+        letter-spacing: 1.3px;
+    }
+}
+
+/* Desktop standard (1201px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1201px) {
+    .container {
+        gap: 8px;
+    }
+
+    .header-link {
         font-size: 16px;
-        padding: 6px 14px;
+        padding: 8px 14px;
     }
 
     .reservation-btn {
         font-size: 13px;
-        padding: 8px 12px;
+        padding: 10px 12px;
+        letter-spacing: 1.1px;
+    }
+}
+
+/* Tablet large (1024px - 1200px) */
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .container {
+        padding: 0 24px;
+        gap: 8px;
+    }
+
+    .header-link {
+        font-size: 15px;
+        padding: 6px 10px;
+    }
+
+    .reservation-btn {
+        font-size: 12px;
+        padding: 8px 10px;
+        letter-spacing: 1px;
     }
 }
 
@@ -357,21 +410,26 @@ header {
 @media (max-width: 1024px) and (min-width: 769px) {
     .container {
         padding: 0 20px;
-        gap: 10px;
+        gap: 6px;
     }
 
     .header-link {
-        font-size: 15px;
-        padding: 6px 12px;
+        font-size: 14px;
+        padding: 6px 8px;
     }
 
     .reservation-btn {
-        font-size: 12px;
-        padding: 7px 10px;
+        font-size: 11px;
+        padding: 7px 8px;
+        letter-spacing: 0.8px;
     }
 
     .logo img {
         height: 42px;
+    }
+
+    .main-nav ul {
+        gap: 2px;
     }
 }
 

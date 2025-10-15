@@ -13,7 +13,7 @@
                     <!-- Première carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <img src="/static/HomePage/DentVector.svg" alt="Nowoczesna stomatologia" />
+                            <NuxtImg src="/static/HomePage/DentVector.svg" alt="Nowoczesna stomatologia" loading="lazy" />
                         </div>
                         <h3 class="card-title">Nowoczesna stomatologia dla wymagających</h3>
                         <p class="card-text">
@@ -24,7 +24,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <img src="/static/HomePage/PiotrWrapper.svg" alt="Piotr Pietruszczak" />
+                                <NuxtImg src="/static/HomePage/PiotrWrapper.svg" alt="Piotr Pietruszczak" loading="lazy" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">PIOTR PIETRUSZCZAK</h4>
@@ -36,7 +36,7 @@
                     <!-- Troisième carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <img src="/static/HomePage/DentVector.svg" alt="Wsparcie" />
+                            <NuxtImg src="/static/HomePage/DentVector.svg" alt="Wsparcie" loading="lazy" />
                         </div>
                         <h3 class="card-title">Wsparcie w każdej sytuacji</h3>
                         <p class="card-text">
@@ -46,7 +46,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <img src="/static/HomePage/AmandaWrapper.svg" alt="Amanda Duszak" />
+                                <NuxtImg src="/static/HomePage/AmandaWrapper.svg" alt="Amanda Duszak" loading="lazy" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">AMANDA DUSZAK</h4>
@@ -57,8 +57,8 @@
 
                     <!-- Boutons -->
                     <div class="action-buttons">
-                        <a href="#" class="primary-button">REZERWACJA ONLINE</a>
-                        <a href="#" class="secondary-button">
+                        <a href="/reservation" class="primary-button">REZERWACJA ONLINE</a>
+                        <a href="/kontakt" class="secondary-button">
                             <span class="button-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#BC9667"
                                     class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -89,7 +89,7 @@
                             zdrowia i samopoczucie.
                         </p>
                         <div class="patient-image">
-                            <img src="/static/HomePage/OlekAvecDame.jpg" alt="Patient with doctor" />
+                            <NuxtImg src="/static/HomePage/OlekAvecDame.jpg" alt="Patient with doctor" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -350,7 +350,7 @@
 
     .title,
     .title-italic {
-        font-size: 42px;
+        font-size: 38px;
     }
 
     .action-buttons {

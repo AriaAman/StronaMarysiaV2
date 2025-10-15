@@ -1,7 +1,7 @@
 <template>
     <section class="hero-section">
         <div class="background-image">
-            <img src="/static/HomePage/FirstImageHomepage.jpg" alt="Background" />
+            <NuxtImg src="/static/HomePage/FirstImageHomepage.jpg" alt="Background" loading="eager" />
         </div>
 
         <div class="hero-content">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="logo-circle">
-            <img src="/static/HomePage/LogoCircleHomepage.svg" alt="Pietruszczak Logo" />
+            <NuxtImg src="/static/HomePage/LogoCircleHomepage.svg" alt="Pietruszczak Logo" loading="lazy" />
         </div>
     </section>
 </template>

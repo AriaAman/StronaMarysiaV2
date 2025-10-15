@@ -11,9 +11,9 @@
                     Czas na pierwszy krok do perfekcyjnego uśmiechu.<br />
                     Umów swoją wizytę i zacznij dbać o zdrowie jamy ustnej.
                 </p>
-                <img src="/static/uslugi/circle-pietrus.png" alt="" class="btn-circle" />
-                <a href="#" class="reservation-btn">
-                    <img src="/static/icons/online-icon.png" alt="" class="btn-icon" />
+                <NuxtImg src="/static/uslugi/circle-pietrus.png" alt="" class="btn-circle" loading="lazy" />
+                <a href="/reservation" class="reservation-btn">
+                    <NuxtImg src="/static/icons/online-icon.png" alt="" class="btn-icon" loading="lazy" />
                     REZERWACJA ONLINE
                 </a>
             </div>
