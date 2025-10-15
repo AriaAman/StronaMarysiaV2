@@ -16,14 +16,18 @@
             </div>
             <div class="step" :class="{ active: currentStep >= 2, completed: currentStep > 2 }">
               <div class="step-number">2</div>
-              <span class="step-text">Wybierz godzinę</span>
+              <span class="step-text">Wybierz lekarza</span>
             </div>
             <div class="step" :class="{ active: currentStep >= 3, completed: currentStep > 3 }">
               <div class="step-number">3</div>
+              <span class="step-text">Wybierz godzinę</span>
+            </div>
+            <div class="step" :class="{ active: currentStep >= 4, completed: currentStep > 4 }">
+              <div class="step-number">4</div>
               <span class="step-text">Dane osobowe</span>
             </div>
-            <div class="step" :class="{ active: currentStep >= 4 }">
-              <div class="step-number">4</div>
+            <div class="step" :class="{ active: currentStep >= 5 }">
+              <div class="step-number">5</div>
               <span class="step-text">Potwierdzenie</span>
             </div>
           </div>
@@ -47,10 +51,31 @@
               </div>
             </div>
 
-            <!-- Étape 2: Créneaux horaires -->
+            <!-- Étape 2: Sélection du médecin -->
             <div v-if="currentStep === 2" class="step-content">
+              <DoctorSelectionComponent 
+                :available-doctors="availableDoctors"
+                :loading="isLoadingDoctors"
+                @doctor-selected="handleDoctorSelection"
+                :selected-doctor="selectedDoctor"
+              />
+              <div class="step-actions">
+                <button class="btn-back" @click="previousStep">Wstecz</button>
+                <button 
+                  class="btn-next" 
+                  :disabled="!selectedDoctor"
+                  @click="nextStep"
+                >
+                  Kontynuuj
+                </button>
+              </div>
+            </div>
+
+            <!-- Étape 3: Créneaux horaires -->
+            <div v-if="currentStep === 3" class="step-content">
               <TimeSlotComponent 
                 :selected-date="selectedDate"
+                :selected-doctor="selectedDoctor"
                 :available-slots="availableTimeSlots"
                 :loading="isLoadingSlots"
                 @slot-selected="handleTimeSlotSelection"
@@ -67,8 +92,8 @@
               </div>
             </div>
 
-            <!-- Étape 3: Informations personnelles -->
-            <div v-if="currentStep === 3" class="step-content">
+            <!-- Étape 4: Informations personnelles -->
+            <div v-if="currentStep === 4" class="step-content">
               <PatientFormComponent 
                 @form-data="handlePatientData"
                 :is-loading="isSubmitting"
@@ -85,8 +110,8 @@
               </div>
             </div>
 
-            <!-- Étape 4: Confirmation -->
-            <div v-if="currentStep === 4" class="step-content">
+            <!-- Étape 5: Confirmation -->
+            <div v-if="currentStep === 5" class="step-content">
               <ConfirmationComponent 
                 :reservation-data="reservationData"
                 @confirm="confirmReservation"
@@ -104,6 +129,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import CalendarComponent from '~/components/Reservation/SimpleCalendarComponent.vue'
+import DoctorSelectionComponent from '~/components/Reservation/DoctorSelectionComponent.vue'
 import TimeSlotComponent from '~/components/Reservation/TimeSlotComponent.vue'
 import PatientFormComponent from '~/components/Reservation/PatientFormComponent.vue'
 import ConfirmationComponent from '~/components/Reservation/ConfirmationComponent.vue'
@@ -112,34 +138,50 @@ import { useReservationApi } from '~/composables/useReservationApi'
 // Reactive data
 const currentStep = ref(1)
 const selectedDate = ref(null)
+const selectedDoctor = ref(null)
 const selectedTimeSlot = ref(null)
 const patientData = ref({})
 const availableDates = ref([])
+const availableDoctors = ref([])
 const availableTimeSlots = ref([])
+const isLoadingDoctors = ref(false)
 const isLoadingSlots = ref(false)
 const isSubmitting = ref(false)
 
 // API composable
-const { getAvailableDates, getAvailableTimeSlots, createAppointment } = useReservationApi()
+const { getAvailableDates, getWorkers, getAvailableTimeSlots, createAppointment } = useReservationApi()
 
 // Computed properties
 const isFormValid = computed(() => {
   return patientData.value.firstName &&
          patientData.value.lastName &&
          patientData.value.email &&
-         patientData.value.phone
+         patientData.value.phone &&
+         ['male', 'female'].includes(patientData.value.gender)
 })
 
-const reservationData = computed(() => ({
-  date: selectedDate.value,
-  timeSlot: selectedTimeSlot.value,
-  patient: patientData.value
-}))
+const reservationData = computed(() => {
+  // Récupérer l'extCalId de la date sélectionnée
+  const dateObj = availableDates.value.find(d => d.date === selectedDate.value)
+  
+  return {
+    date: selectedDate.value,
+    doctor: selectedDoctor.value,
+    timeSlot: selectedTimeSlot.value,
+    patient: patientData.value,
+    extCalId: dateObj?.extCalId // Ajouter l'ID du calendrier externe
+  }
+})
 
 // Methods
-const nextStep = () => {
-  if (currentStep.value < 4) {
+const nextStep = async () => {
+  if (currentStep.value < 5) {
     currentStep.value++
+    
+    // Si on passe à l'étape 3 (sélection des créneaux), charger les créneaux du médecin sélectionné
+    if (currentStep.value === 3) {
+      await loadTimeSlotsForDoctor()
+    }
   }
 }
 
@@ -151,13 +193,61 @@ const previousStep = () => {
 
 const handleDateSelection = async (date) => {
   selectedDate.value = date
+  selectedDoctor.value = null // Reset du médecin sélectionné
   selectedTimeSlot.value = null // Reset du créneau sélectionné
-
-  // Charger les créneaux disponibles pour cette date
+  
+  // Charger les médecins disponibles pour cette date
   if (date) {
     try {
+      isLoadingDoctors.value = true
+      console.log('📅 Date sélectionnée:', date)
+      // Charger la liste des médecins
+      const workersResult = await getWorkers()
+      
+      // Extraire la liste des médecins depuis la réponse API
+      if (workersResult && workersResult.list && Array.isArray(workersResult.list)) {
+        availableDoctors.value = workersResult.list
+      } else if (Array.isArray(workersResult)) {
+        availableDoctors.value = workersResult
+      } else {
+        availableDoctors.value = []
+      }
+      
+      console.log('👥 Médecins chargés:', availableDoctors.value.length)
+    } catch (error) {
+      console.error('Błąd podczas ładowania lekarzy:', error)
+      availableDoctors.value = []
+    } finally {
+      isLoadingDoctors.value = false
+    }
+  }
+}
+
+const handleDoctorSelection = async (doctor) => {
+  selectedDoctor.value = doctor
+  selectedTimeSlot.value = null // Reset du créneau sélectionné
+  console.log('👨‍⚕️ Médecin sélectionné:', doctor)
+  
+  // Recharger les créneaux pour ce docteur spécifique
+  await loadTimeSlotsForDoctor()
+}
+
+const loadTimeSlotsForDoctor = async () => {
+  if (selectedDate.value && selectedDoctor.value) {
+    try {
       isLoadingSlots.value = true
-      availableTimeSlots.value = await getAvailableTimeSlots(date)
+      const dateObj = availableDates.value.find(d => d.date === selectedDate.value)
+      const extCalId = dateObj?.extCalId
+      const doctorId = selectedDoctor.value.workerId || selectedDoctor.value.id
+      
+      console.log('🕒 Chargement des créneaux pour:', {
+        doctor: selectedDoctor.value.name,
+        doctorId: doctorId,
+        date: selectedDate.value,
+        extCalId: extCalId
+      })
+      
+      availableTimeSlots.value = await getAvailableTimeSlots(selectedDate.value, extCalId, doctorId)
     } catch (error) {
       console.error('Błąd podczas ładowania terminów:', error)
       availableTimeSlots.value = []
@@ -235,6 +325,12 @@ useHead({
 .reservation-header {
   text-align: center;
   margin-bottom: 60px;
+}
+
+.api-status-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .reservation-title {

@@ -72,7 +72,7 @@
           </div>
 
           <div class="form-row">
-            <div class="form-group full-width">
+            <div class="form-group">
               <label for="dateOfBirth" class="form-label">Data urodzenia</label>
               <input
                 id="dateOfBirth"
@@ -81,6 +81,22 @@
                 class="form-input"
                 :max="maxBirthDate"
               />
+            </div>
+
+            <div class="form-group">
+              <label for="gender" class="form-label">Płeć *</label>
+              <select
+                id="gender"
+                v-model="formData.gender"
+                class="form-select"
+                :class="{ 'error': errors.gender }"
+                required
+              >
+                <option value="">Wybierz</option>
+                <option value="male">Mężczyzna</option>
+                <option value="female">Kobieta</option>
+              </select>
+              <span v-if="errors.gender" class="error-message">{{ errors.gender }}</span>
             </div>
           </div>
         </div>
@@ -210,6 +226,7 @@ const formData = ref({
   lastName: '',
   email: '',
   phone: '',
+  gender: '',
   dateOfBirth: '',
   reason: '',
   notes: '',
@@ -262,6 +279,11 @@ const validateForm = () => {
   // Validation motif
   if (!formData.value.reason) {
     errors.value.reason = 'Le motif de consultation est requis'
+  }
+
+  // Validation genre
+  if (!['male', 'female'].includes(formData.value.gender)) {
+    errors.value.gender = 'Le genre est requis'
   }
 
   // Validation consentement
