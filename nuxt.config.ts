@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
+  // Modules
+  modules: [
+    '@nuxt/image'
+  ],
+
   // Configuration des composants
   components: [
     {
@@ -11,9 +16,9 @@ export default defineNuxtConfig({
     }
   ],
 
-  // Configuration pour l'API externes
+  // Configuration pour Vercel
   nitro: {
-    // Configuration pour les appels API externes
+    preset: 'vercel',
   },
 
   // Configuration SSR
@@ -22,15 +27,28 @@ export default defineNuxtConfig({
   // Configuration de l'application
   app: {
     head: {
-      title: 'Cabinet Dentaire Dr. Pietruszczak',
+      title: 'Pietruszczak',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Cabinet dentaire moderne à Olsztyn. Spécialistes en stomatologie et implantologie.' }
+        { name: 'description', content: 'Nowoczesna praktyka stomatologiczna w Olsztynie. Specjaliści stomatologii i implantologii. Piotr Pietruszczak.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
       ]
+    }
+  },
+
+  // Configuration des variables d'environnement
+  runtimeConfig: {
+    // Variables privées (côté serveur seulement)
+    felgApiKey: process.env.FELG_API_KEY,
+    felgApiSecret: process.env.FELG_API_SECRET,
+    
+    // Variables publiques (exposées côté client)
+    public: {
+      // Mode production pour l'interface utilisateur
+      apiMode: 'production'
     }
   }
 })
