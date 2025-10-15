@@ -1,7 +1,7 @@
 <template>
   <article class="card" :class="{ reverse: isReverse }">
     <figure class="visual">
-      <img :src="service.image" :alt="service.caption" />
+      <NuxtImg :src="service.image" :alt="service.caption" loading="lazy" />
       <figcaption class="caption">
         <span class="cap-label">{{ service.caption }}</span>
         <span class="cap-idx">{{ idxStr }}</span>
@@ -147,6 +147,7 @@ ul {
   margin: 0 0 24px;
   font: 300 24px/140% 'Aboreto', serif;
   color: #0b162b;
+  width: 90%;
 }
 
 .description {

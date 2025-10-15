@@ -58,23 +58,23 @@
     },
     {
       question: 'Czy leczenie zębów w Waszym gabinecie jest bolesne?',
-      answer: 'Wykorzystujemy nowoczesne metody znieczulenia, które zapewniają komfort podczas leczenia. Dokładamy wszelkich starań, aby wizyty były jak najmniej stresujące i bezbolesne. Przed zabiegiem dokładnie omawiamy procedurę i dostosowujemy znieczulenie do indywidualnych potrzeb pacjenta.'
+      answer: 'Absolutnie nie! Korzystamy z nowoczesnych, skutecznych znieczuleń, dzięki czemu zabiegi są całkowicie komfortowe. Jeśli odczuwasz lęk przed wizytą, poinformuj nas o tym – zadbamy o Twój spokój i wygodę.'
     },
     {
       question: 'Kiedy należy zgłosić się na leczenie kanałowe?',
-      answer: 'Leczenie kanałowe jest zalecane, gdy infekcja dotarła do miazgi zęba. Objawami wskazującymi na potrzebę takiego leczenia są: silny ból zęba, wrażliwość na ciepło i zimno, ból podczas żucia, obrzęk dziąseł przy chorym zębie, lub ropień. Jeśli zauważysz te objawy, należy jak najszybciej skontaktować się z naszym gabinetem.'
+      answer: 'Jeśli odczuwasz silny ból, nadwrażliwość na ciepło i zimno lub masz opuchnięte dziąsło – to mogą być objawy infekcji miazgi zęba. W naszym gabinecie stosujemy nowoczesne techniki endodontyczne, w tym leczenie kanałowe pod mikroskopem, co gwarantuje precyzję i skuteczność zabiegu.'
     },
     {
       question: 'Czy w gabinecie oferujecie nowoczesne metody leczenia?',
-      answer: 'Tak, nasz gabinet jest wyposażony w najnowocześniejszy sprzęt stomatologiczny i oferujemy szeroki zakres zaawansowanych metod leczenia. Stosujemy innowacyjne techniki diagnostyczne, cyfrową radiografię, nowoczesne materiały wypełnieniowe oraz zabiegi z zakresu stomatologii estetycznej i implantologii zgodne z najnowszymi standardami medycznymi.'
+      answer: 'Tak! Wykorzystujemy nowoczesne technologie, takie jak mikroskop stomatologiczny, laseroterapia, cyfrowe zdjęcia RTG oraz zaawansowane systemy do leczenia kanałowego. Dzięki temu zabiegi są skuteczniejsze, szybsze i bardziej komfortowe dla pacjentów.'
     },
     {
       question: 'Jakie są opcje uzupełnienia brakujących zębów?',
-      answer: 'Oferujemy różne opcje uzupełnienia brakujących zębów, w tym implanty dentystyczne, mosty, protezy stałe i ruchome. Implanty są obecnie najnowocześniejszym i najtrwalszym rozwiązaniem, zapewniającym funkcjonalność i estetykę zbliżoną do naturalnych zębów. Podczas konsultacji dobieramy indywidualnie najlepszą metodę, uwzględniając stan zdrowia pacjenta oraz jego oczekiwania.'
+      answer: 'W naszym gabinecie oferujemy kilka rozwiązań: implanty, mosty protetyczne oraz protezy. Implanty to najtrwalsza i najbardziej komfortowa opcja – wyglądają i funkcjonują jak naturalne zęby. Podczas konsultacji pomożemy Ci wybrać najlepsze rozwiązanie dopasowane do Twoich potrzeb.'
     },
     {
       question: 'Od jakiego wieku dzieci powinny chodzić do dentysty?',
-      answer: 'Zalecamy, aby pierwsza wizyta dziecka u dentysty odbyła się po wyrznięciu pierwszego zęba mlecznego, nie później niż w 1. roku życia. Wczesne wizyty pozwalają na wykrycie potencjalnych problemów, naukę właściwej higieny jamy ustnej oraz oswojenie dziecka z gabinetem stomatologicznym, co zmniejsza stres podczas przyszłych wizyt.'
+      answer: 'Pierwsza wizyta powinna odbyć się już po pojawieniu się pierwszego ząbka, czyli około 6. miesiąca życia. W naszym gabinecie oferujemy wizyty adaptacyjne, podczas których dziecko w przyjaznej atmosferze oswaja się z dentystą i uczy się dbania o zęby.'
     }
   ]);
 

@@ -4,7 +4,7 @@
       <div class="contact-bg-title">KONTAKT</div>
       <!-- Bloc gauche : Infos cabinet avec image HTML -->
       <div class="contact-info">
-        <img src="/static/kontakt/imageKontakt.png" alt="photo cabinet" class="contact-info__image" />
+        <NuxtImg src="/static/kontakt/imageKontakt.png" alt="photo cabinet" class="contact-info__image" loading="lazy" />
         <div class="contact-info__card">
           <h3 class="contact-info__title">Jesteśmy do Twojej dyspozycji.</h3>
           <p class="contact-info__subtitle">
@@ -59,7 +59,7 @@
         </div>
 
         <div class="contact-socials">
-      <a href="#" class="contact-social">
+      <a href="https://www.instagram.com/pietruszczak.stomatologia" class="contact-social">
         <span class="contact-social__icon">
           <!-- Icône Instagram SVG -->
           <svg width="16" height="16" fill="#BC9667" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -74,7 +74,7 @@
           </svg>
         </span>
       </a>
-      <a href="#" class="contact-social">
+      <a href="https://www.facebook.com/pietruszczakstomatologia" class="contact-social">
         <span class="contact-social__icon">
           <!-- Icône Facebook SVG -->
           <svg width="16" height="16" fill="#BC9667" class="bi bi-facebook" viewBox="0 0 16 16">

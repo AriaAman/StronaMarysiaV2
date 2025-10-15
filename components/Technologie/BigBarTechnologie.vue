@@ -6,7 +6,7 @@
         <span class="bigbar-subtitle">sprzęt i technologia</span>
       </div>
       <div class="bigbar-desc-row">
-        <img src="/static/technologie/agnieszka.svg" alt="avatar" class="bigbar-avatar" />
+        <NuxtImg src="/static/technologie/agnieszka.svg" alt="avatar" class="bigbar-avatar" loading="lazy" />
         <p class="bigbar-desc">
           Zaawansowana diagnostyka i leczenie — sprawdź, jak dbamy o Twój uśmiech dzięki technologii. Zobacz, co oferujemy w naszym gabinecie:
         </p>

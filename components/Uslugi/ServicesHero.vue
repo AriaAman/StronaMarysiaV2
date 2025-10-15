@@ -7,7 +7,13 @@
     </h1>
 
     <div class="tagline-box">
-      <img class="avatar" src="/static/HomePage/PiotrWrapper.svg" alt="Piotr Pietruszczak" />
+      <NuxtImg 
+        class="avatar" 
+        src="/static/HomePage/PiotrWrapper.svg" 
+        alt="Dr. Piotr Pietruszczak - Chirurg stomatolog" 
+        loading="eager"
+        format="svg"
+      />
       <p class="tagline">
         „Nowoczesna stomatologia w trosce o Twój uśmiech
         <br /> — bezbolesne leczenie, implanty, wybielanie zębów, ortodoncja i pełna diagnostyka."
@@ -17,11 +23,25 @@
     <ul class="filters">
       <li v-for="(cat, i) in categories" :key="cat.value">
         <button class="filter-btn" @click="$emit('select', cat.value)">
-          <img :src="cat.icon" alt="" class="cat-icon" />
+          <NuxtImg 
+            :src="cat.icon" 
+            alt="" 
+            class="cat-icon" 
+            width="40"
+            height="40"
+            format="png"
+          />
 
           <span class="label">{{ cat.label }}</span>
 
-          <img src="/static/uslugi/arrow-down-right.png" alt="" class="arrow" />
+          <NuxtImg 
+            src="/static/uslugi/arrow-down-right.png" 
+            alt="" 
+            class="arrow" 
+            width="20"
+            height="20"
+            format="png"
+          />
         </button>
       </li>
     </ul>

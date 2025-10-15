@@ -3,7 +3,11 @@
     <div class="specialist-content">
       <div :class="['specialist-body', { 'specialist-body-reversed': isReversed }]">
         <div class="specialist-photo">
-          <img :src="photoSrc" :alt="name" />
+          <NuxtImg 
+            :src="photoSrc" 
+            :alt="`${name} - ${title} - Cabinet Dentaire Dr. Pietruszczak`" 
+            loading="lazy"
+          />
         </div>
         <div class="specialist-details">
           <div class="specialist-header">

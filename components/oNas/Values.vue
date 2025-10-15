@@ -13,7 +13,7 @@
     <div class="values-container">
       <div class="value-card">
         <div class="icon-container">
-          <img src="/public/static/oNas/dental.svg" alt="Troska o każdego pacjenta" class="value-icon" />
+          <NuxtImg src="/static/oNas/dental.svg" alt="Troska o każdego pacjenta" class="value-icon" loading="lazy" />
         </div>
         <h4 class="value-title">Troska o każdego pacjenta</h4>
         <p class="value-description">
@@ -24,7 +24,7 @@
 
       <div class="value-card">
         <div class="icon-container">
-          <img src="/public/static/oNas/tooth.svg" alt="Pasja i zaangażowanie" class="value-icon" />
+          <NuxtImg src="/static/oNas/tooth.svg" alt="Pasja i zaangażowanie" class="value-icon" loading="lazy" />
         </div>
         <h4 class="value-title">Pasja i zaangażowanie</h4>
         <p class="value-description">
@@ -35,7 +35,7 @@
 
       <div class="value-card">
         <div class="icon-container">
-          <img src="/public/static/oNas/smile.svg" alt="Najwyższy standard opieki" class="value-icon" />
+          <NuxtImg src="/static/oNas/smile.svg" alt="Najwyższy standard opieki" class="value-icon" loading="lazy" />
         </div>
         <h4 class="value-title">Najwyższy standard opieki</h4>
         <p class="value-description">
@@ -46,7 +46,7 @@
 
       <div class="value-card">
         <div class="icon-container">
-          <img src="/public/static/oNas/dental-care.svg" alt="Wsparcie w każdej sytuacji" class="value-icon" />
+          <NuxtImg src="/static/oNas/dental-care.svg" alt="Wsparcie w każdej sytuacji" class="value-icon" loading="lazy" />
         </div>
         <h4 class="value-title">Wsparcie w każdej sytuacji</h4>
         <p class="value-description">
@@ -60,7 +60,7 @@
     <div class="quote-section">
         <div class="quote-content">
           <div class="quote-mark">
-          <img src="/public/static/oNas/acolad.svg" alt="Wsparcie w każdej sytuacji" />
+          <NuxtImg src="/static/oNas/acolad.svg" alt="Wsparcie w każdej sytuacji" loading="lazy" />
         </div>
         <p class="quote-text">
           Każdy z nas wnosi unikalne umiejętności i specjalizacje, dzięki czemu kompleksowo dbamy o
@@ -74,12 +74,12 @@
           zdrowego i pięknego uśmiechu, który będziesz dumnie prezentować każdego dnia!
         </p>
         <div class="quote-signature">
-          <img src="/public/static/oNas/Polygon.svg" alt="Dr Pietruszczak" class="" />
-          <img src="/public/static/oNas/PiotrLogoSerio.svg" alt="Podpis" class="signature-img" />
+          <NuxtImg src="/static/oNas/Polygon.svg" alt="Dr Pietruszczak" class="" loading="lazy" />
+          <NuxtImg src="/static/oNas/PiotrLogoSerio.svg" alt="Podpis" class="signature-img" loading="lazy" />
         </div>
       </div>
       <div class="doctor-image">
-        <img src="/public/static/oNas/PiotrekSerio.jpg" alt="Dr Pietruszczak" class="doctor-img" />
+        <NuxtImg src="/static/oNas/PiotrekSerio.jpg" alt="Dr Pietruszczak" class="doctor-img" loading="lazy" />
       </div>
     </div>
   </section>

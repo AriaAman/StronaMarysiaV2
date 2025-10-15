@@ -8,7 +8,7 @@
     >
       <!-- Image + titre bas -->
       <div class="tech-img-col">
-        <img :src="tech.image" :alt="tech.titre" class="tech-img" />
+        <NuxtImg :src="tech.image" :alt="tech.titre" class="tech-img" loading="lazy" />
         <div class="tech-img-caption">
           <span class="tech-img-caption-text">{{ tech.caption }}</span>
           <span class="tech-img-num">{{ tech.num }}</span>
@@ -327,7 +327,7 @@ const technologies = [
   position: absolute;
   left: 32px;
   bottom: 32px;
-  width: 640px;
+  width: 92%;
   height: 55px;
   background: rgba(255,255,255,0.96);
   box-shadow: 0 2px 30px rgba(0,0,0,0.06);
@@ -383,6 +383,7 @@ const technologies = [
   letter-spacing: 1px;
   line-height: 130%;
   font-weight: 400;
+  width: 94%;
   margin-top: 0;
 }
 .tech-intro {
