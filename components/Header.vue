@@ -23,6 +23,7 @@
                     <li><a href="/kontakt" class="header-link">KONTAKT</a></li>
                 </ul>
             </nav>
+            <p class="number">+48 503 529 023</p>
             <div class="menu-toggle" @click="toggleMobileMenu">
                 <div class="hamburger" :class="{ 'is-active': isMobileMenuOpen }">
                     <span></span>
@@ -122,6 +123,16 @@ header {
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #eee;
+}
+
+.number {
+    font-family: 'Aboreto', system-ui;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    color: #A9722D;
+    margin: 0;
 }
 
 .container {

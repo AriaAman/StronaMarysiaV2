@@ -2,11 +2,14 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
+        <div class="mobile-divider" aria-hidden="true"></div>
         <NuxtImg 
           src="/static/footer/logoPiotrFooter.svg" 
           alt="Cabinet Dentaire Dr. Pietruszczak - Contact" 
           loading="lazy"
         />
+        <div class="mobile-divider" aria-hidden="true"></div>
+        <div class="social-title">OBSERWUJ NAS</div>
         <div class="social-links">
           <a href="https://www.facebook.com/pietruszczakstomatologia" class="social-link">
             <div class="social-icon">
@@ -31,7 +34,7 @@
         <div class="nav-column">
           <h5>Na skróty</h5>
           <nav>
-            <a href="/start" class="a">I START</a>
+            <a href="/start" class="a">START</a>
             <a href="/uslugi" class="a">USŁUGI</a>
             <a href="/oNas" class="a">O NAS</a>
             <a href="/cennik" class="a">CENNIK</a>
@@ -49,7 +52,7 @@
         </div>
 
         <div class="nav-column">
-          <h5>Blog</h5>
+          <h5>Blog o zdrowiu</h5>
           <nav>
             <a href="#" class="a">JAK DBAĆ O ZĘBY?</a>
             <a href="#" class="a">WORK SINGLE</a>
@@ -70,6 +73,12 @@
               <a>10-687 OLSZTYN</a>
             </address>
             <p class="map-link"><a href="/kontakt">WSKAZÓWKI DOJAZDU (MAPA)</a></p>
+            <p class="mini-title">TAGI:</p>
+            <div class="footer-tags">
+              <span class="footer-tag">STOMATOLOGIA OLSZTYN</span>
+              <span class="footer-tag">IMPLANTY OLSZTYN</span>
+              <span class="footer-tag">STOMATOLOG OLSZTYN</span>
+            </div>
           </div>
         </div>
       </div>
@@ -77,7 +86,7 @@
 
     <div class="footer-bottom">
       <div class="copyright">
-        <p>© 2022 PIETRUSZCZAK STOMATOLOGIA & IMPLANTOLOGIA - Wszelkie prawa zastrzeżone | Design by Daria Georgie | Developer Aria Aman</p>
+        <p>© 2025 PIETRUSZCZAK STOMATOLOGIA & IMPLANTOLOGIA - Wszelkie prawa zastrzeżone | Design by Daria Georgie | Developer Aria Aman</p>
       </div>
       <a href="#" class="back-to-top" @click.prevent="scrollToTop">
         <span>DO GÓRY</span>
@@ -113,7 +122,6 @@ export default {
 
 .footer-content {
     max-width: 1200px;
-    /* width: 100%; */
     padding: clamp(32px, 5vw, 64px) clamp(16px, 6vw, 160px);
     margin: 0 auto;
     display: grid;
@@ -126,6 +134,8 @@ export default {
   flex-direction: column;
   width: 100%;
   max-width: 520px;
+  align-items: center; 
+  text-align: center;
 }
 
 .footer-logo img {
@@ -138,6 +148,17 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: center; /* center socials under the title */
+}
+
+/* Desktop default for the social title */
+.social-title {
+  font-family: 'Aboreto', 'Aboreto';
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #A9722D; 
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .social-link {
@@ -145,7 +166,7 @@ export default {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #122548;
+  color: #A9722D;
 }
 
 .social-icon {
@@ -163,7 +184,7 @@ export default {
   font-size: 13px;
   letter-spacing: 1.5px;
   font-weight: 400;
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
 }
 
 .footer-nav {
@@ -179,13 +200,15 @@ export default {
 }
 
 .nav-column h5 {
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   font-size: 18px;
   letter-spacing: 1px;
   line-height: 140%;
   color: #0B162B;
   font-weight: 300;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #DAC5A7; /* add divider under titles on desktop */
   text-transform: none;
 }
 
@@ -197,7 +220,7 @@ export default {
 
 .nav-column .a {
   color: #A9722D;
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   text-decoration: none;
   font-size: 13px;
   gap: 16px;
@@ -216,12 +239,12 @@ export default {
   align-items: center;
   gap: 8px;
   background-color: #BC9667;
-  color: #0B162B;
+  color: #FFFFFF;
   padding: 10px 16px;
   text-decoration: none;
   line-height: 160%;
   font-size: 13px;
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   letter-spacing: 1.5px;
   border-radius: 4px;
 }
@@ -237,7 +260,7 @@ export default {
   font-size: 13px;
   line-height: 160%;
   letter-spacing: 1.5px;
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   margin: 0;
 }
 
@@ -246,7 +269,7 @@ export default {
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1.5px;
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   line-height: 160%;
 }
 
@@ -256,7 +279,7 @@ export default {
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1.5px;
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   line-height: 160%;
 }
 
@@ -266,12 +289,30 @@ address {
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 1.5px;
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   line-height: 160%;
   font-style: normal;
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+/* Footer tags (based on oNas specialist-tag styles) */
+.footer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.footer-tag {
+  padding: 8px 10px;
+  background-color: #F8F4F0;
+  border: 1px solid #E4D5C2;
+  color: #A9722D;
+  font-family: 'Aboreto', 'Aboreto';
+  font-size: 12px;
+  text-transform: uppercase;
+  border-radius: 4px;
 }
 
 .map-link {
@@ -280,9 +321,16 @@ address {
   cursor: pointer;
 }
 
+/* Divider lines above and below the logo on desktop */
+.mobile-divider {
+  width: 100%;
+  height: 1px;
+  background: #DAC5A7;
+  margin: 16px 0;
+}
+
 .footer-bottom {
   max-width: 1200px;
-  /* width: 100%; */
   padding: 0 clamp(16px, 6vw, 160px) 20px;
   margin: 0 auto;
   display: flex;
@@ -291,10 +339,11 @@ address {
   padding-top: 20px;
   gap: 16px;
   flex-wrap: wrap;
+  border-top: 1px solid #DAC5A7;
 }
 
 .copyright p {
-  font-family: 'Satoshi Variable', sans-serif;
+  font-family: 'Satoshi Variable', 'Satoshi';
   font-size: 12px;
   color: #A9722D;
   margin: 0;
@@ -304,7 +353,7 @@ address {
 }
 
 .back-to-top {
-  font-family: 'Aboreto', sans-serif;
+  font-family: 'Aboreto', 'Aboreto';
   display: flex;
   font-size: 13px;
   letter-spacing: 1.5px;
@@ -333,21 +382,56 @@ address {
 /* Responsive breakpoints */
 @media (max-width: 1024px) {
   .footer-content {
-    grid-template-columns: 1fr 1fr; /* keep two columns on tablet to avoid excessive height */
+    /* Switch from grid to flex on tablet */
+    display: flex;
+    flex-direction: column;
     padding: 40px 32px;
     gap: 32px;
-    align-items: start;
+    align-items: stretch;
   }
   .footer-logo img {
     width: clamp(150px, 22vw, 200px);
   }
+  .footer-logo {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  /* Tablet: socials stacked vertically under the title */
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  /* Show dividers around the logo area on tablet too */
+  .mobile-divider {
+    width: 100%;
+    height: 1px;
+    background: #DAC5A7;
+    margin: 12px 0 16px;
+  }
+  .social-title {
+    font-family: 'Aboreto', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #A9722D;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-top: 40px;
+  }
+  /* Tablet: keep footer nav in three columns */
   .footer-nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 24px;
     row-gap: 28px;
   }
   .nav-column h5 {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #DAC5A7;
+    font-size: 16px; /* tablet heading size */
   }
   .btn-appointment {
     font-size: 12px;
@@ -355,22 +439,58 @@ address {
   }
   .footer-bottom {
     padding: 0 32px 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
 @media (max-width: 640px) {
   .footer-content {
     padding: clamp(28px, 6vw, 48px) clamp(14px, 5vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
   }
   .footer-logo img {
     width: clamp(150px, 45vw, 220px);
     margin-bottom: 24px;
   }
+  .footer-logo {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .mobile-divider {
+    width: 100%;
+    height: 1px;
+    background: #DAC5A7;
+    margin: 12px 0 16px;
+  }
+  .social-title {
+    font-family: 'Aboreto', 'Aboreto';
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: #A9722D;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+  /* Stack all nav columns using flex instead of grid */
   .footer-nav {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
   .nav-column h5 {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    font-size: 20px;
+    border-bottom: 2px solid #BC9667;
   }
   .btn-appointment {
     font-size: 12px;
@@ -378,7 +498,8 @@ address {
   }
   .footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
   .back-to-top {
     gap: 16px;
