@@ -262,7 +262,7 @@
       line-height: 170%;
     }
     .view-services-button {
-      margin-top: 12px; /* ensure spacing under title */
+      margin-top: 12px; 
     }
     .button-circle { width: 40px; height: 40px; }
     .main-image-container { height: 520px; }

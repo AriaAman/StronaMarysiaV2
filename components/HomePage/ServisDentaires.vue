@@ -28,7 +28,7 @@ const services = [
         title: 'PROFESJONALNY ZESPÓŁ',
         description: 'Nasz zespół to grupa doświadczonych specjalistów, którzy łączą swoją wiedzę z prawdziwą troską o Pacjenta. Istotny jest dla nas nie tylko wynik leczenia, ale również relacja pacjent-dentysta, oparta na zaufaniu, komunikacji i wyjątkowej opiece.',
         buttonText: 'ZOBACZ NASZ ZESPÓŁ',
-        link: '/zespol'
+        link: '/oNas'
     },
     {
         number: '02',

@@ -141,7 +141,7 @@ export default {
 .footer-logo img {
   width: clamp(160px, 28vw, 230px);
   height: auto;
-  margin-bottom: 48px;
+  margin: 43px 0px;
 }
 
 .social-links {

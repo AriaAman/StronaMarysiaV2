@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-// No specific logic needed
+
 </script>
 
 <style scoped>
