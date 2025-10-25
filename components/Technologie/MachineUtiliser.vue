@@ -9,10 +9,6 @@
       <!-- Image + titre bas -->
       <div class="tech-img-col">
         <NuxtImg :src="tech.image" :alt="tech.titre" class="tech-img" loading="lazy" />
-        <div class="tech-img-caption">
-          <span class="tech-img-caption-text">{{ tech.caption }}</span>
-          <span class="tech-img-num">{{ tech.num }}</span>
-        </div>
       </div>
       <!-- Carte texte -->
       <div class="tech-text-col">
@@ -23,7 +19,7 @@
           <ul>
             <li v-for="point in tech.points" :key="point.title">
               <b>{{ point.title }}</b>
-              <span v-if="point.desc"> — {{ point.desc }}</span>
+              <span v-if="point.desc"> &nbsp;{{ point.desc }}</span>
             </li>
           </ul>
         </div>
@@ -294,7 +290,7 @@ const technologies = [
   flex-direction: column;
   padding-bottom: 160px;
   gap: 32px;
-  background-color: #122548;
+  background-color: #E4D5C2;
 }
 .tech-row {
   display: flex;
@@ -424,7 +420,7 @@ const technologies = [
   margin-bottom: 0.7rem;
   font-family: 'Satoshi Variable', 'Satoshi';
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 140%;
   color: #0B162B;
 }
 .tech-card li::before {

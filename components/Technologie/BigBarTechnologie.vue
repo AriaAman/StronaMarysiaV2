@@ -6,9 +6,8 @@
         <span class="bigbar-subtitle">sprzęt i technologia</span>
       </div>
       <div class="bigbar-desc-row">
-        <NuxtImg src="/static/technologie/agnieszka.svg" alt="avatar" class="bigbar-avatar" loading="lazy" />
         <p class="bigbar-desc">
-          Zaawansowana diagnostyka i leczenie — sprawdź, jak dbamy o Twój uśmiech dzięki technologii. Zobacz, co oferujemy w naszym gabinecie:
+          Zaawansowana diagnostyka i leczenie - sprawdź, jak dbamy o Twój uśmiech dzięki technologii. <br>Zobacz, co oferujemy w naszym gabinecie.
         </p>
       </div>
     </div>
@@ -21,9 +20,8 @@
 
 <style scoped>
 .bigbar-techno {
-  background-color: #122548;
+  background-color: #E4D5C2;
   padding: 3rem 0 2rem 0;
-  color: #fff;
   width: 100%;
 }
 
@@ -38,7 +36,7 @@
 .bigbar-titles {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
@@ -47,21 +45,23 @@
   font-weight: 300;
   font-size: 96px;
   line-height: 100%;
-  color: #FFFFFF;
+  color: #0E1E3A;
 }
 
 .bigbar-subtitle {
-  font-family: 'Merriweather', 'Merriweather';
+  font-family: 'Satoshi Variable', 'Satoshi';
   font-style: italic;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 96px;
   line-height: 100%;
-  color: #fff;
+  color: #0E1E3A;
 }
 
 .bigbar-desc-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   margin-top: 1.5rem;
   width: 100%;
 }
@@ -80,7 +80,7 @@
   font-weight: 300;
   letter-spacing: 0px;
   line-height: 150%;
-  color: #B08249;
+  color: #122548;
   margin: 0;
 }
 
