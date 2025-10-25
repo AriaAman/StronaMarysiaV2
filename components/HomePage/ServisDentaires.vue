@@ -86,7 +86,7 @@ const services = [
     border: 1px solid #E4D5C2;
     border-radius: 2px;
     padding: 48px;
-    width: 345px; 
+    width: 300px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -95,6 +95,9 @@ const services = [
 
 .service-number {
     font-family: 'Aboreto', 'Aboreto';
+    border-top: #A9722D 1px solid;
+    padding-top: 4px;
+    width: max-content;
     color: #A9722D;
     font-size: 13px;
     margin-bottom: 4px;
@@ -116,7 +119,7 @@ const services = [
 .service-description {
     font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 16px;
-    line-height: 180%;
+    line-height: 140%;
     color: #122548;
     margin-bottom: 8px;
     font-weight: 400;
