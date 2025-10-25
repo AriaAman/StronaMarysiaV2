@@ -23,6 +23,7 @@
                     <li><a href="/kontakt" class="header-link">KONTAKT</a></li>
                 </ul>
             </nav>
+            <a class="reservation-btn tablet-reservation-btn" href="/reservation">REZERWACJA ONLINE</a>
             <p class="number">+48 503 529 023</p>
             <div class="menu-toggle" @click="toggleMobileMenu">
                 <div class="hamburger" :class="{ 'is-active': isMobileMenuOpen }">
@@ -44,7 +45,6 @@
                             width="150"
                             height="45"
                             loading="eager"
-                            format="svg"
                         />
                     </div>
                     <button class="close-btn" @click="closeMobileMenu">
@@ -139,19 +139,21 @@ header {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 15px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     align-items: center;
-    height: 84px;
+    justify-content: space-between;
+    height: 96px;
     gap: 20px;
 }
 
 .logo img {
-    height: 45px;
+    height: 56px;
 }
 
 .main-nav {
-    justify-self: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .main-nav ul {
@@ -187,15 +189,15 @@ header {
 .reservation-btn {
     background-color: #BC9667;
     color: white;
-    border-radius: 4px;
-    padding: 10px 14px;
-    font-family: 'Satoshi', sans-serif;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: 'Aboreto', system-ui;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 1.2px;
-    line-height: 140%;
+    letter-spacing: 1.5px;
+    line-height: 100%;
     display: inline-block;
     transition: background-color 0.3s ease;
     white-space: nowrap;
@@ -204,6 +206,10 @@ header {
 
 .reservation-btn:hover {
     background-color: #A88457;
+}
+
+.tablet-reservation-btn {
+    display: none;
 }
 
 .menu-toggle {
@@ -226,7 +232,7 @@ header {
 .hamburger span {
     width: 100%;
     height: 2px;
-    background-color: #122548;
+    background-color: #A9722D;
     transition: all 0.3s ease;
     transform-origin: center;
 }
@@ -374,9 +380,8 @@ header {
     }
 
     .reservation-btn {
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px 16px;
-        letter-spacing: 1.3px;
     }
 }
 
@@ -402,7 +407,26 @@ header {
 @media (max-width: 1200px) and (min-width: 1025px) {
     .container {
         padding: 0 24px;
-        gap: 8px;
+        gap: 16px;
+        justify-content: flex-start;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .number {
+        display: none;
+    }
+
+    .tablet-reservation-btn {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: 16px;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .header-link {
@@ -411,8 +435,8 @@ header {
     }
 
     .reservation-btn {
-        font-size: 12px;
-        padding: 8px 10px;
+        font-size: 13px;
+        padding: 10px 20px;
         letter-spacing: 1px;
     }
 }
@@ -421,7 +445,26 @@ header {
 @media (max-width: 1024px) and (min-width: 769px) {
     .container {
         padding: 0 20px;
-        gap: 6px;
+        gap: 16px;
+        justify-content: flex-start;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .number {
+        display: none;
+    }
+
+    .tablet-reservation-btn {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: 16px;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .header-link {
@@ -430,8 +473,8 @@ header {
     }
 
     .reservation-btn {
-        font-size: 11px;
-        padding: 7px 8px;
+        font-size: 17px;
+        padding: 9px 13px;
         letter-spacing: 0.8px;
     }
 
@@ -447,12 +490,19 @@ header {
 /* Tablet small et Mobile large (481px - 768px) */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: auto 1fr auto;
         padding: 0 16px;
         height: 76px;
     }
 
     .main-nav {
+        display: none;
+    }
+
+    .number {
+        display: none;
+    }
+
+    .tablet-reservation-btn {
         display: none;
     }
 
@@ -523,11 +573,6 @@ header {
     .mobile-reservation-btn {
         font-size: 14px;
         padding: 12px 16px;
-    }
-
-    .hamburger {
-        width: 22px;
-        height: 16px;
     }
 }
 
