@@ -18,8 +18,8 @@
             <div>
               <span class="contact-info__label">ADRES:</span>
               <address class="address">
-                JAROTY, UL. STAWIGUDZKA 7/D<br /><br />
-                10-687 OLSZTYN
+                 Stawigudzka 8c/e,<br /><br />
+                10-687 Olsztyn, Pologne
               </address>
               <a href="https://goo.gl/maps/..." target="_blank" class="contact-info__map-link">
                 WSKAZÓWKI DOJAZDU (MAPA)
@@ -425,9 +425,7 @@
   }
 
   .contact-info__image {
-    width: 100%;
-    max-width: 350px;
-    height: 280px;
+    display: none;
   }
 
   .contact-info__card {
@@ -458,15 +456,16 @@
   .contact-content {
     gap: 32px;
     padding: 80px 20px 0 20px;
+    justify-content: center;
   }
 
   .contact-info {
-    display: none; /* Masquer l'image et la carte d'info sur tablette */
+    display: none; 
   }
 
   .contact-form {
     width: 100%;
-    max-width: 750px; /* Élargir le formulaire */
+    max-width: 700px;
     padding: 32px;
   }
 
@@ -476,7 +475,7 @@
 
   .contact-socials {
     width: 100%;
-    max-width: 750px; /* Élargir les réseaux sociaux */
+    max-width: 700px;
   }
 }
 
