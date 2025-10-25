@@ -131,10 +131,11 @@
 
 .title-italic {
   display: block;
-  font-family: 'Merriweather', 'Merriweather';
+  font-family: 'Satoshi', 'Satoshi';
   font-style: italic;
   font-weight: 300;
   font-size: 128px;
+  letter-spacing: 0px;
   line-height: 100%;
   color: #FFFFFF;
 }
@@ -163,10 +164,11 @@
 }
 
 .value-title {
-  font-family: 'Merriweather', 'Merriweather';
+  font-family: 'Satoshi', 'Satoshi';
   font-style: italic;
   font-size: 24px;
-  font-weight: 300;
+  line-height: 130%;
+  font-weight: 500;
   margin-bottom: 16px;
   margin-top: 12px;
   color: #122548;
@@ -176,7 +178,7 @@
   font-family: 'Satoshi', 'Satoshi';
   font-size: 16px;
   font-weight: 400;
-  line-height: 180%;
+  line-height: 140%;
   color: #122548;
 }
 

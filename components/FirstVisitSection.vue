@@ -78,10 +78,10 @@
 }
 
 .subtitle {
-    font-family: 'Merriweather', 'Merriweather';
+    font-family: 'Satoshi', 'Satoshi';
     font-style: italic;
-    font-weight: 300;
-    font-size: clamp(36px, 7.5vw, 80px);
+    font-weight: 500;
+    font-size: clamp(36px, 7.5vw, 96px);
     line-height: 110%;
     display: block;
     white-space: normal;
@@ -90,12 +90,13 @@
 .description {
     font-family: 'Satoshi', 'Satoshi';
     font-size: clamp(16px, 2.2vw, 20px);
-    line-height: 170%;
-    font-weight: 300;
+    line-height: 140%;
+    font-weight: 400;
     color: #FFFFFF;
     margin: 16px 0 0 0;
     text-align: center;
     max-width: 680px;
+    margin-bottom: 40px;
 }
 
 .reservation-btn {
@@ -114,7 +115,7 @@
 }
 
 .reservation-btn:hover {
-    transform: translateY(-8px);
+    transform: translateY(8px);
 }
 
 .btn-icon {
@@ -126,7 +127,7 @@
 }
 
 .btn-circle {
-    display: none; /* hidden to match clean style of reference image */
+    display: none;
 }
 
 /* Responsive styles remain the same */
