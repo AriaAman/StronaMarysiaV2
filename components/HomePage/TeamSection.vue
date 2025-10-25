@@ -11,7 +11,7 @@
                             d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                     </svg>
                 </div>
-                <span class="button-text">POZNAJ CAŁY ZESPÓŁ</span>
+                <span class="button-text">więcej o nas</span>
             </button>
         </div>
 
@@ -43,20 +43,20 @@ const doctors = [
     {
         name: 'Piotr Pietruszczak',
         image: '/static/HomePage/piotr.png',
-        description: 'Doświadczony implantolog, protetyk i endodonta, właściciel gabinetu PIETRUSZCZAK STOMATOLOGIA od 9 lat. Posiada tytuł "Expert in Oral Implantology" nadany przez Niemieckie Towarzystwo Implantologii Stomatologicznej DGOI. Posiada certyfikat PSI/ICOI Europe. Członek Polskiego Stowarzyszenia Implantologicznego PSI. Łączy nowoczesne technologie z precyzyjną diagnostyką, dbając o zdrowy i piękny uśmiech pacjentów.',
-        specialties: ['STOMATOLOGIA', 'IMPLANTOLOGIA', 'PROTETYKA', 'MIKROSKOPIA', 'PRECYZJA', 'EMPATIA']
+        description: 'Doświadczony implantolog, protetyk i endodonta, właściciel gabinetu PIETRUSZCZAK STOMATOLOGIA od 9 lat. Posiada tytuł „Expert in Oral Implantology”nadany przez Niemieckie Towarzystwo Implantologii Stomatologicznej DGOI. Posiada certyfikat PSI/ICOI/ICOI Europe. Członek Polskiego Stowarzyszenia Implantologicznego PSI. Łączy nowoczesne technologie z precyzyjną diagnostyką, dbając o zdrowy i piękny uśmiech pacjentów...',
+        specialties: ['implantologia', 'stomatologia', 'endodoncja', 'protetyka', 'DIAGNOSTYKA',]
     },
     {
         name: 'Agnieszka Rutkowska',
         image: '/static/HomePage/Agnieszka2.png',
-        description: 'Absolwentka Akademii Medycznej w Gdańsku, specjalizuje się w stomatologii zachowawczej i dziecięcej. Łączy skuteczność z delikatnością, otaczając szczególną opieką pacjentów z dentofobią. W trakcie szkolenia z Ortodontji. Jest osobą cierpliwą i uśmiechniętą, dzięki czemu łatwo nawiązuje kontakt z Pacjentami w każdym wieku. Szczególną opieką otacza pacjentów z problemem dentofobii.',
-        specialties: ['STOMATOLOGIA ZACHOWAWCZA', 'ORTODONTJA', 'STOMATOLOGIA DZIECIĘCA', 'DENTOFOBIA', 'EMPATIA']
+        description: 'Absolwentka Akademii Medycznej w Gdańsku, specjalizuje się w stomatologii zachowawczej i dziecięcej. Łączy skuteczność z delikatnością, otaczając szczególną opieką pacjentów z dentofobią. W trakcie szkolenia z Ortotropii. Jest osobą cierpliwą i uśmiechniętą, dzięki czemu łatwo nawiązuje kontakt z Pacjentami w każdym wieku. Szczególną opieką otacza pacjentów z problemem dentofobii...',
+        specialties: ['STOMATOLOGIA', 'STOMATOLOGIA DZIECIĘCA','endodoncja', 'Diagnostyka', 'protetyk']
     },
     {
-        name: 'Małgorzata Lech',
+        name: 'Amanda Duszak',
         image: '/static/HomePage/malgor1.png',
-        description: 'Swoją karierę rozpoczynała na Pomorzu. Od 2013 r. związana z olsztyńską stomatologią. Specjalizuje się w stomatologii zachowawczej, a przede wszystkim w estetycznych odbudowach kompozytowych, w protetyce i endodoncji. Traktując każdy przypadek indywidualnie, w zależności od sytuacji i oczekiwań, odtwarza zniszczone i brakujące zęby lub projektuje zupełnie nowy uśmiech.',
-        specialties: ['STOMATOLOGIA', 'STOMATOLOGIA ESTETYCZNA', 'PROTETYKA', 'ENDODONCJA', 'ESTETYCZNEODBUDOWY']
+        description: 'Jest dyplomowaną higienistką stomatologiczną, która z pasją dba o zdrowie i piękny uśmiech swoich pacjentów. Stale poszerza swoją wiedzę, uczestnicząc w licznych kursach i szkoleniach, dzięki czemu nieustannie doskonali swoje umiejętności. W gabinecie specjalizuje się w profilaktyce chorób przyzębia, wykonując profesjonalne zabiegi skalingu, piaskowania i fluoryzacji...',
+        specialties: ['profilaktyka', 'Wsparcie stomatologiczne']
     }
 ]
 
@@ -81,9 +81,9 @@ const navigateToTeam = () => {
 }
 
 .team-title {
-    font-family: 'Satoshi Variable', 'Satoshi Variable';
+    font-family: 'Satoshi Variable', 'Satoshi';
     width: 878px;
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 100;
     color: #0B162B;
     margin: 0px;
@@ -91,8 +91,9 @@ const navigateToTeam = () => {
 }
 
 .team-subtitle {
-    font-family: 'Satoshi Variable', 'Satoshi Variable';
+    font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 48px;
+    color: #122548;
     font-style: italic;
     font-weight: 500;
     line-height: 110%;
@@ -112,7 +113,7 @@ const navigateToTeam = () => {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: #0B162B;
+    background-color: #122548;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +137,7 @@ const navigateToTeam = () => {
 .team-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 24px;
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -169,13 +170,13 @@ const navigateToTeam = () => {
 .doctor-title {
     font-family: 'Aboreto', 'Aboreto';
     margin-top: 24px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 120%;
     font-weight: 400;
     color: #A9722D;
     margin-bottom: 5px;
     text-transform: uppercase;
-    letter-spacing: 0px;
+    letter-spacing: 2px;
 }
 
 .doctor-name {

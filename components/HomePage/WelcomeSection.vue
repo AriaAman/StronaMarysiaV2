@@ -269,7 +269,6 @@
 }
 
 .patient-image img {
-    opacity: 0.7;
     width: 100%;
     height: auto;
     object-fit: cover;

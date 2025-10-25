@@ -10,14 +10,14 @@
               Szeroki wachlarz <span class="italic-text">usług</span>
             </h2>
           </div>
-          <button class="view-services-button" @click="navigateToServices">
+          <NuxtLink class="view-services-button" to="/uslugi">
             <div class="button-circle">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#fff" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
               </svg>
             </div>
             <span>ZOBACZ USŁUGI</span>
-          </button>
+          </NuxtLink>
         </div>
   
         <!-- Image principale -->
@@ -44,6 +44,8 @@
   </template>
   
   <script setup>
+import { NuxtLink } from '#components';
+
   const mainImage = '/static/HomePage/HomePageOlekEtDentiste.png';
   
   // Liste des services
@@ -109,24 +111,24 @@
   .meta-title {
     font-family: 'Aboreto', 'Aboreto';
     text-transform: uppercase;
-    font-size: 13px;
-    color: #0B162B;
+    font-size: 14px;
+    color: #0E1E3A;
     margin-bottom: 16px;
     letter-spacing: 1.5px;
   }
   
   .main-title {
     font-family: 'Satoshi Variable', 'Satoshi';
-    font-size: 80px;
+    font-size: 74px;
     font-weight: 300;
-    color: #0B162B;
+    color: #0E1E3A;
     margin: 0;
     line-height: 100%;
   }
   
   .italic-text {
     font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
   }
   
   .view-services-button {
@@ -134,6 +136,8 @@
     align-items: center;
     background: none;
     border: none;
+    color: #122548;
+    text-decoration-line: none;
     cursor: pointer;
     padding: 0;
     margin-top: 15px;
@@ -153,7 +157,7 @@
   .view-services-button span {
     font-family: 'Aboreto', 'Aboreto';
     font-size: 18px;
-    color: #0B162B;
+    color: #122548;
     letter-spacing: 1px;
   }
   
@@ -173,10 +177,8 @@
   
   /* Ajout du conteneur avec overflow */
   .services-list-wrapper {
-    border: 1px solid #e0e9f5;
     border-radius: 5px;
     overflow: auto;
-    max-height: 600px; /* Ajustez cette valeur selon vos besoins */
   }
   
   .services-list {
@@ -189,7 +191,7 @@
     display: flex;
     gap: 30px;
     padding: 20px 30px;
-    border-bottom: 1px solid #E4D5C2;
+    border-bottom: 1px solid #D7C0A4;
   }
   
   .service-item:last-child {

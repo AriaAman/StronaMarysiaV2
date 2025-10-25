@@ -5,11 +5,10 @@
           <p class="subheading">CO NAS WYRÓŻNIA?</p>
           <h2 class="title">
             Nasze atuty
-            <span class="title-italic">–poznaj nas bliżej</span>
+            <span class="title-italic">- spoznaj nas bliżej</span>
           </h2>
           <p class="description">
-           czesne technologie i szeroki zakres
-            usług, aby zapewnić Ci kompleksową opiekę na najwyższym poziomie.
+           Łączymy doświadczenie, nowoczesne technologie i szeroki zakres usług, aby zapewnić Ci kompleksową opiekę na najwyższym poziomie.
           </p>
         </div>
       </div>
@@ -53,9 +52,10 @@
   }
 
   .title {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-weight: 300;
     font-size: 96px;
+    width: max-content;
     line-height: 100%;
     margin: 0px;
     text-align: center;
@@ -64,20 +64,21 @@
 
   .title-italic {
     display: block;
-    font-family: 'Merriweather', serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-style: italic;
-    font-weight: 300;
-    font-size: 80px;
+    font-weight: 500;
+    font-size: 96px;
     line-height: 110%;
     color: #122548;
   }
 
   .description {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-size: 20px;
-    line-height: 170%;
+    line-height: 120%;
     font-weight: 400;
-    width: 618px;
+    letter-spacing: 1px;
+    width: 700px;
     margin: 24px 0 0 0;
     color: white;
   }

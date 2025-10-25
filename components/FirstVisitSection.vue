@@ -57,7 +57,7 @@
 }
 
 .subheading {
-    font-family: 'Aboreto', sans-serif;
+    font-family: 'Aboreto', 'Aboreto';
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 1.5px;
@@ -68,7 +68,7 @@
 }
 
 .main-title {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-size: clamp(40px, 8vw, 96px);
     font-weight: 300;
     line-height: 100%;
@@ -78,7 +78,7 @@
 }
 
 .subtitle {
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', 'Merriweather';
     font-style: italic;
     font-weight: 300;
     font-size: clamp(36px, 7.5vw, 80px);
@@ -88,7 +88,7 @@
 }
 
 .description {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-size: clamp(16px, 2.2vw, 20px);
     line-height: 170%;
     font-weight: 300;
@@ -105,7 +105,7 @@
     color: #0B162B;
     padding: 14px 22px;
     text-decoration: none;
-    font-family: 'Aboreto', sans-serif;
+    font-family: 'Aboreto', 'Aboreto';
     font-size: clamp(14px, 1.8vw, 18px);
     font-weight: 400;
     text-transform: uppercase;

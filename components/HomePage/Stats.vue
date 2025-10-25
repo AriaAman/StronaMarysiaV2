@@ -4,7 +4,7 @@
     <div class="container">
       <div class="stat-item">
         <div class="stat-label">Z NAMI OD 2016</div>
-        <div class="stat-value">12 lat</div>
+        <div class="stat-value">14 lat</div>
       </div>
 
       <div class="stat-item">

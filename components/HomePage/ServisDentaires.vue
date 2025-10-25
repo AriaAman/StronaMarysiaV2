@@ -72,7 +72,7 @@ const services = [
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 52px;
+    gap: 32px;
     margin: 0 auto;
     padding: 0 20px;
     z-index: 2;
@@ -103,14 +103,14 @@ const services = [
     font-size: 24px;
     font-weight: 400;
     margin: 0px;
-    line-height: 130%;
-    color: #0B162B;
+    line-height: 140%;
+    color: #122548;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .service-description {
-    font-family: 'Satoshi Variable', 'Satoshi Variable';
+    font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 16px;
     line-height: 180%;
     color: #122548;
@@ -142,11 +142,12 @@ const services = [
 }
 
 .button-text {
-    font-family: 'Aboreto', sans-serif;
-    font-size: 16px;
+    font-family: 'Aboreto', 'Aboreto';
+    font-size: 18px;
     color: #0B162B;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    line-height: 130%;
+    letter-spacing: 1.8px;
 }
 
 /* Responsive */
