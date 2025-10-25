@@ -33,28 +33,73 @@
         <div class="contact-form">
           <span class="contact-form__meta">SKONTAKTUJ SIĘ Z NAMI</span>
           <h2 class="contact-form__title">Zostańmy w kontakcie</h2>
-          <form>
+          
+          <!-- Message de succès -->
+          <div v-if="formStatus === 'success'" class="alert alert-success">
+            ✓ Twoja wiadomość została wysłana pomyślnie! Skontaktujemy się z Tobą wkrótce.
+          </div>
+          
+          <!-- Message d'erreur -->
+          <div v-if="formStatus === 'error'" class="alert alert-error">
+            ✗ {{ errorMessage }}
+          </div>
+          
+          <form @submit.prevent="handleSubmit">
             <div class="contact-form__group">
-              <input type="text" required placeholder="Imię i nazwisko*" />
+              <input 
+                v-model="formData.name" 
+                type="text" 
+                required 
+                placeholder="Imię i nazwisko*"
+                :disabled="isSubmitting"
+              />
             </div>
             <div class="contact-form__group">
-              <input type="email" required placeholder="Adres e-mail*" />
+              <input 
+                v-model="formData.email" 
+                type="email" 
+                required 
+                placeholder="Adres e-mail*"
+                :disabled="isSubmitting"
+              />
             </div>
             <div class="contact-form__group">
-              <input type="tel" placeholder="Numer telefonu (Opcjonalnie)" />
+              <input 
+                v-model="formData.phone" 
+                type="tel" 
+                placeholder="Numer telefonu (Opcjonalnie)"
+                :disabled="isSubmitting"
+              />
             </div>
             <div class="contact-form__group">
-              <textarea rows="4" placeholder="Dzień dobry! Chciałbym umówić wizytę..."></textarea>
+              <textarea 
+                v-model="formData.message" 
+                rows="4" 
+                required
+                placeholder="Dzień dobry! Chciałbym umówić wizytę..."
+                :disabled="isSubmitting"
+              ></textarea>
             </div>
             <div class="contact-form__consent">
-              <input type="checkbox" id="consent" />
+              <input 
+                v-model="formData.consent" 
+                type="checkbox" 
+                id="consent"
+                :disabled="isSubmitting"
+              />
               <label for="consent">
                 Wyrażam zgodę na przetwarzanie danych osobowych przez "Pietruszczak Stomatologia" w celu przesyłania
                 treści marketingowych na mój adres e-mail podany powyżej w formularzu kontaktowym. W przeciwnym razie
                 prosimy o kontakt telefoniczny
               </label>
             </div>
-            <button type="submit" class="contact-form__submit">WYŚLIJ WIADOMOŚĆ</button>
+            <button 
+              type="submit" 
+              class="contact-form__submit"
+              :disabled="isSubmitting"
+            >
+              {{ isSubmitting ? 'WYSYŁANIE...' : 'WYŚLIJ WIADOMOŚĆ' }}
+            </button>
           </form>
         </div>
 
@@ -96,6 +141,68 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+// État du formulaire
+const formData = ref({
+  name: '',
+  email: '',
+  phone: '',
+  message: '',
+  consent: false
+});
+
+const isSubmitting = ref(false);
+const formStatus = ref(null); // null, 'success', 'error'
+const errorMessage = ref('');
+
+// Fonction de gestion de soumission
+const handleSubmit = async () => {
+  // Réinitialiser les messages
+  formStatus.value = null;
+  errorMessage.value = '';
+  isSubmitting.value = true;
+
+  try {
+    // Appel à l'API
+    const response = await $fetch('/api/contact', {
+      method: 'POST',
+      body: {
+        name: formData.value.name,
+        email: formData.value.email,
+        phone: formData.value.phone,
+        message: formData.value.message,
+        consent: formData.value.consent
+      }
+    });
+
+    if (response.success) {
+      formStatus.value = 'success';
+      // Réinitialiser le formulaire
+      formData.value = {
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        consent: false
+      };
+      
+      // Faire disparaître le message après 5 secondes
+      setTimeout(() => {
+        formStatus.value = null;
+      }, 5000);
+    } else {
+      formStatus.value = 'error';
+      errorMessage.value = response.error || 'Une erreur est survenue';
+    }
+  } catch (error) {
+    console.error('Erreur lors de l\'envoi:', error);
+    formStatus.value = 'error';
+    errorMessage.value = 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.';
+  } finally {
+    isSubmitting.value = false;
+  }
+};
 </script>
 
 <style scoped>
@@ -132,7 +239,7 @@
   z-index: 1;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 120px 20px 0 20px;
+  padding: 120px 40px 0 40px;
   box-sizing: border-box;
 }
 .contact-info {
@@ -262,6 +369,42 @@
   margin: 0px;
   margin-bottom: 32px;
 }
+
+/* Messages d'alerte */
+.alert {
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  font-family: 'Satoshi Variable', 'Satoshi Variable';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
 .contact-form__group {
   margin-bottom: 16px;
 }
@@ -320,10 +463,16 @@
   margin-bottom: 48px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: background 0.2s;
+  transition: background 0.2s, opacity 0.2s;
 }
-.contact-form__submit:hover {
+
+.contact-form__submit:hover:not(:disabled) {
   background: #19366b;
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .contact-socials {
@@ -384,34 +533,51 @@
   background: #f3e7d7;
   box-shadow: 0 4px 16px #0002;
 }
-/* Large Desktop (1440px+) */
+
+/* ============ RESPONSIVE STYLES ============ */
+
+/* Large Desktop */
 @media (min-width: 1441px) {
   .contact-content {
     padding: 120px 40px 0 40px;
   }
 }
 
-/* Desktop (1200px - 1440px) */
-@media (max-width: 1440px) and (min-width: 1201px) {
+/* Medium Desktop (1200px - 1440px) */
+@media (max-width: 1440px) {
   .contact-content {
-    padding: 120px 32px 0 32px;
+    padding: 100px 32px 0 32px;
     gap: 40px;
-  }
-
-  .contact-info__image {
-    display: none;
   }
 
   .contact-bg-title {
     font-size: 220px;
   }
+
+  .contact-info {
+    width: 600px;
+  }
+
+  .contact-info__image {
+    left: -100px;
+    width: 480px;
+    height: 650px;
+  }
+
+  .contact-info__card {
+    width: 420px;
+    height: 580px;
+    padding: 40px;
+  }
 }
 
 /* Tablet Large (1024px - 1200px) */
-@media (max-width: 1200px) and (min-width: 1025px) {
+@media (max-width: 1199px) {
   .contact-content {
-    padding: 100px 24px 0 24px;
-    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 32px 0 32px;
+    gap: 40px;
   }
 
   .contact-bg-title {
@@ -421,7 +587,8 @@
 
   .contact-info {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
+    height: auto;
   }
 
   .contact-info__image {
@@ -429,44 +596,58 @@
   }
 
   .contact-info__card {
+    position: relative;
     width: 100%;
-    max-width: 400px;
-    padding: 32px;
-  }
-
-  .contact-form {
-    width: 100%;
-    max-width: 580px;
-    padding: 40px 32px 0 32px;
-  }
-
-  .contact-socials {
-    width: 100%;
-    max-width: 580px;
-  }
-}
-
-/* Tablette (768px - 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .contact-bg-title {
-    font-size: 160px;
-    top: -20px;
-  }
-
-  .contact-content {
-    gap: 32px;
-    padding: 80px 20px 0 20px;
-    justify-content: center;
-  }
-
-  .contact-info {
-    display: none; 
+    height: auto;
+    top: 0;
+    left: 0;
+    padding: 40px;
   }
 
   .contact-form {
     width: 100%;
     max-width: 700px;
+  }
+
+  .contact-socials {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 30px 0 0 0;
+  }
+
+  .contact-content {
+    padding: 60px 24px 0 24px;
+    gap: 32px;
+  }
+
+  .contact-bg-title {
+    font-size: 140px;
+  }
+
+  .contact-info__card {
     padding: 32px;
+  }
+
+  .contact-info__title {
+    font-size: 28px;
+  }
+
+  .contact-info__subtitle {
+    font-size: 18px;
+  }
+
+  .contact-info__label {
+    font-size: 20px;
+  }
+
+  .contact-form {
+    padding: 40px 32px 0 32px;
   }
 
   .contact-form__title {
@@ -474,39 +655,34 @@
   }
 
   .contact-socials {
-    width: 100%;
-    max-width: 700px;
+    margin-bottom: 80px;
   }
 }
 
 /* Mobile Large (481px - 768px) */
 @media (max-width: 768px) {
   .contact-section {
-    padding: 16px 0 0 0;
+    padding: 20px 0 0 0;
     min-height: auto;
   }
 
   .contact-bg-title {
     font-size: 100px;
     top: -10px;
-    left: -20px;
   }
 
   .contact-content {
-    flex-direction: column;
-    align-items: center;
+    padding: 50px 16px 0 16px;
     gap: 24px;
-    padding: 60px 16px 0 16px;
   }
 
   .contact-info {
-    display: none; /* Masquer l'image et la carte d'info sur mobile */
+    display: none;
   }
 
   .contact-form {
-    width: 100%;
-    max-width: 100%; /* Utiliser toute la largeur disponible */
-    padding: 24px 20px 0 20px;
+    max-width: 100%;
+    padding: 32px 24px 0 24px;
   }
 
   .contact-form__title {
@@ -514,15 +690,13 @@
     margin-bottom: 24px;
   }
 
-  .contact-form__group input,
-  .contact-form__group textarea {
-    padding: 14px 16px;
-    font-size: 16px;
-    margin-bottom: 12px;
+  .contact-form__meta {
+    font-size: 12px;
   }
 
-  .contact-form__group input::placeholder,
-  .contact-form__group textarea::placeholder {
+  .contact-form__group input,
+  .contact-form__group textarea {
+    padding: 16px 20px;
     font-size: 16px;
   }
 
@@ -533,6 +707,7 @@
 
   .contact-form__consent label {
     font-size: 13px;
+    line-height: 150%;
   }
 
   .contact-form__submit {
@@ -542,28 +717,28 @@
   }
 
   .contact-socials {
-    width: 100%;
-    max-width: 100%; /* Utiliser toute la largeur disponible */
+    max-width: 100%;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 
   .contact-social {
-    height: 50px;
-    padding: 0 16px;
+    height: 52px;
+    padding: 0 20px;
   }
 
   .contact-social__text {
     font-size: 16px;
+    letter-spacing: 1px;
   }
 }
 
-/* Mobile Medium (321px - 480px) */
+/* Mobile Medium (up to 480px) */
 @media (max-width: 480px) {
   .contact-bg-title {
-    font-size: 60px;
-    display: none; /* Masquer sur très petits écrans pour éviter l'encombrement */
+    font-size: 70px;
+    left: -10px;
   }
 
   .contact-content {
@@ -571,7 +746,7 @@
   }
 
   .contact-form {
-    padding: 20px 16px 0 16px;
+    padding: 24px 16px 0 16px;
   }
 
   .contact-form__title {
@@ -580,37 +755,43 @@
 
   .contact-form__group input,
   .contact-form__group textarea {
-    padding: 12px 14px;
-    font-size: 14px;
-  }
-
-  .contact-form__group input::placeholder,
-  .contact-form__group textarea::placeholder {
-    font-size: 14px;
+    padding: 14px 16px;
+    font-size: 15px;
   }
 
   .contact-form__submit {
-    font-size: 14px;
+    font-size: 15px;
+    padding: 13px 0;
   }
 
   .contact-social {
-    height: 46px;
-    padding: 0 12px;
+    height: 48px;
+    padding: 0 16px;
   }
 
   .contact-social__text {
     font-size: 14px;
   }
+
+  .contact-social__icon svg,
+  .contact-social__arrow svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
-/* Mobile Small (jusqu'à 320px) */
-@media (max-width: 320px) {
+/* Mobile Small (up to 360px) */
+@media (max-width: 360px) {
+  .contact-bg-title {
+    display: none;
+  }
+
   .contact-content {
-    padding: 30px 8px 0 8px;
+    padding: 30px 10px 0 10px;
   }
 
   .contact-form {
-    padding: 16px 12px 0 12px;
+    padding: 20px 12px 0 12px;
   }
 
   .contact-form__title {
@@ -619,150 +800,23 @@
 
   .contact-form__group input,
   .contact-form__group textarea {
-    padding: 10px 12px;
-    font-size: 13px;
+    padding: 12px 14px;
+    font-size: 14px;
   }
 
   .contact-form__submit {
-    font-size: 13px;
+    font-size: 14px;
     padding: 12px 0;
   }
 
   .contact-social {
     height: 44px;
-    padding: 0 10px;
-  }
-
-  .contact-social__text {
-    font-size: 13px;
-  }
-}
-
-/* Mobile (jusqu'à 768px) */
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 20px 0 0 0;
-  }
-
-  .contact-bg-title {
-    font-size: 120px;
-    top: -10px;
-    left: -20px;
-  }
-
-  .contact-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding-top: 60px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .contact-info {
-    display: none; /* Masquer l'image et la carte d'info sur mobile */
-  }
-
-  .contact-form {
-    width: 100%;
-    max-width: 750px; /* Utiliser toute la largeur disponible jusqu'à 750px */
-    padding: 24px 20px 0 20px;
-  }
-
-  .contact-form__title {
-    font-size: 32px;
-    margin-bottom: 24px;
-  }
-
-  .contact-form__group input,
-  .contact-form__group textarea {
-    padding: 14px 16px;
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
-  .contact-form__group input::placeholder,
-  .contact-form__group textarea::placeholder {
-    font-size: 16px;
-  }
-
-  .contact-form__consent {
-    font-size: 13px;
-    margin-bottom: 20px;
-  }
-
-  .contact-form__consent label {
-    font-size: 13px;
-  }
-
-  .contact-form__submit {
-    font-size: 16px;
-    padding: 14px 0;
-    margin-bottom: 32px;
-  }
-
-  .contact-socials {
-    width: 100%;
-    max-width: 750px;
-    height: 100px;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 80px;
-  }
-
-  .contact-social {
-    height: 50px;
-    padding: 0 16px;
-  }
-
-  .contact-social__text {
-    font-size: 16px;
-  }
-}
-
-/* Très petit mobile (jusqu'à 480px) */
-@media (max-width: 480px) {
-  .contact-bg-title {
-    font-size: 80px;
-    display: none; /* Masquer sur très petits écrans */
-  }
-
-  .contact-content {
-    padding-top: 40px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .contact-form {
-    padding: 20px 16px 0 16px;
-  }
-
-  .contact-form__title {
-    font-size: 28px;
-  }
-
-  .contact-form__group input,
-  .contact-form__group textarea {
-    padding: 12px 14px;
-    font-size: 14px;
-  }
-
-  .contact-form__group input::placeholder,
-  .contact-form__group textarea::placeholder {
-    font-size: 14px;
-  }
-
-  .contact-form__submit {
-    font-size: 14px;
-  }
-
-  .contact-social {
-    height: 46px;
     padding: 0 12px;
   }
 
   .contact-social__text {
-    font-size: 14px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
 }
 </style>
