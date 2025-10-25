@@ -2,7 +2,7 @@
 export default {
   image: {
     // Optimisation pour site médical/dentaire
-    quality: 85,
+    quality: 100,
     format: ['webp', 'jpg'],
     screens: {
       xs: 320,
