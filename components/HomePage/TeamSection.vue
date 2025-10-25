@@ -67,8 +67,7 @@ const navigateToTeam = () => {
 
 <style scoped>
 .team-container {
-    width: 100%;
-    padding: 80px 0;
+    padding: 80px 20px;
     background-color: #E4D5C2;
 }
 
@@ -78,11 +77,14 @@ const navigateToTeam = () => {
     display: flex;
     gap: 265px;
     align-items: flex-end;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .team-title {
     font-family: 'Satoshi Variable', 'Satoshi';
     width: 878px;
+    max-width: 100%;
     font-size: 48px;
     font-weight: 100;
     color: #0B162B;
@@ -138,14 +140,17 @@ const navigateToTeam = () => {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    max-width: 1440px;
     margin: 0 auto;
+    padding: 0 20px;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .doctor-card {
     background-color: #FFFFFF;
     border-radius: 2px;
     width: 458px;
+    max-width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
@@ -218,30 +223,161 @@ const navigateToTeam = () => {
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+/* Desktop à Tablette Large (1025px - 1440px) */
+@media (max-width: 1440px) and (min-width: 1025px) {
+    .team-header {
+        gap: 100px;
+    }
+
+    .team-title {
+        width: auto;
+        flex: 1;
+    }
+}
+
+/* Tablette (768px - 1024px) */
+@media (max-width: 1024px) {
+    .team-container {
+        padding: 60px 24px;
+    }
+
     .team-header {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 30px;
+        gap: 24px;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .team-title {
+        font-size: 36px;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .team-subtitle {
+        font-size: 36px;
     }
 
     .team-button {
-        margin: 0 auto;
+        margin: 0;
+    }
+
+    .button-text {
+        font-size: 16px;
+    }
+
+    .team-grid {
+        gap: 20px;
+        padding: 0;
+    }
+
+    .doctor-card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .doctor-image-container {
+        height: 350px;
+    }
+
+    .doctor-info {
+        padding: 28px;
+    }
+
+    .doctor-name {
+        font-size: 28px;
+    }
+
+    .doctor-description {
+        font-size: 15px;
+        line-height: 170%;
+    }
+
+    .specialty-tag {
+        font-size: 11px;
+        padding: 7px 14px;
+    }
+}
+
+/* Petites tablettes */
+@media (max-width: 900px) {
+    .team-title {
+        font-size: 32px;
+        max-width: 500px;
+    }
+
+    .team-subtitle {
+        font-size: 32px;
+    }
+
+    .doctor-card {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .doctor-image-container {
+        height: 320px;
     }
 }
 
 @media (max-width: 768px) {
+    .team-container {
+        padding: 40px 16px;
+    }
+
+    .team-header {
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+
     .team-title {
-        font-size: 32px;
-        width: auto;
+        font-size: 28px;
+        max-width: 400px;
+    }
+
+    .team-subtitle {
+        font-size: 28px;
+    }
+
+    .button-text {
+        font-size: 16px;
+    }
+
+    .button-circle {
+        width: 32px;
+        height: 32px;
+    }
+
+    .team-grid {
+        gap: 16px;
     }
 
     .doctor-card {
+        width: 100%;
         max-width: 100%;
     }
 
     .doctor-image-container {
         height: 300px;
+    }
+
+    .doctor-info {
+        padding: 20px;
+    }
+
+    .doctor-name {
+        font-size: 24px;
+    }
+
+    .doctor-description {
+        font-size: 14px;
+    }
+
+    .specialty-tag {
+        font-size: 11px;
+        padding: 6px 12px;
     }
 }
 </style>
