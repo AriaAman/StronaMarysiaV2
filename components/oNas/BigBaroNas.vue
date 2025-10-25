@@ -7,7 +7,7 @@
       </h2>
       <p class="specialists-description">
         Za sukcesem zdrowego i pięknego uśmiechu stoi zespół pełen pasji, doświadczenia i zaangażowania.
-        Jesteśmy grupą specjalistów, których łączy jeden cel — zapewnienie naszym pacjentom najwyższego
+        Jesteśmy grupą specjalistów, których łączy jeden cel - zapewnienie naszym pacjentom najwyższego
         standardu opieki stomatologicznej w przyjaznej atmosferze.
       </p>
       <a href="#specjalisci" class="specialists-button">
@@ -41,19 +41,19 @@
 }
 
 .specialists-title {
-  font-family: 'Satoshi Variable ', 'Satoshi';
+  font-family: 'Satoshi Variable', 'Satoshi';
   font-weight: 100;
   font-size: 96px;
   line-height: 100%;
   color: #0B162B;
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .specialists-subtitle {
   display: block;
-  font-family: 'Merriweatther', 'Merriweather';
+  font-family: 'Satoshi Variable', 'Satoshi';
   font-style: italic;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 96px;
   line-height: 100%;
   color: #0B162B;
@@ -63,7 +63,7 @@
   font-family: 'Satoshi Variable', 'Satoshi';
   font-size: 20px;
   font-weight: 400;
-  line-height: 170%;
+  line-height: 140%;
   letter-spacing: 0px;
   margin: 2rem 0;
   color: #122548;

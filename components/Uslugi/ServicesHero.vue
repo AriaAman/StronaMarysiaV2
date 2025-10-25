@@ -7,16 +7,9 @@
     </h1>
 
     <div class="tagline-box">
-      <NuxtImg 
-        class="avatar" 
-        src="/static/HomePage/PiotrWrapper.svg" 
-        alt="Dr. Piotr Pietruszczak - Chirurg stomatolog" 
-        loading="eager"
-        format="svg"
-      />
       <p class="tagline">
-        „Nowoczesna stomatologia w trosce o Twój uśmiech
-        <br /> — bezbolesne leczenie, implanty, wybielanie zębów, ortodoncja i pełna diagnostyka."
+        Nowoczesna stomatologia w trosce o Twój uśmiech.<br />
+Bezbolesne leczenie, implanty, wybielanie zębów, ortodoncja i pełna diagnostyka.
       </p>
     </div>
 
@@ -29,7 +22,7 @@
             class="cat-icon" 
             width="40"
             height="40"
-            format="png"
+            format="svg"
           />
 
           <span class="label">{{ cat.label }}</span>
@@ -40,7 +33,7 @@
             class="arrow" 
             width="20"
             height="20"
-            format="png"
+            format="svg"
           />
         </button>
       </li>
@@ -106,33 +99,43 @@ const categories = [
 }
 
 .title {
-  font: 300 80px/100% 'Satoshi', sans-serif;
-  color: #0b162b;
-  margin: 0 0 24px;
+  display: flex;
+  font-family: 'Satoshi Variable', 'Satoshi';
+  font-weight: 300;
+  font-size: 96px;
+  line-height: 100%;
+  color: #0E1E3A;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-italic {
-  font: italic 300 80px/100% 'Merriweather', serif;
+  font-family: 'Satoshi Variable', 'Satoshi';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 100%;
+  color: #0E1E3A;
 }
 
 .tagline-box {
   display: flex;
   align-items: center;
+  
   gap: 24px;
+  margin-top: 24px;
   margin-bottom: 56px;
-}
-
-.avatar {
-  width: 66px;
-  height: 66px;
-  border-radius: 50%;
-  object-fit: cover;
+  text-align: center;
+  justify-content: center;
 }
 
 .tagline {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0;
-  font: 400 20px/160% 'Satoshi', sans-serif;
+  line-height: 130%;
+  font-size: 24px;
+  font-family: 'Satoshi', sans-serif;
   color: #a9722d;
 }
 

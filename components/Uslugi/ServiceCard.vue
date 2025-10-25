@@ -2,10 +2,6 @@
   <article class="card" :class="{ reverse: isReverse }">
     <figure class="visual">
       <NuxtImg :src="service.image" :alt="service.caption" loading="lazy" />
-      <figcaption class="caption">
-        <span class="cap-label">{{ service.caption }}</span>
-        <span class="cap-idx">{{ idxStr }}</span>
-      </figcaption>
     </figure>
 
     <div class="content">

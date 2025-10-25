@@ -3,11 +3,13 @@
     <div class="specialist-content">
       <div :class="['specialist-body', { 'specialist-body-reversed': isReversed }]">
         <div class="specialist-photo">
-          <NuxtImg 
-            :src="photoSrc" 
-            :alt="`${name} - ${title} - Cabinet Dentaire Dr. Pietruszczak`" 
-            loading="lazy"
-          />
+          <v-if v-if="photoSrc">
+            <NuxtImg 
+              :src="photoSrc" 
+              :alt="`${name} - ${title} - Cabinet Dentaire Dr. Pietruszczak`" 
+              loading="lazy"
+            />
+          </v-if>
         </div>
         <div class="specialist-details">
           <div class="specialist-header">
@@ -83,7 +85,9 @@ defineProps({
 }
 
 .specialist-title {
+  border-top: 1px solid #A9722D;
   font-family: 'Aboreto', 'Aboreto';
+  width: fit-content;
   font-weight: 400;
   font-size: 20px;
   color: #A9722D;
@@ -142,7 +146,7 @@ defineProps({
   font-family: 'Satoshi Variable', 'Satoshi';
   font-size: 16px;
   font-weight: 400;
-  line-height: 180%;
+  line-height: 140%;
   color: #122548;
   letter-spacing: 0px;
 }

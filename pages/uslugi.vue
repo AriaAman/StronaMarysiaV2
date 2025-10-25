@@ -45,16 +45,16 @@ const services = ref([
       zębów, a także zapobiegają zanikowi kości, co często występuje po utracie zęba.
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> Implanty można dostosować do różnych sytuacji klinicznych –
+        <li><span style="color: #A9722D;">•</span> Implanty można dostosować do różnych sytuacji klinicznych
         <strong> od pojedynczych braków zębowych po pełną rekonstrukcję łuków zębowych.</strong></li>
         <li><span style="color: #A9722D;">•</span> Proces leczenia obejmuje <strong> diagnostykę, zabieg chirurgiczny,
         gojenie oraz zamocowanie korony, mostu lub protezy.</strong> </li>
-        <li><span style="color: #A9722D;">•</span> Dzięki nowym technologiom, takim jak <strong> tomografia CBCT,
-        implanty można precyzyjnie zaplanować </strong> , co zwiększa skuteczność i bezpieczeństwo zabiegu..</li>
+        <li><span style="color: #A9722D;">•</span> Dzięki tomografii CBCT możliwe jest <strong> uzyskanie szczegółowego obrazu struktur anatomicznych,
+        </strong> co pozwala na precyzyjne zaplanowanie położenia implantu i bezpieczne przeprowadzenie zabiegu.</li>
       </ul>`
   },
   {
-    title: 'Endodoncja — leczenie kanałowe',
+    title: 'Endodoncja - leczenie kanałowe',
     caption: 'Endodoncja',
     image: '/static/uslugi/endodoncja.png',
     category: 'endodoncja',
@@ -69,7 +69,7 @@ const services = ref([
       <ul style="list-style: none;">
         <li><span style="color: #A9722D;">•</span> <strong> Mikroskop do leczenia kanałowego </strong> umożliwia dokładne określenie liczby, lokalizacji oraz ewentualnych zwężeń, zarośnięć i perforacji kanałów.</li>
         <li><span style="color: #A9722D;">•</span> <strong> Endometr endodontyczny </strong> precyzyjnie mierzy długość kanałów dzięki różnicom w oporności tkanek.</li>
-        <li><span style="color: #A9722D;">•</span> Podczas leczenia wykonuje się <strong> cyfrowe zdjęcia RTG </strong>, a w trudnych przypadkach – <strong> tomografię CBCT. </strong></li>
+        <li><span style="color: #A9722D;">•</span> Podczas leczenia wykonuje się <strong> cyfrowe zdjęcia RTG </strong>, a w trudnych przypadkach <strong> tomografię CBCT. </strong></li>
       </ul>`
   },
   {
@@ -81,7 +81,7 @@ const services = ref([
     <p style="color: #A9722D;">
       Dziedzina stomatologii zajmująca się <strong> uzupełnianiem braków zębowych oraz poprawą wyglądu
       zębów </strong>, mająca na celu przywrócenie pacjentowi funkcji żucia i poprawę jakości życia,
-      zwłaszcza w zakresie estetyki. W naszym gabinecie oferujemy uzupełnienia kombinowane –
+      zwłaszcza w zakresie estetyki. W naszym gabinecie oferujemy uzupełnienia kombinowane
       <strong> połączenie uzupełnień ruchomych ze stałymi </strong>, dostosowane do warunków i oczekiwań pacjenta.
     </p>
       <ul style="list-style: none;">
@@ -186,7 +186,7 @@ const services = ref([
     zębów, a także <strong> zapobiegają zanikowi kości </strong>, co często występuje po utracie zęba.
     </p>
       <ul style="list-style: none;">
-        <li><span style="color: #A9722D;">•</span> Implanty można dostosować do różnych sytuacji klinicznych – <strong> od pojedynczych braków zębowych po pełną rekonstrukcję łuków zębowych </strong></li>
+        <li><span style="color: #A9722D;">•</span> Implanty można dostosować do różnych sytuacji klinicznych <strong> od pojedynczych braków zębowych po pełną rekonstrukcję łuków zębowych </strong></li>
         <li><span style="color: #A9722D;">•</span> Proces leczenia obejmuje <strong> diagnostykę, zabieg chirurgiczny, gojenie oraz zamocowanie korony, mostu lub protezy. </strong></li>
         <li><span style="color: #A9722D;">•</span> Dzięki nowym technologiom, takim jak <strong> tomografia CBCT, implanty można precyzyjnie zaplanować, </strong> co zwiększa skuteczność i bezpieczeństwo zabiegu.</li>
       </ul>`
