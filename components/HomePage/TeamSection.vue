@@ -54,7 +54,7 @@ const doctors = [
     },
     {
         name: 'Amanda Duszak',
-        image: '/static/HomePage/malgor1.png',
+        image: '/static/HomePage/Amanda2.png',
         description: 'Jest dyplomowaną higienistką stomatologiczną, która z pasją dba o zdrowie i piękny uśmiech swoich pacjentów. Stale poszerza swoją wiedzę, uczestnicząc w licznych kursach i szkoleniach, dzięki czemu nieustannie doskonali swoje umiejętności. W gabinecie specjalizuje się w profilaktyce chorób przyzębia, wykonując profesjonalne zabiegi skalingu, piaskowania i fluoryzacji...',
         specialties: ['profilaktyka', 'Wsparcie stomatologiczne']
     }

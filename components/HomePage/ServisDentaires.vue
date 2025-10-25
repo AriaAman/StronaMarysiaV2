@@ -14,7 +14,7 @@
                                 d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
                         </svg>
                     </div>
-                    <span class="button-text">{{ service.buttonText }}</span>
+                    <NuxtLink class="button-text" :to="service.link">{{ service.buttonText }}</NuxtLink>
                 </div>
             </div>
         </div>
@@ -27,19 +27,22 @@ const services = [
         number: '01',
         title: 'PROFESJONALNY ZESPÓŁ',
         description: 'Nasz zespół to grupa doświadczonych specjalistów, którzy łączą swoją wiedzę z prawdziwą troską o Pacjenta. Istotny jest dla nas nie tylko wynik leczenia, ale również relacja pacjent-dentysta, oparta na zaufaniu, komunikacji i wyjątkowej opiece.',
-        buttonText: 'ZOBACZ NASZ ZESPÓŁ'
+        buttonText: 'ZOBACZ NASZ ZESPÓŁ',
+        link: '/zespol'
     },
     {
         number: '02',
         title: 'TECHNOLOGIE',
         description: 'Aby zapewnić najlepsze efekty leczenia, inwestujemy w najwyższej jakości sprzęt i materiały od renomowanych producentów, co w połączeniu z doświadczeniem naszych lekarzy gwarantuje usługi stomatologiczne na najwyższym poziomie.',
-        buttonText: 'ZOBACZ TECHNOLOGIE'
+        buttonText: 'ZOBACZ TECHNOLOGIE',
+        link: '/technologie',
     },
     {
         number: '03',
         title: 'SZEROKI ZAKRES USŁUG',
         description: 'Niezależnie od tego, czy potrzebujesz implantów, zabiegu higienizacji, leczenia kanałowego pod mikroskopem, stomatologii dziecięcej czy badania w pracowni tomografii komputerowej CBCT - możemy Ci pomóc.',
-        buttonText: 'PRZEJDŹ DO USŁUG'
+        buttonText: 'PRZEJDŹ DO USŁUG',
+        link: '/uslugi'
     }
 ]
 </script>
@@ -83,9 +86,10 @@ const services = [
     border: 1px solid #E4D5C2;
     border-radius: 2px;
     padding: 48px;
-    width: 345px; /* desktop */
+    width: 345px; 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -145,6 +149,7 @@ const services = [
     font-family: 'Aboreto', 'Aboreto';
     font-size: 18px;
     color: #0B162B;
+    text-decoration: none;
     text-transform: uppercase;
     line-height: 130%;
     letter-spacing: 1.8px;

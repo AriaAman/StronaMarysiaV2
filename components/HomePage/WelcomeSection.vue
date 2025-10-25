@@ -124,7 +124,7 @@
 }
 
 .title {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-weight: 300;
     font-size: 80px;
     line-height: 100%;
@@ -135,10 +135,10 @@
 
 .title-italic {
     display: block;
-    font-family: 'Merriweather', serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-style: italic;
-    font-weight: 300;
-    font-size: 80px;
+    font-weight: 500;
+    font-size: 74px;
     line-height: 100%;
     letter-spacing: 0px;
 }
@@ -182,26 +182,25 @@
 }
 
 .card-title {
-    font-family: 'Merriweather', serif;
-    font-style: italic;
-    font-weight: 300;
+    font-family: 'Satoshi', 'Satoshi';
+    font-weight: 400;
     margin: 0px;
     font-size: 24px;
-    color: #122548;
-    line-height: 140%;
+    color: #0B162B;
+    line-height: 130%;
 }
 
 .card-title-big {
-    font-family: 'Satoshi', serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-weight: 400;
     margin: 0px;
-    font-size: 48px;
+    font-size: 24px;
     color: #0B162B;
-    line-height: 110%;
+    line-height: 130%;
 }
 
 .card-text {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-size: 16px;
     line-height: 180%;
     font-weight: 400;
@@ -234,7 +233,7 @@
 }
 
 .doctor-name {
-    font-family: 'Aboreto', sans-serif;
+    font-family: 'Aboreto', 'Aboreto';
     font-size: 24px;
     font-weight: 400;
     color: #122548;
@@ -244,7 +243,7 @@
 }
 
 .doctor-title {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi', 'Satoshi';
     font-size: 16px;
     font-weight: 400px;
     line-height: 180%;
@@ -253,12 +252,16 @@
 }
 
 .special-header {
-    font-family: 'Aboreto', sans-serif;
-    font-size: 13px;
+    font-family: 'Aboreto', 'Aboreto';
+    font-size: 14px;
     color: #BC9667;
     text-transform: uppercase;
-    letter-spacing: 160%;
+    letter-spacing: 2px;
+    line-height: 120%;
     font-weight: 400;
+    border-top: #A9722D 1px solid;
+    padding-top: 8px;
+    width: fit-content;
 }
 
 .patient-image {

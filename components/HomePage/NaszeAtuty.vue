@@ -2,7 +2,7 @@
     <section class="advantages-section">
         <div class="container">
         <div class="advantages-header">
-          <p class="subheading">CO NAS WYRÓŻNIA?</p>
+          <p class="subheading">najwyższy standard opieki</p>
           <h2 class="title">
             Nasze atuty
             <span class="title-italic">- spoznaj nas bliżej</span>
@@ -42,13 +42,16 @@
   }
 
   .subheading {
-    font-family: 'Aboreto', sans-serif;
-    font-size: 13px;
+    font-family: 'Aboreto', 'Aboreto';
+    font-size: 14px;
+    border-top: #ffffff 1px solid;
+    padding-top: 10px;
+    color: #ffffff;
     font-weight: 400;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 24px;
-    line-height: 160%;
+    line-height: 120%;
   }
 
   .title {
