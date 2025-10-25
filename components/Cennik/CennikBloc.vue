@@ -69,7 +69,7 @@ const categories = [
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 1 KANAŁU*', price: '800 ZŁ' },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 2 KANAŁÓW*', price: '1100 ZŁ' },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 3 KANAŁÓW*', price: '1500 ZŁ' },
-      { name: 'LECZENIE ENDODONTYCZNE — WYPEŁNIENIE 4 KANAŁÓW*', price: '1800 ZŁ' },
+      { name: 'LECZENIE ENDODONTYCZNE WYPEŁNIENIE 4 KANAŁÓW*', price: '1800 ZŁ' },
       { name: 'POWTÓRNE LECZENIE KANAŁOWE', price: '+100 ZŁ / 1 KANAŁ' },
       { name: 'ODBUDOWA ZĘBA PO LECZENIU ENDODONTYCZNYM KOMPOZYTEM', price: '350-500 ZŁ' },
       { name: 'ODBUDOWA ZĘBA PO LECZENIU ENDODONTYCZNYM WŁÓKNEM SZKLANYM', price: '500 ZŁ' }
@@ -116,6 +116,14 @@ const categories = [
       { name: 'EKSTRAKCJA ZĘBA MLECZNEGO', price: '200-300 ZŁ' },
       { name: 'EKSTRAKCJA ZĘBA ZATRZYMANEGO', price: '1500 ZŁ' },
       { name: 'PODCIĘCIE CHIRURGICZNE WĘDZIDEŁKA (WARGI, JĘZYKA)', price: '400 ZŁ' }
+    ]
+  },
+  {
+    title: 'STOMATOLOGIA ESTETYCZNA',
+    description: 'Piękny uśmiech dzięki wybielaniu i nowoczesnym licówkom.',
+    services: [
+      { name: 'Wybielanie nakładkowe', price: '1200 zł' },
+      { name: 'Wybielanie laserowe BIOLASE EPIC X (jedna wizyta w gabinecie)', price: '1400 zł' },
     ]
   },
   {
@@ -340,7 +348,7 @@ const categories = [
     font-size: 14px;
     text-align: left;
     width: 100%;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 

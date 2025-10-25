@@ -6,7 +6,7 @@
           <span class="specialists-subtitle">stomatologicznych</span>
         </h2>
         <p class="specialists-description">
-          Sprawdź ceny konsultacji, leczenia i zabiegów stomatologicznych w naszym gabinecie w Olsztynie. Transparentne koszty i najwyższa jakość usług.
+          Sprawdź ceny konsultacji, leczenia i zabiegów stomatologicznych w <br> naszym gabinecie w Olsztynie. Transparentne koszty i najwyższa jakość usług.
         </p>
         <a href="#specjalisci" class="specialists-button">
           <span class="button-icon">
@@ -14,14 +14,13 @@
                   <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
               </svg>
           </span>
-          BUTTON TEXT
+          ZAPOZNAJ SIĘ Z CENNIKIEM
         </a>
       </div>
     </div>
   </template>
 
   <script setup>
-  // Aucune logique nécessaire pour ce composant statique
   </script>
 
   <style scoped>
@@ -49,9 +48,9 @@
 
   .specialists-subtitle {
     display: block;
-    font-family: 'Merriweatther', 'Merriweather';
+    font-family: 'Satoshi Variable ', 'Satoshi';
     font-style: italic;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 80px;
     line-height: 100%;
     color: #0B162B;
@@ -61,7 +60,7 @@
     font-family: 'Satoshi Variable', 'Satoshi';
     font-size: 20px;
     font-weight: 400;
-    line-height: 170%;
+    line-height: 140%;
     letter-spacing: 0px;
     margin: 2rem 0;
     color: #122548;
@@ -70,7 +69,7 @@
   .specialists-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -78,6 +77,7 @@
     font-weight: 400;
     font-size: 18px;
     color: #0B162B;
+    letter-spacing: 1.8px;
     padding: 0.5rem 1rem;
     text-decoration: none;
   }
