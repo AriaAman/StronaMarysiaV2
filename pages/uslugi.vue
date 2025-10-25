@@ -196,13 +196,13 @@ const services = ref([
 
 <style scoped>
 .services-page {
-  background-color: #f7f7f7;
+  background-color: #EEEBEA;
   min-height: 100vh;
 }
 
 .services-section {
   padding: 1px 0 120px;
-  background-color: #f7f7f7;
+  background-color: #EEEBEA;
 }
 
 .services-container {

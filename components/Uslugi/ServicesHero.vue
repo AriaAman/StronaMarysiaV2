@@ -16,24 +16,22 @@ Bezbolesne leczenie, implanty, wybielanie zębów, ortodoncja i pełna diagnosty
     <ul class="filters">
       <li v-for="(cat, i) in categories" :key="cat.value">
         <button class="filter-btn" @click="$emit('select', cat.value)">
-          <NuxtImg 
+          <img 
             :src="cat.icon" 
-            alt="" 
+            :alt="cat.label" 
             class="cat-icon" 
-            width="40"
-            height="40"
-            format="svg"
+            width="18"
+            height="18"
           />
 
           <span class="label">{{ cat.label }}</span>
 
-          <NuxtImg 
+          <img 
             src="/static/uslugi/arrow-down-right.png" 
             alt="" 
             class="arrow" 
-            width="20"
-            height="20"
-            format="svg"
+            width="10"
+            height="10"
           />
         </button>
       </li>
@@ -122,7 +120,6 @@ const categories = [
 .tagline-box {
   display: flex;
   align-items: center;
-  
   gap: 24px;
   margin-top: 24px;
   margin-bottom: 56px;
@@ -178,19 +175,21 @@ const categories = [
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  transition: filter 0.2s ease;
+  display: inline-block;
 }
 
 .arrow {
   width: 10px;
   height: 10px;
   flex-shrink: 0;
-  transition: filter 0.2s ease;
+  display: inline-block;
 }
 
 /* Make icons white on hover/active */
 .filter-btn:hover .cat-icon,
 .filter-btn.active .cat-icon,
+.filter-btn:hover .cat-icon img,
+.filter-btn.active .cat-icon img,
 .filter-btn:hover .arrow,
 .filter-btn.active .arrow {
   filter: brightness(0) invert(1);
@@ -242,7 +241,7 @@ const categories = [
 
   .tagline-box {
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
     gap: 16px;
     margin-bottom: 40px;
   }
@@ -278,6 +277,13 @@ const categories = [
     width: 12px;
     height: 12px;
     margin-left: auto;
+  }
+  
+  .filter-btn:hover .cat-icon,
+  .filter-btn.active .cat-icon,
+  .filter-btn:hover .arrow,
+  .filter-btn.active .arrow {
+    filter: brightness(0) invert(1);
   }
 }
 
@@ -329,6 +335,13 @@ const categories = [
   .arrow {
     width: 10px;
     height: 10px;
+  }
+  
+  .filter-btn:hover .cat-icon,
+  .filter-btn.active .cat-icon,
+  .filter-btn:hover .arrow,
+  .filter-btn.active .arrow {
+    filter: brightness(0) invert(1);
   }
 }
 </style>
