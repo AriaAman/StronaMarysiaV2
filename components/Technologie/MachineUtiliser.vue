@@ -56,10 +56,35 @@ const technologies = [
     ]
   },
   {
+    titre: "SKANER WEWNĄTRZUSTNY CARESTREAM CS 3600",
+    image: "/static/technologie/CHIRURGIA-STOMATOLOGICZNA.png",
+    caption: "Nowoczesne obrazowanie CBCT",
+    num: "02",
+    intro: `Pozwala na otrzymanie wirtualnego obrazu jamy ustnej na ekranie komputera w ciągu kilku minut.`,
+    points: [
+      {
+        title: "Cyfrowe wyciski",
+        desc: "szybkie i dokładne odwzorowanie jamy ustnej w zaledwie kilka minut."
+      },
+      {
+        title: "Najwyższa precyzja",
+        desc: "tysiące drobnych ujęć tworzą szczegółowy, realistyczny obraz anatomiczny."
+      },
+      {
+        title: "Idealne dopasowanie",
+        desc: "kluczowe w protetyce, ortodoncji i implantologii."
+      },
+      {
+        title: "Komfort pacjenta",
+        desc: "eliminacja tradycyjnych mas wyciskowych i redukcja odruchu wymiotnego."
+      }
+    ]
+  },
+  {
     titre: "MIKROSKOP ZUMAX",
     image: "/static/technologie/ZUMAX-OMS2350-technologie.png",
     caption: "Precyzja w leczeniu kanałowym i protetyce",
-    num: "02",
+    num: "03",
     intro: `Niezastąpione narzędzie w nowoczesnej stomatologii, które zapewnia skuteczność i najwyższą jakość leczenia dzięki powiększeniu i wyjątkowej ostrości obrazu.`,
     points: [
       {
@@ -77,31 +102,6 @@ const technologies = [
       {
         title: "Wczesne wykrywanie problemów",
         desc: "identyfikacja pęknięć szkliwa, mikrourazów i zmian w przyzębiu niewidocznych gołym okiem."
-      }
-    ]
-  },
-  {
-    titre: "LASER BIOLASE EPIC X",
-    image: "/static/technologie/PROTETYKA.png",
-    caption: "Nowoczesne obrazowanie CBCT",
-    num: "03",
-    intro: `Laser Biolase Epic X to nowoczesne narzędzie dla klinik, które stawiają na innowacyjność, skuteczność i maksymalny komfort pacjenta.`,
-    points: [
-      {
-        title: "Najnowocześniejszy laser diodowy",
-        desc: "światowy standard w precyzyjnych zabiegach stomatologicznych."
-      },
-      {
-        title: "Minimalizacja krwawienia i bólu",
-        desc: "delikatne cięcie tkanek, szybsze gojenie i mniejszy dyskomfort pozabiegowy."
-      },
-      {
-        title: "Redukcja bakterii",
-        desc: "wspomaga leczenie i regenerację, zwiększając skuteczność terapii."
-      },
-      {
-        title: "Szerokie zastosowanie",
-        desc: "idealny w implantologii, chirurgii, protetyce i stomatologii estetycznej."
       }
     ]
   },
@@ -156,35 +156,10 @@ const technologies = [
     ]
   },
   {
-    titre: "SMART DENTIN GRINDER",
-    image: "/static/technologie/DIAGNOSTYKA.png",
-    caption: "Autologiczny biomateriał z zębów pacjenta",
-    num: "06",
-    intro: `Smart Dentin Grinder to innowacyjne narzędzie w nowoczesnej chirurgii stomatologicznej, które łączy skuteczność, bezpieczeństwo i indywidualne podejście do każdego pacjenta.`,
-    points: [
-      {
-        title: "Naturalna odbudowa kości",
-        desc: "wykorzystanie usuniętych zębów do stworzenia własnego materiału kostnego."
-      },
-      {
-        title: "Biokompatybilność 100%",
-        desc: "zębina, jako materiał pochodzenia własnego, eliminuje ryzyko odrzutu."
-      },
-      {
-        title: "Szybsze gojenie",
-        desc: "znacząco skrócony czas regeneracji kości po zabiegach implantologicznych."
-      },
-      {
-        title: "Wysoka jakość biomateriału",
-        desc: "zębina wykazuje właściwości niemal identyczne z naturalną kością."
-      }
-    ]
-  },
-  {
     titre: "SPEKTROFOTOMETR SPECTRO SHADE",
     image: "/static/technologie/PROFILAKTYKA.png",
     caption: "Precyzyjna analiza koloru zębów",
-    num: "07",
+    num: "06",
     intro: `SpectroShade to niezbędne narzędzie w nowoczesnej protetyce estetycznej, które zapewnia najwyższą jakość i naturalny wygląd uzupełnień protetycznych.`,
     points: [
       {
@@ -206,27 +181,52 @@ const technologies = [
     ]
   },
   {
-    titre: "SKANER WEWNĄTRZUSTNY CARESTREAM CS 3600",
-    image: "/static/technologie/CHIRURGIA-STOMATOLOGICZNA.png",
-    caption: "Nowoczesne obrazowanie CBCT",
-    num: "08",
-    intro: `Pozwala na otrzymanie wirtualnego obrazu jamy ustnej na ekranie komputera w ciągu kilku minut.`,
+    titre: "SMART DENTIN GRINDER",
+    image: "/static/technologie/DIAGNOSTYKA.png",
+    caption: "Autologiczny biomateriał z zębów pacjenta",
+    num: "07",
+    intro: `Smart Dentin Grinder to innowacyjne narzędzie w nowoczesnej chirurgii stomatologicznej, które łączy skuteczność, bezpieczeństwo i indywidualne podejście do każdego pacjenta.`,
     points: [
       {
-        title: "Cyfrowe wyciski",
-        desc: "szybkie i dokładne odwzorowanie jamy ustnej w zaledwie kilka minut."
+        title: "Naturalna odbudowa kości",
+        desc: "wykorzystanie usuniętych zębów do stworzenia własnego materiału kostnego."
       },
       {
-        title: "Najwyższa precyzja",
-        desc: "tysiące drobnych ujęć tworzą szczegółowy, realistyczny obraz anatomiczny."
+        title: "Biokompatybilność 100%",
+        desc: "zębina, jako materiał pochodzenia własnego, eliminuje ryzyko odrzutu."
       },
       {
-        title: "Idealne dopasowanie",
-        desc: "kluczowe w protetyce, ortodoncji i implantologii."
+        title: "Szybsze gojenie",
+        desc: "znacząco skrócony czas regeneracji kości po zabiegach implantologicznych."
       },
       {
-        title: "Komfort pacjenta",
-        desc: "eliminacja tradycyjnych mas wyciskowych i redukcja odruchu wymiotnego."
+        title: "Wysoka jakość biomateriału",
+        desc: "zębina wykazuje właściwości niemal identyczne z naturalną kością."
+      }
+    ]
+  },
+  {
+    titre: "LASER BIOLASE EPIC X",
+    image: "/static/technologie/PROTETYKA.png",
+    caption: "Nowoczesne obrazowanie CBCT",
+    num: "08",
+    intro: `Laser Biolase Epic X to nowoczesne narzędzie dla klinik, które stawiają na innowacyjność, skuteczność i maksymalny komfort pacjenta.`,
+    points: [
+      {
+        title: "Najnowocześniejszy laser diodowy",
+        desc: "światowy standard w precyzyjnych zabiegach stomatologicznych."
+      },
+      {
+        title: "Minimalizacja krwawienia i bólu",
+        desc: "delikatne cięcie tkanek, szybsze gojenie i mniejszy dyskomfort pozabiegowy."
+      },
+      {
+        title: "Redukcja bakterii",
+        desc: "wspomaga leczenie i regenerację, zwiększając skuteczność terapii."
+      },
+      {
+        title: "Szerokie zastosowanie",
+        desc: "idealny w implantologii, chirurgii, protetyce i stomatologii estetycznej."
       }
     ]
   },
