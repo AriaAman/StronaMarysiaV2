@@ -49,42 +49,42 @@ const categories = [
   {
     label: 'Implantologia',
     value: 'implanty',
-    icon: '/static/icons/implantology.png'
+    icon: '/static/HomePage/DentHomepage1.svg'
   },
   {
     label: 'Leczenie kanałowe',
     value: 'endodoncja',
-    icon: '/static/icons/root-canal.png'
+    icon: '/static/HomePage/DentHomepage2.svg'
   },
   {
     label: 'Protetyka',
     value: 'protetyka',
-    icon: '/static/icons/teeth-icon.png'
+    icon: '/static/HomePage/DentHomepage3.svg'
   },
   {
     label: 'Stom. estetyczna',
     value: 'estetyczna',
-    icon: '/static/icons/tooth-2.png'
+    icon: '/static/HomePage/DentHomepage4.svg'
   },
   {
     label: 'Stom. zachowawcza',
     value: 'zachowawcza',
-    icon: '/static/icons/tooth.png'
+    icon: '/static/HomePage/DentHomepage5.svg'
   },
   {
     label: 'Diagnostyka',
     value: 'diagnostyka',
-    icon: '/static/icons/hands.png'
+    icon: '/static/HomePage/DentHomepage6.svg'
   },
   {
     label: 'Profilaktyka',
     value: 'profilaktyka',
-    icon: '/static/icons/gum.png'
+    icon: '/static/HomePage/DentHomepage7.svg'
   },
   {
     label: 'Chirurgia stom.',
     value: 'chirurgia',
-    icon: '/static/icons/chair.png'
+    icon: '/static/HomePage/DentHomepage8.svg'
   }
 ]
 </script>
@@ -178,12 +178,22 @@ const categories = [
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+  transition: filter 0.2s ease;
 }
 
 .arrow {
   width: 10px;
   height: 10px;
   flex-shrink: 0;
+  transition: filter 0.2s ease;
+}
+
+/* Make icons white on hover/active */
+.filter-btn:hover .cat-icon,
+.filter-btn.active .cat-icon,
+.filter-btn:hover .arrow,
+.filter-btn.active .arrow {
+  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 1023px) {
