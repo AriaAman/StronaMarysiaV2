@@ -69,7 +69,7 @@
 
             <p class="mini-title">ADRES:</p>
             <address>
-              <a>JAROTY, UL. STAWIGUDZKA 7/D</a>
+              <a>Stawigudzka 8c/e,</a>
               <a>10-687 OLSZTYN</a>
             </address>
             <p class="map-link"><a href="/kontakt">WSKAZÓWKI DOJAZDU (MAPA)</a></p>
