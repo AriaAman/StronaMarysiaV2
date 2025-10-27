@@ -18,8 +18,8 @@
             <div>
               <span class="contact-info__label">ADRES:</span>
               <address class="address">
-                 Stawigudzka 8c/e,<br /><br />
-                10-687 Olsztyn, Pologne
+                 Stawigudzka 8c/e<br /><br />
+                10-687 Olsztyn
               </address>
               <a href="https://goo.gl/maps/..." target="_blank" class="contact-info__map-link">
                 WSKAZÓWKI DOJAZDU (MAPA)
