@@ -1,6 +1,5 @@
 {
   "framework": "nuxtjs",
   "buildCommand": "npm run build",
-    "regions": ["cdg1"]
+  "regions": ["cdg1"]
 }
-

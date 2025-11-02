@@ -17,13 +17,13 @@
                     <li><NuxtLink to="/" class="header-link">START</NuxtLink></li>
                     <li><a href="/oNas" class="header-link">O NAS</a></li>
                     <li><NuxtLink to="/uslugi" class="header-link">USŁUGI</NuxtLink></li>
-                    <li><a class="reservation-btn" href="/reservation">REZERWACJA ONLINE</a></li>
+                    <!-- <li><a class="reservation-btn" href="/reservation">REZERWACJA ONLINE</a></li> -->
                     <li><a href="/technologie" class="header-link">TECHNOLOGIE</a></li>
                     <li><a href="/cennik" class="header-link">CENNIK</a></li>
                     <li><a href="/kontakt" class="header-link">KONTAKT</a></li>
                 </ul>
             </nav>
-            <a class="reservation-btn tablet-reservation-btn" href="/reservation">REZERWACJA ONLINE</a>
+            <!-- <a class="reservation-btn tablet-reservation-btn" href="/reservation">REZERWACJA ONLINE</a> -->
             <p class="number">+48 503 529 023</p>
             <div class="menu-toggle" @click="toggleMobileMenu">
                 <div class="hamburger" :class="{ 'is-active': isMobileMenuOpen }">
@@ -61,7 +61,7 @@
                     <li><a href="/cennik" class="mobile-link" @click="closeMobileMenu">CENNIK</a></li>
                     <li><a href="/kontakt" class="mobile-link" @click="closeMobileMenu">KONTAKT</a></li>
                     <div class="mobile-cta">
-                    <a class="mobile-reservation-btn" href="/reservation" @click="closeMobileMenu">REZERWACJA ONLINE</a>
+                    <!-- <a class="mobile-reservation-btn" href="/reservation" @click="closeMobileMenu">REZERWACJA ONLINE</a> -->
                 </div>
                 </ul>
             </nav>
@@ -408,7 +408,7 @@ header {
     .container {
         padding: 0 24px;
         gap: 16px;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
     .main-nav {
@@ -446,7 +446,7 @@ header {
     .container {
         padding: 0 20px;
         gap: 16px;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
     .main-nav {
