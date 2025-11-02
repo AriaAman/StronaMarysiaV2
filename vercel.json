@@ -1,7 +1,6 @@
 {
   "framework": "nuxtjs",
   "buildCommand": "npm run build",
-  "functions": {
     "regions": ["cdg1"]
-  }
 }
+
