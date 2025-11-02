@@ -42,6 +42,7 @@ export default defineNuxtConfig({
   // Configuration des variables d'environnement
   runtimeConfig: {
     // Variables privées (côté serveur seulement)
+    // Conservées à la demande: clés FELG disponibles même si non utilisées côté app
     felgApiKey: process.env.FELG_API_KEY,
     felgApiSecret: process.env.FELG_API_SECRET,
     
