@@ -1,6 +1,6 @@
-# Nuxt Minimal Starter
+# StronaMarysiaV2
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 3 website for the dental practice. The online reservation now uses the embedded FELG calendar.
 
 ## Setup
 

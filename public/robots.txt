@@ -11,9 +11,6 @@ Disallow: /composables/
 Disallow: /.git/
 Disallow: /node_modules/
 
-# Bloquer l'accès aux pages de réservation en cours (optionnel)
-Disallow: /reservation/success
-
 # Permettre l'accès aux pages importantes
 Allow: /
 Allow: /uslugi

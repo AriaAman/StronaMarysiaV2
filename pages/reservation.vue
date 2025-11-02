@@ -4,120 +4,21 @@
       <div class="reservation-container">
         <div class="reservation-header">
           <h1 class="reservation-title">Rezerwacja online</h1>
-          <p class="reservation-subtitle">Wybierz preferowany termin na swoją wizytę dentystyczną</p>
+          <p class="reservation-subtitle">Skorzystaj z naszego zewnętrznego kalendarza, aby zarezerwować wizytę.</p>
         </div>
-        
+
         <div class="reservation-content">
-          <!-- Étapes de réservation -->
-          <div class="reservation-steps">
-            <div class="step" :class="{ active: currentStep >= 1, completed: currentStep > 1 }">
-              <div class="step-number">1</div>
-              <span class="step-text">Wybierz datę</span>
-            </div>
-            <div class="step" :class="{ active: currentStep >= 2, completed: currentStep > 2 }">
-              <div class="step-number">2</div>
-              <span class="step-text">Wybierz lekarza</span>
-            </div>
-            <div class="step" :class="{ active: currentStep >= 3, completed: currentStep > 3 }">
-              <div class="step-number">3</div>
-              <span class="step-text">Wybierz godzinę</span>
-            </div>
-            <div class="step" :class="{ active: currentStep >= 4, completed: currentStep > 4 }">
-              <div class="step-number">4</div>
-              <span class="step-text">Dane osobowe</span>
-            </div>
-            <div class="step" :class="{ active: currentStep >= 5 }">
-              <div class="step-number">5</div>
-              <span class="step-text">Potwierdzenie</span>
-            </div>
-          </div>
-
-          <!-- Contenu principal -->
           <div class="reservation-body">
-            <!-- Étape 1: Calendrier -->
-            <div v-if="currentStep === 1" class="step-content">
-              <CalendarComponent 
-                @date-selected="handleDateSelection"
-                :available-dates="availableDates"
-              />
-              <div class="step-actions">
-                <button 
-                  class="btn-next" 
-                  :disabled="!selectedDate"
-                  @click="nextStep"
-                >
-                  Kontynuuj
-                </button>
-              </div>
-            </div>
-
-            <!-- Étape 2: Sélection du médecin -->
-            <div v-if="currentStep === 2" class="step-content">
-              <DoctorSelectionComponent 
-                :available-doctors="availableDoctors"
-                :loading="isLoadingDoctors"
-                @doctor-selected="handleDoctorSelection"
-                :selected-doctor="selectedDoctor"
-              />
-              <div class="step-actions">
-                <button class="btn-back" @click="previousStep">Wstecz</button>
-                <button 
-                  class="btn-next" 
-                  :disabled="!selectedDoctor"
-                  @click="nextStep"
-                >
-                  Kontynuuj
-                </button>
-              </div>
-            </div>
-
-            <!-- Étape 3: Créneaux horaires -->
-            <div v-if="currentStep === 3" class="step-content">
-              <TimeSlotComponent 
-                :selected-date="selectedDate"
-                :selected-doctor="selectedDoctor"
-                :available-slots="availableTimeSlots"
-                :loading="isLoadingSlots"
-                @slot-selected="handleTimeSlotSelection"
-              />
-              <div class="step-actions">
-                <button class="btn-back" @click="previousStep">Wstecz</button>
-                <button 
-                  class="btn-next" 
-                  :disabled="!selectedTimeSlot"
-                  @click="nextStep"
-                >
-                  Kontynuuj
-                </button>
-              </div>
-            </div>
-
-            <!-- Étape 4: Informations personnelles -->
-            <div v-if="currentStep === 4" class="step-content">
-              <PatientFormComponent 
-                @form-data="handlePatientData"
-                :is-loading="isSubmitting"
-              />
-              <div class="step-actions">
-                <button class="btn-back" @click="previousStep">Wstecz</button>
-                <button 
-                  class="btn-next" 
-                  :disabled="!isFormValid"
-                  @click="nextStep"
-                >
-                  Kontynuuj
-                </button>
-              </div>
-            </div>
-
-            <!-- Étape 5: Confirmation -->
-            <div v-if="currentStep === 5" class="step-content">
-              <ConfirmationComponent 
-                :reservation-data="reservationData"
-                @confirm="confirmReservation"
-                @back="previousStep"
-                :is-submitting="isSubmitting"
-              />
+            <div class="embed-wrapper">
+              <iframe
+                class="felg-iframe"
+                title="Kalendarz rezerwacji FELG"
+                src="https://felg.app/extcal/6531821429455923"
+                frameborder="0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
         </div>
@@ -127,177 +28,10 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
-import CalendarComponent from '~/components/Reservation/SimpleCalendarComponent.vue'
-import DoctorSelectionComponent from '~/components/Reservation/DoctorSelectionComponent.vue'
-import TimeSlotComponent from '~/components/Reservation/TimeSlotComponent.vue'
-import PatientFormComponent from '~/components/Reservation/PatientFormComponent.vue'
-import ConfirmationComponent from '~/components/Reservation/ConfirmationComponent.vue'
-import { useReservationApi } from '~/composables/useReservationApi'
-
-// Reactive data
-const currentStep = ref(1)
-const selectedDate = ref(null)
-const selectedDoctor = ref(null)
-const selectedTimeSlot = ref(null)
-const patientData = ref({})
-const availableDates = ref([])
-const availableDoctors = ref([])
-const availableTimeSlots = ref([])
-const isLoadingDoctors = ref(false)
-const isLoadingSlots = ref(false)
-const isSubmitting = ref(false)
-
-// API composable
-const { getAvailableDates, getWorkers, getAvailableTimeSlots, createAppointment } = useReservationApi()
-
-// Computed properties
-const isFormValid = computed(() => {
-  return patientData.value.firstName &&
-         patientData.value.lastName &&
-         patientData.value.email &&
-         patientData.value.phone &&
-         ['male', 'female'].includes(patientData.value.gender)
-})
-
-const reservationData = computed(() => {
-  // Récupérer l'extCalId de la date sélectionnée
-  const dateObj = availableDates.value.find(d => d.date === selectedDate.value)
-  
-  return {
-    date: selectedDate.value,
-    doctor: selectedDoctor.value,
-    timeSlot: selectedTimeSlot.value,
-    patient: patientData.value,
-    extCalId: dateObj?.extCalId // Ajouter l'ID du calendrier externe
-  }
-})
-
-// Methods
-const nextStep = async () => {
-  if (currentStep.value < 5) {
-    currentStep.value++
-    
-    // Si on passe à l'étape 3 (sélection des créneaux), charger les créneaux du médecin sélectionné
-    if (currentStep.value === 3) {
-      await loadTimeSlotsForDoctor()
-    }
-  }
-}
-
-const previousStep = () => {
-  if (currentStep.value > 1) {
-    currentStep.value--
-  }
-}
-
-const handleDateSelection = async (date) => {
-  selectedDate.value = date
-  selectedDoctor.value = null // Reset du médecin sélectionné
-  selectedTimeSlot.value = null // Reset du créneau sélectionné
-  
-  // Charger les médecins disponibles pour cette date
-  if (date) {
-    try {
-      isLoadingDoctors.value = true
-      console.log('📅 Date sélectionnée:', date)
-      // Charger la liste des médecins
-      const workersResult = await getWorkers()
-      
-      // Extraire la liste des médecins depuis la réponse API
-      if (workersResult && workersResult.list && Array.isArray(workersResult.list)) {
-        availableDoctors.value = workersResult.list
-      } else if (Array.isArray(workersResult)) {
-        availableDoctors.value = workersResult
-      } else {
-        availableDoctors.value = []
-      }
-      
-      console.log('👥 Médecins chargés:', availableDoctors.value.length)
-    } catch (error) {
-      console.error('Błąd podczas ładowania lekarzy:', error)
-      availableDoctors.value = []
-    } finally {
-      isLoadingDoctors.value = false
-    }
-  }
-}
-
-const handleDoctorSelection = async (doctor) => {
-  selectedDoctor.value = doctor
-  selectedTimeSlot.value = null // Reset du créneau sélectionné
-  console.log('👨‍⚕️ Médecin sélectionné:', doctor)
-  
-  // Recharger les créneaux pour ce docteur spécifique
-  await loadTimeSlotsForDoctor()
-}
-
-const loadTimeSlotsForDoctor = async () => {
-  if (selectedDate.value && selectedDoctor.value) {
-    try {
-      isLoadingSlots.value = true
-      const dateObj = availableDates.value.find(d => d.date === selectedDate.value)
-      const extCalId = dateObj?.extCalId
-      const doctorId = selectedDoctor.value.workerId || selectedDoctor.value.id
-      
-      console.log('🕒 Chargement des créneaux pour:', {
-        doctor: selectedDoctor.value.name,
-        doctorId: doctorId,
-        date: selectedDate.value,
-        extCalId: extCalId
-      })
-      
-      availableTimeSlots.value = await getAvailableTimeSlots(selectedDate.value, extCalId, doctorId)
-    } catch (error) {
-      console.error('Błąd podczas ładowania terminów:', error)
-      availableTimeSlots.value = []
-    } finally {
-      isLoadingSlots.value = false
-    }
-  }
-}
-
-const handleTimeSlotSelection = (slot) => {
-  selectedTimeSlot.value = slot
-}
-
-const handlePatientData = (data) => {
-  patientData.value = data
-}
-
-const confirmReservation = async () => {
-  try {
-    isSubmitting.value = true
-    const result = await createAppointment(reservationData.value)
-
-    if (result.success) {
-      // Rediriger vers une page de succès ou afficher un message
-      await navigateTo('/reservation/success')
-    } else {
-      // Gérer l'erreur
-      console.error('Błąd podczas tworzenia terminu wizyty:', result.error)
-    }
-  } catch (error) {
-    console.error('Błąd:', error)
-  } finally {
-    isSubmitting.value = false
-  }
-}
-
-// Lifecycle
-onMounted(async () => {
-  try {
-    availableDates.value = await getAvailableDates()
-  } catch (error) {
-    console.error('Błąd podczas ładowania dostępnych dat:', error)
-  }
-})
-
-// SEO
 useHead({
   title: 'Rezerwacja online - Gabinet Dentystyczny',
   meta: [
-    { name: 'description', content: 'Zarezerwuj swoją wizytę dentystyczną online. Wybierz preferowany termin szybko i łatwo.' }
+    { name: 'description', content: 'Szybka i wygodna rezerwacja wizyty poprzez zewnętrzny kalendarz FELG.' }
   ]
 })
 </script>
@@ -358,127 +92,25 @@ useHead({
   overflow: hidden;
 }
 
-.reservation-steps {
-  display: flex;
-  background: #f8f6f3;
-  padding: 0;
-  margin: 0;
-  border-bottom: 1px solid #E5E7EB;
-}
-
-.step {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 16px;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.step::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 60%;
-  background: #E5E7EB;
-}
-
-.step:last-child::after {
-  display: none;
-}
-
-.step.active {
-  background: linear-gradient(135deg, #BC9667 0%, #A68553 100%);
-  color: white;
-}
-
-.step.completed {
-  background: #10B981;
-  color: white;
-}
-
-.step-number {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  margin-right: 12px;
-  font-size: 14px;
-}
-
-.step:not(.active):not(.completed) .step-number {
-  background: #E5E7EB;
-  color: #6B7280;
-}
-
-.step-text {
-  font-weight: 500;
-  font-size: 14px;
-}
-
 .reservation-body {
   padding: 40px;
 }
 
-.step-content {
-  min-height: 500px;
+/* Embed */
+.embed-wrapper {
+  width: 100%;
+  min-height: 70vh;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  background: #fff;
 }
 
-.step-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 1px solid #E5E7EB;
-}
-
-.btn-back, .btn-next {
-  padding: 16px 32px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-  font-family: 'Satoshi Variable', sans-serif;
-}
-
-.btn-back {
-  background: #F3F4F6;
-  color: #6B7280;
-}
-
-.btn-back:hover {
-  background: #E5E7EB;
-  color: #374151;
-}
-
-.btn-next {
-  background: linear-gradient(135deg, #BC9667 0%, #A68553 100%);
-  color: white;
-  min-width: 140px;
-}
-
-.btn-next:hover:not(:disabled) {
-  background: linear-gradient(135deg, #A68553 0%, #8F7449 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(188, 150, 103, 0.4);
-}
-
-.btn-next:disabled {
-  background: #D1D5DB;
-  color: #9CA3AF;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+.felg-iframe {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  border: 0;
 }
 
 /* Responsive */
@@ -509,39 +141,13 @@ useHead({
     font-size: 16px;
   }
   
-  .reservation-steps {
-    flex-direction: column;
-  }
-  
-  .step {
-    padding: 16px;
-  }
-  
-  .step::after {
-    display: none;
-  }
-  
-  .step-text {
-    font-size: 12px;
-  }
-  
-  .step-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .btn-back, .btn-next {
-    width: 100%;
-  }
+  .felg-iframe { min-height: 700px; }
 }
 
 @media (max-width: 480px) {
   .reservation-body {
     padding: 16px;
   }
-  
-  .reservation-steps {
-    display: none; /* Masquer les étapes sur très petits écrans */
-  }
+  .felg-iframe { min-height: 650px; }
 }
 </style>
