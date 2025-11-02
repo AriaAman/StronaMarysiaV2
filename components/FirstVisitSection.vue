@@ -12,10 +12,10 @@
                     Umów swoją wizytę i zacznij dbać o zdrowie jamy ustnej.
                 </p>
                 <NuxtImg src="/static/uslugi/circle-pietrus.png" alt="" class="btn-circle" loading="lazy" />
-                <a href="/reservation" class="reservation-btn">
+                <!-- <NuxtLink to="/reservation" class="reservation-btn">
                     <NuxtImg src="/static/icons/online-icon.png" alt="" class="btn-icon" loading="lazy" />
                     REZERWACJA ONLINE
-                </a>
+                </NuxtLink> -->
             </div>
         </div>
     </section>

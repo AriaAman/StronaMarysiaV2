@@ -293,8 +293,8 @@
   }
 
   .doctor-img {
-    width: 450px;
-    height: 315px;
+    width: 400px;
+    height: 285px;
   }
 
   .signature-img {

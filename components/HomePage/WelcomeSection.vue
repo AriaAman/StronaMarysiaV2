@@ -57,8 +57,8 @@
 
                     <!-- Boutons -->
                     <div class="action-buttons">
-                        <a href="/reservation" class="primary-button">REZERWACJA ONLINE</a>
-                        <a href="/kontakt" class="secondary-button">
+                        <!-- <a href="/reservation" class="primary-button">REZERWACJA ONLINE</a> -->
+                        <NuxtLink to="/kontakt" class="secondary-button">
                             <span class="button-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#BC9667"
                                     class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -67,7 +67,7 @@
                                 </svg>
                             </span>
                             ZOBACZ NA MAPIE
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
 

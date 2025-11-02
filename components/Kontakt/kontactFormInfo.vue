@@ -513,6 +513,8 @@ const handleSubmit = async () => {
   height: 16px;
 }
 .contact-social__text {
+  display: flex;
+  align-items: center;
   flex: 1;
   text-align: left;
   font-size: 18px;
@@ -730,6 +732,7 @@ const handleSubmit = async () => {
 
   .contact-social__text {
     font-size: 16px;
+    height: 35px;
     letter-spacing: 1px;
   }
 }
@@ -767,10 +770,6 @@ const handleSubmit = async () => {
   .contact-social {
     height: 48px;
     padding: 0 16px;
-  }
-
-  .contact-social__text {
-    font-size: 14px;
   }
 
   .contact-social__icon svg,
@@ -812,11 +811,6 @@ const handleSubmit = async () => {
   .contact-social {
     height: 44px;
     padding: 0 12px;
-  }
-
-  .contact-social__text {
-    font-size: 13px;
-    letter-spacing: 0.5px;
   }
 }
 </style>
