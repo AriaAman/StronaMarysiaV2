@@ -7,7 +7,6 @@
           <h2 class="category-title">{{ category.title }}</h2>
           <p class="category-description">{{ category.description }}</p>
         </div>
-
         <div class="price-items">
           <div class="price-item" v-for="(service, sIndex) in category.services" :key="sIndex">
             <div class="service-name">{{ service.name }}</div>
@@ -25,7 +24,8 @@ const categories = [
     title: 'KONSULTACJE',
     description: 'Indywidualna ocena stanu zdrowia jamy ustnej i plan leczenia.',
     services: [
-      { name: 'KONSULTACJA STOMATOLOGICZNA', price: '200 zł' }
+      { name: 'KONSULTACJA/BADANIE STOMATOLOGICZNE', price: '200 zł' },
+      { name: 'KONSULTACJA/BADANIE STOMATOLOGICZNE + PANTOMOGRAM', price: '300 zł' }
     ]
   },
   {
@@ -33,70 +33,72 @@ const categories = [
     description: 'Precyzyjne badania i nowoczesne technologie dla trafnej diagnozy.',
     services: [
       { name: 'ZDJĘCIE PUNKTOWE', price: '50 ZŁ' },
-      { name: 'ZDJĘCIE PANTOMOGRAFICZNE', price: '100 ZŁ' },
-      { name: 'TOMOGRAF (CBCT) CAŁOŚĆ JAMY USTNEJ', price: '400 ZŁ' },
+      { name: 'ZDJĘCIE PANTOMOGRAFICZNE', price: '150 ZŁ' },
+      { name: 'TOMOGRAF (CBCT) PUNKTOWE', price: '150 ZŁ' },
       { name: 'TOMOGRAF (CBCT) ŻUCHWA/SZCZĘKA', price: '200 ZŁ' },
-      { name: 'TOMOGRAF (CBCT) PUNKTOWE', price: '150 ZŁ' }
+      { name: 'TOMOGRAF (CBCT) CAŁOŚĆ JAMY USTNEJ', price: '400 ZŁ' }
     ]
   },
   {
     title: 'PROFILAKTYKA',
     description: 'Skuteczne zabiegi zapobiegające próchnicy i chorobom dziąseł.',
     services: [
-      { name: 'PAKIET HIGIENIZACYJNY (SKALING, PIASKOWANIE, FLUORYZACJA)', price: '350 zł' },
       { name: 'FLUORYZACJA OBU ŁUKÓW ZĘBOWYCH', price: '200 ZŁ' },
-      { name: 'PIASKOWANIE ZĘBÓW', price: '200 ZŁ' },
-      { name: 'SKALING ULTRADŹWIĘKOWY', price: '200 ZŁ' }
+      { name: 'PIASKOWANIE ZĘBÓW + LAKIEROWANIE', price: '250 ZŁ' },
+      { name: 'SKALING ULTRADŹWIĘKOWY + LAKIEROWANIE', price: '250 ZŁ' },
+      { name: 'PAKIET HIGIENIZACYJNY (SKALING, PIASKOWANIE, FLUORYZACJA)', price: '400 zł' }
     ]
   },
   {
     title: 'IMPLANTOLOGIA',
     description: 'Nowoczesne implanty dla trwałego i estetycznego uzupełnienia braków zębowych.',
     services: [
-      { name: 'WSZCZEPIENIE IMPLANTU', price: '3500 zł' },
       { name: 'ODSŁONIĘCIE IMPLANTU I ZAŁOŻENIE ŚRUBY GOJĄCEJ', price: '300 ZŁ' },
-      { name: 'KORONA PORCELANOWA NA IMPLANCIE', price: 'OD 3500 ZŁ' },
       { name: 'PRACE IMPLANTOLOGICZNE ZŁOŻONE WYCENIANE SĄ INDYWIDUALNIE', price: '' },
+      { name: 'KORONA TYMCZASOWA NA ŁĄCZNIKU TYTANOWYM', price: '800 ZŁ' },
       { name: 'SZABLON IMPLANTOLOGICZNY', price: '1000 ZŁ' },
       { name: 'PODNIESIENIE DNA ZATOKI SZCZĘKOWEJ (SINUS LIFT)', price: '2500 ZŁ' },
-      { name: 'KORONA TYMCZASOWA NA ŁĄCZNIKU TYTANOWYM', price: '800 ZŁ' }
+      { name: 'WSZCZEPIENIE IMPLANTU', price: '3500 zł' },
+      { name: 'KORONA PORCELANOWA NA IMPLANCIE', price: 'OD 3500 ZŁ' },
     ]
   },
   {
     title: 'ENDODONCJA (MIKROSKOPOWA)',
     description: 'Precyzyjne leczenie kanałowe z użyciem zaawansowanych technologii.',
     services: [
+      { name: 'ODBUDOWA ZĘBA PO LECZENIU ENDODONTYCZNYM KOMPOZYTEM', price: '350-500 ZŁ' },
+      { name: 'ODBUDOWA ZĘBA PO LECZENIU ENDODONTYCZNYM WŁÓKNEM SZKLANYM', price: '500 ZŁ' },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 1 KANAŁU*', price: '800 ZŁ' },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 2 KANAŁÓW*', price: '1100 ZŁ' },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 3 KANAŁÓW*', price: '1500 ZŁ' },
-      { name: 'LECZENIE ENDODONTYCZNE WYPEŁNIENIE 4 KANAŁÓW*', price: '1800 ZŁ' },
+      { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 4 KANAŁÓW*', price: '1800 ZŁ' },
       { name: 'POWTÓRNE LECZENIE KANAŁOWE', price: '+100 ZŁ / 1 KANAŁ' },
-      { name: 'ODBUDOWA ZĘBA PO LECZENIU ENDODONTYCZNYM KOMPOZYTEM', price: '350-500 ZŁ' },
-      { name: 'ODBUDOWA ZĘBA PO LECZENIU ENDODONTYCZNYM WŁÓKNEM SZKLANYM', price: '500 ZŁ' }
+      // a revoir le dernier
     ]
   },
   {
     title: 'PROTETYKA',
     description: 'Estetyczne i funkcjonalne odbudowy protetyczne dopasowane do Twoich potrzeb.',
     services: [
+      { name: 'WAX UP (1PUNKT)', price: '150ZŁ' },
+      { name: 'DOSTAWIENIE ZĘBA DO PROTEZY', price: '200 ZŁ' },
+      { name: 'POWTÓRNE ZACEMENTOWANIE KORONY/MOSTU (1 PUNKT)', price: '400 ZŁ' },
+      { name: 'WKŁAD KORONOWO-KORZENIOWY JEDNOCZĘŚCIOWY CHROMO-KOBALT', price: '450 ZŁ' },
+      { name: 'WKŁAD KORONOWO-KORZENIOWY ZŁOŻONY CHROMO-KOBALT', price: '600 ZŁ' },
+      { name: 'SZYNA RELAKSACYJNA', price: '800 ZŁ' },
+      { name: 'SZYNA DLA SPORTOWCÓW', price: '800 ZŁ' },
       { name: 'KORONA PORCELANOWA NA PODBUDOWIE CHROMOWO KOBALTOWEJ (PUNKT SPIEKANY)', price: '2000 zł' },
       { name: 'KORONA PEŁNOCERAMICZNA/CYRKONOWA', price: '2500 ZŁ' },
       { name: 'KORONA TYMCZASOWA', price: 'W CENIE USŁUGI' },
       { name: 'LICÓWKA PORCELANOWA', price: '2500 ZŁ' },
-      { name: 'WKŁAD KORONOWO-KORZENIOWY JEDNOCZĘŚCIOWY CHROMO-KOBALT', price: '450 ZŁ' },
-      { name: 'WKŁAD KORONOWO-KORZENIOWY ZŁOŻONY CHROMO-KOBALT', price: '600 ZŁ' },
       { name: 'PROTEZA SZKIELETOWA', price: '3500 ZŁ' },
       { name: 'PROTEZA BEZKLAMROWA', price: 'WYCENA INDYWIDUALNA' },
-      { name: 'WAX UP (1PUNKT)', price: '150ZŁ' },
       { name: 'PROTEZA AKRYLOWA', price: '2000 ZŁ' },
       { name: 'PROTEZA AKRONOWA', price: '3000 ZŁ' },
-      { name: 'DOSTAWIENIE ZĘBA DO PROTEZY', price: '200 ZŁ' },
-      { name: 'POWTÓRNE ZACEMENTOWANIE KORONY/MOSTU (1 PUNKT)', price: '400 ZŁ' },
-      { name: 'SZYNA RELAKSACYJNA', price: '800 ZŁ' },
-      { name: 'SZYNA DLA SPORTOWCÓW', price: '800 ZŁ' }
     ]
   },
   {
+    // pas trouvé
     title: 'STOMATOLOGIA ZACHOWAWCZA',
     description: 'Skuteczna odbudowa i leczenie próchnicy dla zdrowych zębów.',
     services: [
@@ -107,6 +109,7 @@ const categories = [
     ]
   },
   {
+    // pas les memes services
     title: 'CHIRURGIA',
     description: 'Bezpieczne i komfortowe zabiegi chirurgiczne w nowoczesnym wydaniu.',
     services: [
@@ -131,9 +134,11 @@ const categories = [
     description: 'Beztresowe leczenie zębów najmłodszych pacjentów.',
     services: [
       { name: 'WIZYTA KONSULTACYJNA/ADAPTACYJNA Z PRZEGLĄDEM JAMY USTNEJ', price: '200 ZŁ' },
-      { name: 'OPATRUNEK W ZĘBIE MLECZNYM', price: '180 ZŁ' },
+      { name: 'OPATRUNEK W ZĘBIE MLECZNYM', price: '200 ZŁ' },
       { name: 'WYPEŁNIENIE W ZĘBIE MLECZNYM', price: '250-300 ZŁ' },
+      // pas la meme chose en bas 
       { name: 'LAKIEROWANIE ZĘBÓW MLECZNYCH/STAŁYCH (2 ŁUKI)', price: '200 ZŁ' },
+      // je n'ai pas d'ekstrakcja
       { name: 'EKSTRAKCJA ZĘBA MLECZNEGO', price: '200-250 ZŁ' },
       { name: 'LAKOWANIE ZĘBA', price: '200 ZŁ' },
       { name: 'OTWARCIE ZĘBA Z OPATRUNKIEM', price: '200 ZŁ' }
@@ -143,8 +148,8 @@ const categories = [
     title: 'STOMATOLOGIA LASEROWA',
     description: 'Nowoczesne i bezbolesne zabiegi z wykorzystaniem lasera.',
     services: [
+      { name: 'LECZENIE OPRYSZCZKI, AFT', price: '200 ZŁ' },
       { name: 'WYDŁUŻENIE KORONY KLINICZNEJ (KOREKTA DZIĄSŁA)', price: '250 ZŁ' },
-      { name: 'LECZENIE OPRYSZCZKI, AFT', price: '200 ZŁ' }
     ]
   }
 ];
