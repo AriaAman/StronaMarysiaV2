@@ -53,12 +53,12 @@ const categories = [
     title: 'IMPLANTOLOGIA',
     description: 'Nowoczesne implanty dla trwałego i estetycznego uzupełnienia braków zębowych.',
     services: [
+      { name: 'WSZCZEPIENIE IMPLANTU', price: '3500 zł' },
       { name: 'ODSŁONIĘCIE IMPLANTU I ZAŁOŻENIE ŚRUBY GOJĄCEJ', price: '300 ZŁ' },
       { name: 'PRACE IMPLANTOLOGICZNE ZŁOŻONE WYCENIANE SĄ INDYWIDUALNIE', price: '' },
       { name: 'KORONA TYMCZASOWA NA ŁĄCZNIKU TYTANOWYM', price: '800 ZŁ' },
       { name: 'SZABLON IMPLANTOLOGICZNY', price: '1000 ZŁ' },
       { name: 'PODNIESIENIE DNA ZATOKI SZCZĘKOWEJ (SINUS LIFT)', price: '2500 ZŁ' },
-      { name: 'WSZCZEPIENIE IMPLANTU', price: '3500 zł' },
       { name: 'KORONA PORCELANOWA NA IMPLANCIE', price: 'OD 3500 ZŁ' },
     ]
   },
@@ -103,9 +103,9 @@ const categories = [
     description: 'Skuteczna odbudowa i leczenie próchnicy dla zdrowych zębów.',
     services: [
       { name: 'ZNIECZULENIE KOMPUTEROWE DENTAPEN', price: 'Bezpłatnie' },
-      { name: 'WYPEŁNIENIE ZĘBA (W ZALEŻNOŚCI OD ROZLEGŁOŚCI UBYTKU)', price: '350-450 ZŁ' },
-      { name: 'WYPEŁNIENIA TYMCZASOWE', price: '100 ZŁ' },
-      { name: 'ODBUDOWA ZĘBA NA WŁÓKNIE SZKLANYM', price: '500 ZŁ' }
+      { name: 'WYPEŁNIENIA TYMCZASOWE', price: '200 ZŁ' },
+      { name: 'WYPEŁNIENIE ZĘBA (W ZALEŻNOŚCI OD ROZLEGŁOŚCI UBYTKU)', price: '400-500 ZŁ' },
+      { name: 'ODBUDOWA ZĘBA NA WŁÓKNIE SZKLANYM', price: '600 ZŁ' }
     ]
   },
   {

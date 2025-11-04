@@ -34,7 +34,7 @@
         <div class="nav-column">
           <h5>Na skróty</h5>
           <nav>
-            <a href="/start" class="a">START</a>
+            <a href="/" class="a">START</a>
             <a href="/uslugi" class="a">USŁUGI</a>
             <a href="/oNas" class="a">O NAS</a>
             <a href="/cennik" class="a">CENNIK</a>
