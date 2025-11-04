@@ -13,7 +13,7 @@
                     <!-- Première carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <NuxtImg src="/static/HomePage/DentVector.svg" alt="Nowoczesna stomatologia" loading="lazy" />
+                            <img src="/static/HomePage/DentVector.svg" alt="Nowoczesna stomatologia" width="30" height="34" loading="lazy" />
                         </div>
                         <h3 class="card-title">Nowoczesna stomatologia dla wymagających</h3>
                         <p class="card-text">
@@ -24,7 +24,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <NuxtImg src="/static/HomePage/PiotrWrapper.svg" alt="Piotr Pietruszczak" loading="lazy" />
+                                <img src="/static/HomePage/PiotrWrapper.svg" alt="Piotr Pietruszczak" width="60" height="60" loading="lazy" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">PIOTR PIETRUSZCZAK</h4>
@@ -36,7 +36,7 @@
                     <!-- Troisième carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <NuxtImg src="/static/HomePage/DentVector.svg" alt="Wsparcie" loading="lazy" />
+                            <img src="/static/HomePage/DentVector.svg" alt="Wsparcie" width="30" height="34" loading="lazy" />
                         </div>
                         <h3 class="card-title">Wsparcie w każdej sytuacji</h3>
                         <p class="card-text">
@@ -46,7 +46,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <NuxtImg src="/static/HomePage/AmandaWrapper.svg" alt="Amanda Duszak" loading="lazy" />
+                                <img src="/static/HomePage/AmandaWrapper.svg" alt="Amanda Duszak" width="60" height="60" loading="lazy" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">AMANDA DUSZAK</h4>

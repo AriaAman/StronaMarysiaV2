@@ -54,7 +54,7 @@
   const faqItems = ref([
     {
       question: 'Jak często powinienem odwiedzać dentystę?',
-      answer: 'Regularne wizyty u stomatologa to podstawa zdrowego uśmiechu. W naszym gabinecie zalecamy kontrolę co 6 miesięcy, aby w porę wykrywać i zapobiegać problemom. Podczas wizyty wykonujemy profesjonalne badanie jamy ustnej i doradzamy najlepsze metody pielęgnacji zębów. <a href="/reservation">Zapisz się już teraz.</a>'
+      answer: 'Regularne wizyty u stomatologa to podstawa zdrowego uśmiechu. W naszym gabinecie zalecamy kontrolę co 6 miesięcy, aby w porę wykrywać i zapobiegać problemom. Podczas wizyty wykonujemy profesjonalne badanie jamy ustnej i doradzamy najlepsze metody pielęgnacji zębów. <a href="/kontakt">Zapisz się już teraz.</a>'
     },
     {
       question: 'Czy leczenie zębów w Waszym gabinecie jest bolesne?',

@@ -1,7 +1,16 @@
 <template>
     <section class="hero-section">
         <div class="background-image">
-            <NuxtImg src="/static/HomePage/FirstImageHomepage.jpg" alt="Background" loading="eager" />
+            <NuxtImg
+                src="/static/HomePage/FirstImageHomepage.jpg"
+                alt="Background"
+                loading="eager"
+                preset="hero"
+                width="1920"
+                height="1080"
+                sizes="xs:768px sm:640px md:768px lg:1024px xl:1280px xxl:1536px"
+                fetchpriority="high"
+            />
         </div>
 
         <div class="overlay-panel"></div>
@@ -27,7 +36,13 @@
             </div>
         </div>
         <div class="logo-circle">
-            <NuxtImg src="/static/HomePage/LogoCircleHomepage.svg" alt="Pietruszczak Logo" loading="lazy" />
+            <img
+                src="/static/HomePage/LogoCircleHomepage.svg"
+                alt="Pietruszczak Logo"
+                loading="lazy"
+                width="142"
+                height="142"
+            />
         </div>
     </section>
 </template>

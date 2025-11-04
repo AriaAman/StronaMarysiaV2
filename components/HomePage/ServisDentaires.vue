@@ -1,6 +1,16 @@
 <!-- ServiceBlocks.vue -->
 <template>
     <div class="services-container">
+        <div class="services-background">
+            <NuxtImg
+                src="/static/HomePage/FondHomePageCat.png"
+                alt="Background pattern"
+                preset="background"
+                width="1920"
+                height="1080"
+                loading="lazy"
+            />
+        </div>
         <div class="services-grid">
             <div v-for="(service, index) in services" :key="index" class="service-card">
                 <div class="service-number">{{ service.number }}</div>
@@ -55,19 +65,20 @@ const services = [
     z-index: 1;
 }
 
-.services-container::before {
-    content: '';
+.services-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/static/HomePage/FondHomePageCat.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
     z-index: -1;
+    opacity: 0.5;
+}
+
+.services-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .services-grid {

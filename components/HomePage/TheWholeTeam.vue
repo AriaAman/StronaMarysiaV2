@@ -1,10 +1,28 @@
 <!-- TeamIntro.vue -->
 <template>
-    <div class="team-intro-container" :style="{ backgroundImage: `url('${bgImage}')` }">
+    <div class="team-intro-container">
+      <div class="team-background">
+        <NuxtImg
+          src="/static/HomePage/SectionOnasHomePage.png"
+          alt="Background"
+          preset="background"
+          width="1920"
+          height="1080"
+          loading="lazy"
+        />
+      </div>
       <div class="team-intro-content">
         <!-- Image avec bordure blanche -->
         <div class="team-image-frame">
-          <img :src="teamImage" alt="Zespół stomatologiczny" class="team-image" />
+          <NuxtImg
+            src="/static/HomePage/TheWholeTeamHomepage.png"
+            alt="Zespół stomatologiczny"
+            class="team-image"
+            preset="background"
+            width="960"
+            height="640"
+            loading="lazy"
+          />
         </div>
 
         <!-- Section de texte en largeur complète -->
@@ -36,17 +54,29 @@
   </template>
 
   <script setup>
-  const bgImage = '/static/HomePage/SectionOnasHomePage.png';
-  const teamImage = '/static/HomePage/TheWholeTeamHomepage.png';
+  // Images optimisées via NuxtImg dans le template
   </script>
 
   <style scoped>
   .team-intro-container {
+    position: relative;
     width: 100%;
     padding: 80px 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  }
+
+  .team-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .team-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .team-intro-content {

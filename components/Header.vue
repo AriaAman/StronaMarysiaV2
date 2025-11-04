@@ -3,9 +3,9 @@
         <div class="container">
             <div class="logo">
                 <NuxtLink to="/">
-                    <NuxtImg 
-                        src="/static/header/logoPiotr.svg" 
-                        alt="Cabinet Dentaire Dr. Pietruszczak - Logo" 
+                    <img
+                        src="/static/header/logoPiotr.svg"
+                        alt="Cabinet Dentaire Dr. Pietruszczak - Logo"
                         width="200"
                         height="60"
                         loading="eager"
@@ -39,9 +39,9 @@
             <nav class="mobile-nav" @click.stop>
                 <div class="mobile-nav-header">
                     <div class="mobile-logo">
-                        <NuxtImg 
-                            src="/static/header/logoPiotr.svg" 
-                            alt="Cabinet Dentaire Dr. Pietruszczak - Logo Mobile" 
+                        <img
+                            src="/static/header/logoPiotr.svg"
+                            alt="Cabinet Dentaire Dr. Pietruszczak - Logo Mobile"
                             width="150"
                             height="45"
                             loading="eager"

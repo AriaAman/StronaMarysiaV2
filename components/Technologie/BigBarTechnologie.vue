@@ -55,6 +55,7 @@
   font-size: 96px;
   line-height: 100%;
   color: #0E1E3A;
+  text-align: center;
 }
 
 .bigbar-desc-row {
