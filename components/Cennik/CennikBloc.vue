@@ -57,7 +57,7 @@ const categories = [
       { name: 'ODSŁONIĘCIE IMPLANTU I ZAŁOŻENIE ŚRUBY GOJĄCEJ', price: '300 ZŁ' },
       { name: 'PRACE IMPLANTOLOGICZNE ZŁOŻONE WYCENIANE SĄ INDYWIDUALNIE', price: '' },
       { name: 'KORONA TYMCZASOWA NA ŁĄCZNIKU TYTANOWYM', price: '800 ZŁ' },
-      { name: 'SZABLON IMPLANTOLOGICZNY', price: '1000 ZŁ' },
+      { name: 'SZABLON IMPLANTOLOGICZNY', price: '1200 ZŁ' },
       { name: 'PODNIESIENIE DNA ZATOKI SZCZĘKOWEJ (SINUS LIFT)', price: '2500 ZŁ' },
       { name: 'KORONA PORCELANOWA NA IMPLANCIE', price: 'OD 3500 ZŁ' },
     ]
@@ -72,8 +72,7 @@ const categories = [
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 2 KANAŁÓW*', price: '1100 ZŁ' },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 3 KANAŁÓW*', price: '1500 ZŁ' },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPEŁNIENIEM 4 KANAŁÓW*', price: '1800 ZŁ' },
-      { name: 'POWTÓRNE LECZENIE KANAŁOWE', price: '+100 ZŁ / 1 KANAŁ' },
-      // a revoir le dernier
+      { name: 'POWTÓRNE LECZENIE KANAŁOWE', price: '+200 ZŁ / 1 KANAŁ' },
     ]
   },
   {

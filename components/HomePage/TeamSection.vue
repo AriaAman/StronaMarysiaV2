@@ -22,7 +22,7 @@
                     <div class="doctor-image-container">
                         <img :src="doctor.image" :alt="doctor.name" class="doctor-image">
                     </div>
-                    <div class="doctor-title">LEKARZ STOMATOLOG</div>
+                    <div class="doctor-title">{{ doctor.title }}</div>
                     <h3 class="doctor-name">{{ doctor.name }}</h3>
                     <p class="doctor-description">{{ doctor.description }}</p>
 
@@ -41,18 +41,21 @@
 <script setup>
 const doctors = [
     {
+        title: 'LEKARZ STOMATOLOG',
         name: 'Piotr Pietruszczak',
         image: '/static/HomePage/piotr.png',
         description: 'Doświadczony implantolog, protetyk i endodonta, właściciel gabinetu PIETRUSZCZAK STOMATOLOGIA od 9 lat. Posiada tytuł „Expert in Oral Implantology”nadany przez Niemieckie Towarzystwo Implantologii Stomatologicznej DGOI. Posiada certyfikat PSI/ICOI/ICOI Europe. Członek Polskiego Stowarzyszenia Implantologicznego PSI. Łączy nowoczesne technologie z precyzyjną diagnostyką, dbając o zdrowy i piękny uśmiech pacjentów...',
         specialties: ['implantologia', 'stomatologia', 'endodoncja', 'protetyka', 'DIAGNOSTYKA',]
     },
     {
+        title: 'LEKARZ STOMATOLOG',
         name: 'Agnieszka Rutkowska',
         image: '/static/HomePage/Agnieszka2.png',
         description: 'Absolwentka Akademii Medycznej w Gdańsku, specjalizuje się w stomatologii zachowawczej i dziecięcej. Łączy skuteczność z delikatnością, otaczając szczególną opieką pacjentów z dentofobią. W trakcie szkolenia z Ortotropii. Jest osobą cierpliwą i uśmiechniętą, dzięki czemu łatwo nawiązuje kontakt z Pacjentami w każdym wieku. Szczególną opieką otacza pacjentów z problemem dentofobii...',
         specialties: ['STOMATOLOGIA', 'STOMATOLOGIA DZIECIĘCA','endodoncja', 'Diagnostyka', 'protetyk']
     },
     {
+        title: 'HIGIENISTKA STOMATOLOGICZNA',
         name: 'Amanda Duszak',
         image: '/static/HomePage/Amanda2.png',
         description: 'Jest dyplomowaną higienistką stomatologiczną, która z pasją dba o zdrowie i piękny uśmiech swoich pacjentów. Stale poszerza swoją wiedzę, uczestnicząc w licznych kursach i szkoleniach, dzięki czemu nieustannie doskonali swoje umiejętności. W gabinecie specjalizuje się w profilaktyce chorób przyzębia, wykonując profesjonalne zabiegi skalingu, piaskowania i fluoryzacji...',

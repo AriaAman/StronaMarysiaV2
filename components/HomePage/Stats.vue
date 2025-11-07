@@ -4,7 +4,7 @@
     <div class="container">
       <div class="stat-item">
         <div class="stat-label">Z NAMI OD 2016</div>
-        <div class="stat-value">14 lat</div>
+        <div class="stat-value">15 lat</div>
       </div>
 
       <div class="stat-item">
@@ -19,10 +19,6 @@
     </div>
   </section>
 </template>
-
-<script setup>
-// Pas de logique spécifique nécessaire pour ce composant statique
-</script>
 
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/satoshi?styles=135009');
