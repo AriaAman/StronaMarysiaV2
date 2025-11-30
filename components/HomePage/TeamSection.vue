@@ -20,7 +20,7 @@
 
                 <div class="doctor-info">
                     <div class="doctor-image-container">
-                        <img :src="doctor.image" :alt="doctor.name" class="doctor-image">
+                        <img :src="doctor.image" :alt="`${doctor.name} - ${doctor.title} - Gabinet stomatologiczny Olsztyn`" class="doctor-image">
                     </div>
                     <div class="doctor-title">{{ doctor.title }}</div>
                     <h3 class="doctor-name">{{ doctor.name }}</h3>

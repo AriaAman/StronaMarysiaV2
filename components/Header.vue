@@ -5,7 +5,7 @@
                 <NuxtLink to="/">
                     <img
                         src="/static/header/logoPiotr.svg"
-                        alt="Cabinet Dentaire Dr. Pietruszczak - Logo"
+                        alt="Pietruszczak Stomatologia - Gabinet dentystyczny Olsztyn"
                         width="200"
                         height="60"
                         loading="eager"
@@ -41,7 +41,7 @@
                     <div class="mobile-logo">
                         <img
                             src="/static/header/logoPiotr.svg"
-                            alt="Cabinet Dentaire Dr. Pietruszczak - Logo Mobile"
+                            alt="Pietruszczak Stomatologia - Dentysta Olsztyn"
                             width="150"
                             height="45"
                             loading="eager"

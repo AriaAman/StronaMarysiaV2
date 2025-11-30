@@ -6,7 +6,7 @@
           <NuxtImg
             v-if="photoSrc"
             :src="photoSrc"
-            :alt="`${name} - ${title} - Cabinet Dentaire Dr. Pietruszczak`"
+            :alt="`${name} - ${title} - Gabinet stomatologiczny Olsztyn`"
             loading="lazy"
           />
         </div>

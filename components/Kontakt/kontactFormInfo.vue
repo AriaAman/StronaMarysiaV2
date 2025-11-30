@@ -4,7 +4,7 @@
       <div class="contact-bg-title">KONTAKT</div>
       <!-- Bloc gauche : Infos cabinet avec image HTML -->
       <div class="contact-info">
-        <NuxtImg src="/static/kontakt/imageKontakt.png" alt="photo cabinet" class="contact-info__image" loading="lazy" />
+        <NuxtImg src="/static/kontakt/imageKontakt.png" alt="Gabinet stomatologiczny Pietruszczak - Wnętrze kliniki Olsztyn" class="contact-info__image" loading="lazy" />
         <div class="contact-info__card">
           <h3 class="contact-info__title">Jesteśmy do Twojej dyspozycji.</h3>
           <p class="contact-info__subtitle">
@@ -21,7 +21,7 @@
                  Stawigudzka 8c/e<br /><br />
                 10-687 Olsztyn
               </address>
-              <a href="https://goo.gl/maps/..." target="_blank" class="contact-info__map-link">
+              <a href="#mapa" @click.prevent="scrollToMap" class="contact-info__map-link">
                 WSKAZÓWKI DOJAZDU (MAPA)
               </a>
             </div>
@@ -142,6 +142,14 @@
 
 <script setup>
 import { ref } from 'vue';
+
+// Fonction pour scroller vers la carte
+const scrollToMap = () => {
+  const mapElement = document.getElementById('mapa')
+  if (mapElement) {
+    mapElement.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
 // État du formulaire
 const formData = ref({

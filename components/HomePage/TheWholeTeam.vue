@@ -4,7 +4,7 @@
       <div class="team-background">
         <NuxtImg
           src="/static/HomePage/SectionOnasHomePage.png"
-          alt="Background"
+          alt="Gabinet stomatologiczny Pietruszczak - Wnętrze kliniki"
           preset="background"
           width="1920"
           height="1080"
@@ -16,7 +16,7 @@
         <div class="team-image-frame">
           <NuxtImg
             src="/static/HomePage/TheWholeTeamHomepage.png"
-            alt="Zespół stomatologiczny"
+            alt="Zespół stomatologiczny Pietruszczak Olsztyn - Lekarze dentyści i specjaliści"
             class="team-image"
             preset="background"
             width="960"

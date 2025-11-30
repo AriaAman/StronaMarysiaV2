@@ -3,7 +3,7 @@
         <div class="background-image">
             <NuxtImg
                 src="/static/HomePage/FirstImageHomepage.jpg"
-                alt="Background"
+                alt="Gabinet stomatologiczny Olsztyn - Nowoczesna klinika dentystyczna"
                 loading="eager"
                 preset="hero"
                 width="1920"
@@ -38,7 +38,7 @@
         <div class="logo-circle">
             <img
                 src="/static/HomePage/LogoCircleHomepage.svg"
-                alt="Pietruszczak Logo"
+                alt="Pietruszczak Stomatologia - Logo gabinetu dentystycznego Olsztyn"
                 loading="lazy"
                 width="142"
                 height="142"

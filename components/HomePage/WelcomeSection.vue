@@ -13,7 +13,7 @@
                     <!-- Première carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <img src="/static/HomePage/DentVector.svg" alt="Nowoczesna stomatologia" width="30" height="34" loading="lazy" />
+                            <img src="/static/HomePage/DentVector.svg" alt="Ikona zęba - Nowoczesna stomatologia Olsztyn" width="30" height="34" loading="lazy" />
                         </div>
                         <h3 class="card-title">Nowoczesna stomatologia dla wymagających</h3>
                         <p class="card-text">
@@ -24,7 +24,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <img src="/static/HomePage/PiotrWrapper.svg" alt="Piotr Pietruszczak" width="60" height="60" loading="lazy" />
+                                <img src="/static/HomePage/PiotrWrapper.svg" alt="Dr Piotr Pietruszczak - Stomatolog implantolog Olsztyn" width="60" height="60" loading="lazy" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">PIOTR PIETRUSZCZAK</h4>
@@ -36,7 +36,7 @@
                     <!-- Troisième carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <img src="/static/HomePage/DentVector.svg" alt="Wsparcie" width="30" height="34" loading="lazy" />
+                            <img src="/static/HomePage/DentVector.svg" alt="Ikona zęba - Opieka stomatologiczna" width="30" height="34" loading="lazy" />
                         </div>
                         <h3 class="card-title">Wsparcie w każdej sytuacji</h3>
                         <p class="card-text">
@@ -46,7 +46,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <img src="/static/HomePage/AmandaWrapper.svg" alt="Amanda Duszak" width="60" height="60" loading="lazy" />
+                                <img src="/static/HomePage/AmandaWrapper.svg" alt="Amanda Duszak - Higienistka stomatologiczna Olsztyn" width="60" height="60" loading="lazy" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">AMANDA DUSZAK</h4>
@@ -58,7 +58,7 @@
                     <!-- Boutons -->
                     <div class="action-buttons">
                         <!-- <a href="/reservation" class="primary-button">REZERWACJA ONLINE</a> -->
-                        <NuxtLink to="/kontakt" class="secondary-button">
+                        <NuxtLink to="/kontakt#mapa" class="secondary-button" @click="scrollToMapOnContact">
                             <span class="button-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#BC9667"
                                     class="bi bi-arrow-right-short" viewBox="0 0 16 16">
@@ -89,7 +89,7 @@
                             zdrowia i samopoczucie.
                         </p>
                         <div class="patient-image">
-                            <NuxtImg src="/static/HomePage/OlekAvecDame.jpg" alt="Patient with doctor" loading="lazy" />
+                            <NuxtImg src="/static/HomePage/OlekAvecDame.jpg" alt="Stomatolog z pacjentką - Gabinet dentystyczny Olsztyn" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,16 @@
 </template>
 
 <script setup>
-// Aucune logique spécifique nécessaire
+const router = useRouter()
+
+const scrollToMapOnContact = () => {
+  setTimeout(() => {
+    const mapElement = document.getElementById('mapa')
+    if (mapElement) {
+      mapElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, 500)
+}
 </script>
 
 <style scoped>

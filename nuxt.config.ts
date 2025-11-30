@@ -5,8 +5,31 @@ export default defineNuxtConfig({
 
   // Modules
   modules: [
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
+
+  // Configuration du site (utilisé par sitemap et robots)
+  site: {
+    url: 'https://pietruszczak.pl',
+    name: 'Pietruszczak Stomatologia',
+  },
+
+  // Configuration du sitemap
+  sitemap: {
+    // Exclure les pages non pertinentes
+    exclude: [
+      '/reservation/success'
+    ],
+  },
+
+  // Configuration de robots.txt
+  robots: {
+    // Bloquer les dossiers techniques
+    disallow: ['/api/', '/_nuxt/', '/server/'],
+    // Le sitemap est automatiquement ajouté
+  },
 
   // Configuration de l'optimisation d'images
   image: {

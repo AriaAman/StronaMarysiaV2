@@ -22,7 +22,7 @@
 
         <!-- Image principale -->
         <div class="main-image-container">
-          <img :src="mainImage" alt="Lekarz z pacjentem" class="main-image" />
+          <img :src="mainImage" alt="Stomatolog Olsztyn - Lekarz dentysta podczas konsultacji z pacjentem" class="main-image" />
         </div>
 
         <!-- Table de services alignée comme la maquette -->

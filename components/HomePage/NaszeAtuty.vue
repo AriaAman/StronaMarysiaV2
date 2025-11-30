@@ -5,7 +5,7 @@
           <p class="subheading">najwyższy standard opieki</p>
           <h2 class="title">
             Nasze atuty
-            <span class="title-italic">- spoznaj nas bliżej</span>
+            <span class="title-italic">- poznaj nas bliżej</span>
           </h2>
           <p class="description">
            Łączymy doświadczenie, nowoczesne technologie i szeroki zakres usług, aby zapewnić Ci kompleksową opiekę na najwyższym poziomie.

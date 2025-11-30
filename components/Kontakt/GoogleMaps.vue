@@ -1,5 +1,5 @@
 <template>
-    <div id="map" class="map-container"></div>
+    <div id="mapa" class="map-container"></div>
 </template>
 
 <script setup>
@@ -13,7 +13,7 @@ onMounted(async () => {
   const L = await import('leaflet');
   await import('leaflet/dist/leaflet.css');
 
-  const map = L.map('map').setView([53.72497, 20.47331], 17); // Coordinates for Stawigudzka 8c/c, Olsztyn
+  const map = L.map('mapa').setView([53.72497, 20.47331], 17); // Coordinates for Stawigudzka 8c/c, Olsztyn
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -30,6 +30,7 @@ onMounted(async () => {
   height: 400px;
   width: 100%;
   box-sizing: border-box;
+  scroll-margin-top: 100px;
 }
 
 /* Desktop large (1441px+) */

@@ -18,7 +18,7 @@ Bezbolesne leczenie, implanty, wybielanie zębów, ortodoncja i pełna diagnosty
         <button class="filter-btn" @click="$emit('select', cat.value)">
           <img 
             :src="cat.icon" 
-            :alt="cat.label" 
+            :alt="`${cat.label} - Usługi stomatologiczne Olsztyn`" 
             class="cat-icon" 
             width="18"
             height="18"
@@ -28,7 +28,7 @@ Bezbolesne leczenie, implanty, wybielanie zębów, ortodoncja i pełna diagnosty
 
           <img 
             src="/static/uslugi/arrow-down-right.png" 
-            alt="" 
+            alt="Przejdź do usługi" 
             class="arrow" 
             width="10"
             height="10"

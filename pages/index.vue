@@ -20,6 +20,13 @@ import NaszeAtuty from '~/components/HomePage/NaszeAtuty'
 import ServisDentaires from '~/components/HomePage/ServisDentaires.vue';
 import TeamSection from '~/components/HomePage/TeamSection.vue';
 import TheWholeTeam from '~/components/HomePage/TheWholeTeam.vue';
+
+useSeoMeta({
+  title: 'Piotr Pietruszczak - Stomatolog Olsztyn | Gabinet Dentystyczny',
+  ogTitle: 'Piotr Pietruszczak - Stomatolog Olsztyn | Gabinet Dentystyczny',
+  description: 'Nowoczesna praktyka stomatologiczna w Olsztynie. Implanty, leczenie kanałowe, protetyka, stomatologia estetyczna. Profesjonalna opieka dentystyczna w przyjaznej atmosferze.',
+  ogDescription: 'Nowoczesna praktyka stomatologiczna w Olsztynie. Implanty, leczenie kanałowe, protetyka, stomatologia estetyczna. Profesjonalna opieka dentystyczna w przyjaznej atmosferze.',
+})
 </script>
 
 <style scoped>

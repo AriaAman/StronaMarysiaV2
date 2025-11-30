@@ -4,7 +4,7 @@
         <div class="services-background">
             <NuxtImg
                 src="/static/HomePage/FondHomePageCat.png"
-                alt="Background pattern"
+                alt="Usługi stomatologiczne Olsztyn - Profesjonalna opieka dentystyczna"
                 preset="background"
                 width="1920"
                 height="1080"

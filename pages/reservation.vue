@@ -28,11 +28,11 @@
 </template>
 
 <script setup>
-useHead({
-  title: 'Rezerwacja online - Gabinet Dentystyczny',
-  meta: [
-    { name: 'description', content: 'Szybka i wygodna rezerwacja wizyty poprzez zewnętrzny kalendarz FELG.' }
-  ]
+useSeoMeta({
+  title: 'Rezerwacja online - Gabinet Dentystyczny Piotr Pietruszczak',
+  ogTitle: 'Rezerwacja online - Gabinet Dentystyczny Piotr Pietruszczak',
+  description: 'Zarezerwuj wizytę online w gabinecie dentystycznym Piotra Pietruszczaka w Olsztynie. Szybka i wygodna rezerwacja przez kalendarz online.',
+  ogDescription: 'Zarezerwuj wizytę online w gabinecie dentystycznym Piotra Pietruszczaka w Olsztynie. Szybka i wygodna rezerwacja przez kalendarz online.',
 })
 </script>
 

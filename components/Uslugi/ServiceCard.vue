@@ -1,7 +1,7 @@
 <template>
   <article class="card" :class="{ reverse: isReverse }">
     <figure class="visual">
-      <NuxtImg :src="service.image" :alt="service.caption" loading="lazy" />
+      <NuxtImg :src="service.image" :alt="`${service.caption} - Usługi stomatologiczne Olsztyn`" loading="lazy" />
     </figure>
 
     <div class="content">

@@ -5,7 +5,7 @@
         <div class="mobile-divider" aria-hidden="true"></div>
         <NuxtImg 
           src="/static/footer/logoPiotrFooter.svg" 
-          alt="Cabinet Dentaire Dr. Pietruszczak - Contact" 
+          alt="Pietruszczak Stomatologia Olsztyn - Kontakt i lokalizacja" 
           loading="lazy"
         />
         <div class="mobile-divider" aria-hidden="true"></div>
@@ -51,6 +51,7 @@
           </div>
         </div>
 
+        <!-- Blog section - masquée pour l'instant (pas de contenu)
         <div class="nav-column">
           <h5>Blog o zdrowiu</h5>
           <nav>
@@ -60,6 +61,7 @@
             <a href="#" class="a">BLOG POST</a>
           </nav>
         </div>
+        -->
 
         <div class="nav-column">
           <h5>Skontaktuj się z nami</h5>
@@ -72,7 +74,7 @@
               <a>Stawigudzka 8c/e,</a>
               <a>10-687 OLSZTYN</a>
             </address>
-            <p class="map-link"><a href="/kontakt">WSKAZÓWKI DOJAZDU (MAPA)</a></p>
+            <p class="map-link"><a href="/kontakt#mapa" @click.prevent="scrollToMap">WSKAZÓWKI DOJAZDU (MAPA)</a></p>
             <p class="mini-title">TAGI:</p>
             <div class="footer-tags">
               <span class="footer-tag">STOMATOLOGIA OLSZTYN</span>
@@ -109,6 +111,28 @@ export default {
         top: 0,
         behavior: 'smooth'
       })
+    },
+    scrollToMap(event) {
+      const router = useRouter()
+      const route = useRoute()
+      
+      // Si on est déjà sur /kontakt, scroll directement
+      if (route.path === '/kontakt') {
+        const mapElement = document.getElementById('mapa')
+        if (mapElement) {
+          mapElement.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        // Sinon, naviguer vers /kontakt puis scroll
+        router.push('/kontakt').then(() => {
+          setTimeout(() => {
+            const mapElement = document.getElementById('mapa')
+            if (mapElement) {
+              mapElement.scrollIntoView({ behavior: 'smooth' })
+            }
+          }, 300)
+        })
+      }
     }
   }
 }
