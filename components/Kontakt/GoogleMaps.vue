@@ -20,7 +20,7 @@ onMounted(async () => {
   }).addTo(map);
 
   L.marker([53.72497, 20.47331]).addTo(map)
-    .bindPopup('Stommatologia Implantologia<br>Stawigudzka 8c/e, 10-687 Olsztyn')
+    .bindPopup('Stomatologia Implantologia<br>Stawigudzka 8c/e, 10-687 Olsztyn')
     .openPopup();
 });
 </script>

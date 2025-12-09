@@ -161,6 +161,11 @@ export default defineNuxtConfig({
   // Configuration SSR
   ssr: true,
 
+  // Règles d'indexation explicites
+  routeRules: {
+    '/**': { robots: 'index, follow' },
+  },
+
   // Configuration de l'application
   app: {
     head: {
