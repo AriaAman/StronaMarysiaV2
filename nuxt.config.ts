@@ -33,8 +33,8 @@ export default defineNuxtConfig({
 
   // Configuration de l'optimisation d'images
   image: {
-    // Provider Vercel pour optimisation automatique en production
-    provider: 'vercel',
+    // Provider Vercel en production, ipx en développement (évite les warnings)
+    provider: process.env.NODE_ENV === 'production' ? 'vercel' : 'ipx',
 
     // Optimisation pour site médical/dentaire
     quality: 80,
@@ -177,7 +177,15 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Nowoczesna praktyka stomatologiczna w Olsztynie. Specjaliści stomatologii i implantologii. Piotr Pietruszczak.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+        // Preconnect pour accélérer le chargement des polices
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'preconnect', href: 'https://fonts.cdnfonts.com' },
+        // Polices centralisées (identiques à la prod)
+        { rel: 'stylesheet', href: 'https://fonts.cdnfonts.com/css/satoshi' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Aboreto&family=Yesteryear&display=swap' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Aboreto&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Yesteryear&display=swap' }
       ]
     }
   },

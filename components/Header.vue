@@ -117,8 +117,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Yesteryear&display=swap');
-@import url('https://fonts.cdnfonts.com/css/satoshi?styles=135009');
+/* Polices centralisées dans nuxt.config.ts */
 header {
     width: 100%;
     background-color: #fff;

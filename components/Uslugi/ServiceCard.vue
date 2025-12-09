@@ -30,7 +30,7 @@ const idxStr = computed(() =>
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500&family=Merriweather:ital,wght@1,300&family=Aboreto&display=swap');
+/* Polices centralisées dans nuxt.config.ts */
 
 .description ul,
 .description ul li,

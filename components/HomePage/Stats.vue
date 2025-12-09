@@ -21,7 +21,7 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.cdnfonts.com/css/satoshi?styles=135009');
+/* Polices centralisées dans nuxt.config.ts */
 
 .stats-section {
   width: 100%;

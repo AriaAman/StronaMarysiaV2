@@ -10,8 +10,6 @@
         <NuxtImg 
           src="/static/kontakt/imageGabinetLocation.png" 
           alt="Mapa parkingu - Lokalizacja gabinetu stomatologicznego Dr. Pietruszczak"
-          width="720"
-          height="450"
           loading="lazy"
         />
       </div>
@@ -23,7 +21,7 @@
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700&display=swap');
+/* Polices centralisées dans nuxt.config.ts */
 
 .parking-section {
   width: 100%;

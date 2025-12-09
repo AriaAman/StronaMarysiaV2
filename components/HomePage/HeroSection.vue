@@ -48,7 +48,7 @@
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Satoshi:wght@300;400;500;700&display=swap');
+/* Polices centralisées dans nuxt.config.ts */
 
 .hero-section {
     position: relative;

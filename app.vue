@@ -12,9 +12,7 @@
 import ServicesBanner from './components/Uslugi/ServicesBanner.vue';
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Yesteryear&display=swap');
-@import url('https://fonts.cdnfonts.com/css/satoshi');
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Yesteryear&display=swap');
+/* Polices centralisées dans nuxt.config.ts */
 
 body {
   margin: 0;

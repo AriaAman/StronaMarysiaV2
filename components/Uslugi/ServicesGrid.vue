@@ -65,8 +65,7 @@ const services = [
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+/* Polices centralisées dans nuxt.config.ts */
 
 .services-grid-section {
   padding: 80px 0;
