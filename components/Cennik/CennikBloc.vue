@@ -125,7 +125,6 @@ const categories = [
     description: 'Piękny uśmiech dzięki wybielaniu i nowoczesnym licówkom.',
     services: [
       { name: 'Wybielanie nakładkowe', price: '1200 zł' },
-      { name: 'Wybielanie laserowe BIOLASE EPIC X (jedna wizyta w gabinecie)', price: '1400 zł' },
     ]
   },
   {
