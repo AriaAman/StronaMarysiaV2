@@ -213,7 +213,7 @@ export default {
 
 .footer-nav {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 3vw, 32px);
 }
 

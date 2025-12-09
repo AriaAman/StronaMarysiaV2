@@ -169,6 +169,7 @@ export default defineNuxtConfig({
   // Configuration de l'application
   app: {
     head: {
+      htmlAttrs: { lang: 'pl' },
       title: 'Pietruszczak',
       meta: [
         { charset: 'utf-8' },
