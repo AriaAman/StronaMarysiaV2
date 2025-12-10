@@ -3,6 +3,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
+  // Configuration du head pour SEO et vérifications
+  app: {
+    head: {
+      meta: [
+        { name: 'google-site-verification', content: '6IyiuZ--CvhtZamM6Gtv5M4Xf8iMWSqZVteGIhSnKcA' }
+      ]
+    }
+  },
+
   // Modules
   modules: [
     '@nuxt/image',
