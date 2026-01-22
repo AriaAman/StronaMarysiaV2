@@ -3,7 +3,7 @@
   <section class="stats-section">
     <div class="container">
       <div class="stat-item">
-        <div class="stat-label">Z NAMI OD 2016</div>
+        <div class="stat-label">Z NAMI OD 2011</div>
         <div class="stat-value">15 lat</div>
       </div>
 
