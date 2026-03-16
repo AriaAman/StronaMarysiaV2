@@ -124,7 +124,8 @@ const categories = [
     title: 'STOMATOLOGIA ESTETYCZNA',
     description: 'Piękny uśmiech dzięki wybielaniu i nowoczesnym licówkom.',
     services: [
-      { name: 'Wybielanie nakładkowe', price: '1200 zł' },
+      { name: 'Wybielanie nakładkowe (z szynami indywidualnymi)', price: '1200 zł' },
+      { name: 'Wybielanie gabinetowe z regeneracją szkliwa metodą PREVDENT', price: '1600 zł' },
     ]
   },
   {
