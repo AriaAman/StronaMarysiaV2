@@ -116,7 +116,8 @@ const categories = [
       { name: 'EKSTRAKCJA ZĘBA WIELOKORZENIOWEGO', price: '400 ZŁ' },
       { name: 'EKSTRAKCJA ÓSEMKI', price: '600 ZŁ' },
       { name: 'EKSTRAKCJA ZĘBA MLECZNEGO', price: '200-300 ZŁ' },
-      { name: 'EKSTRAKCJA ZĘBA ZATRZYMANEGO', price: '1500 ZŁ' },
+      { name: 'USUNIĘCIE ZĘBA ZATRZYMANEGO', price: '400-600 ZŁ' },
+      { name: 'EKSTRAKCJA ZĘBA ZATRZYMANEGO', price: '1000-1500 ZŁ' },
       { name: 'PODCIĘCIE CHIRURGICZNE WĘDZIDEŁKA (WARGI, JĘZYKA)', price: '400 ZŁ' }
     ]
   },
