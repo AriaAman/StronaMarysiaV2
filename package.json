@@ -1,32 +1,22 @@
 {
-  "name": "nuxt-app",
+  "name": "pietruszczak-monorepo",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+  "engines": {
+    "node": ">=20.19.0"
   },
-  "dependencies": {
-    "@fullcalendar/core": "^6.1.19",
-    "@fullcalendar/daygrid": "^6.1.19",
-    "@fullcalendar/interaction": "^6.1.19",
-    "@fullcalendar/timegrid": "^6.1.19",
-    "@fullcalendar/vue3": "^6.1.19",
-    "@nuxt/image": "^1.11.0",
-    "@nuxtjs/robots": "^5.5.6",
-    "@nuxtjs/sitemap": "^7.4.7",
-    "axios": "^1.11.0",
-    "bootstrap-icons": "^1.13.1",
-    "dompurify": "^3.3.0",
-    "jsdom": "^27.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "leaflet": "^1.9.4",
-    "nuxt": "^3.17.2",
-    "resend": "^6.2.2",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.1"
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @pietruszczak/site",
+    "dev": "npm run dev --workspace @pietruszczak/site",
+    "generate": "npm run generate --workspace @pietruszczak/site",
+    "preview": "npm run preview --workspace @pietruszczak/site",
+    "site:build": "npm run build --workspace @pietruszczak/site",
+    "site:dev": "npm run dev --workspace @pietruszczak/site",
+    "admin:build": "npm run build --workspace @pietruszczak/admin",
+    "admin:dev": "npm run dev --workspace @pietruszczak/admin"
   }
 }

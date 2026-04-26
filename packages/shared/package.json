@@ -1,0 +1,9 @@
+{
+  "name": "@pietruszczak/shared",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./prices": "./src/prices.ts",
+    "./types": "./src/types.ts"
+  }
+}

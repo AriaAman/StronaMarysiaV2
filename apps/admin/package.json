@@ -1,0 +1,22 @@
+{
+  "name": "@pietruszczak/admin",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 3001",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview --port 3001",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@pietruszczak/shared": "*",
+    "@supabase/supabase-js": "^2.87.1",
+    "nuxt": "^4.4.2",
+    "vue": "^3.5.33",
+    "vue-router": "^4.6.3"
+  }
+}

@@ -1,75 +1,36 @@
-# StronaMarysiaV2
+# Pietruszczak monorepo
 
-Nuxt 3 website for the dental practice. The online reservation now uses the embedded FELG calendar.
+## Apps
 
-## Setup
+- `apps/site`: public Nuxt site.
+- `apps/admin`: admin panel for `admin.pietruszczak.pl`.
+- `packages/shared`: shared types and fallback price data.
+- `supabase/migrations`: SQL to run in Supabase.
 
-Make sure to install dependencies:
+## Local commands
+
+Use Node `20.19+`.
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm run site:dev
+npm run admin:dev
+npm run site:build
+npm run admin:build
 ```
 
-## Development Server
+## Supabase setup
 
-Start the development server on `http://localhost:3000`:
+Run `supabase/migrations/202604260001_prices_v1.sql` in the Supabase SQL Editor.
 
-```bash
-# npm
-npm run dev
+The first admin email is:
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+```txt
+ariaaman@outlook.fr
 ```
 
-## Production
+The admin app uses magic-link login. In Supabase Auth, add the deployed admin URL to the allowed redirect URLs when deploying:
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```txt
+https://admin.pietruszczak.pl
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
