@@ -69,6 +69,9 @@
             <p class="mini-title">TELEFON:</p>
             <a href="tel:+48503529023">+48 503 529 023</a>
 
+            <p class="mini-title">EMAIL:</p>
+            <a href="mailto:kontakt@pietruszczak.pl">kontakt@pietruszczak.pl</a>
+
             <p class="mini-title">ADRES:</p>
             <address>
               <a>Stawigudzka 8c/e,</a>

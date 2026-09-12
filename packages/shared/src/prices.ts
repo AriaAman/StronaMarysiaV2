@@ -8,7 +8,8 @@ export const fallbackPriceCategories: PriceCategory[] = [
     is_active: true,
     services: [
       { name: 'KONSULTACJA/BADANIE STOMATOLOGICZNE', price: '200 zł', sort_order: 1, is_active: true },
-      { name: 'KONSULTACJA/BADANIE STOMATOLOGICZNE + PANTOMOGRAM', price: '300 zł', sort_order: 2, is_active: true }
+      { name: 'KONSULTACJA/BADANIE STOMATOLOGICZNE + PANTOMOGRAM', price: '300 zł', sort_order: 2, is_active: true },
+      { name: 'KONSULTACJA IMPLANTOLOGICZNA', price: '300 ZL', sort_order: 3, is_active: true }
     ]
   },
   {
@@ -42,13 +43,13 @@ export const fallbackPriceCategories: PriceCategory[] = [
     sort_order: 4,
     is_active: true,
     services: [
-      { name: 'WSZCZEPIENIE IMPLANTU', price: '3500 zl', sort_order: 1, is_active: true },
+      { name: 'WSZCZEPIENIE IMPLANTU', price: '3.700 ZL', sort_order: 1, is_active: true },
       { name: 'ODSLONIECIE IMPLANTU I ZALOZENIE SRUBY GOJACEJ', price: '300 ZL', sort_order: 2, is_active: true },
       { name: 'PRACE IMPLANTOLOGICZNE ZLOZONE WYCENIANE SA INDYWIDUALNIE', price: '', sort_order: 3, is_active: true },
       { name: 'KORONA TYMCZASOWA NA LACZNIKU TYTANOWYM', price: '800 ZL', sort_order: 4, is_active: true },
-      { name: 'SZABLON IMPLANTOLOGICZNY', price: '1200 ZL', sort_order: 5, is_active: true },
+      { name: 'SZABLON IMPLANTOLOGICZNY', price: '1300 ZL', sort_order: 5, is_active: true },
       { name: 'PODNIESIENIE DNA ZATOKI SZCZEKOWEJ (SINUS LIFT)', price: '2500 ZL', sort_order: 6, is_active: true },
-      { name: 'KORONA PORCELANOWA NA IMPLANCIE', price: 'OD 3500 ZL', sort_order: 7, is_active: true }
+      { name: 'KORONA CYRKONOWA NA IMPLANCIE', price: '3.700 ZL', sort_order: 7, is_active: true }
     ]
   },
   {
@@ -63,7 +64,8 @@ export const fallbackPriceCategories: PriceCategory[] = [
       { name: 'LECZENIE ENDODONTYCZNE Z WYPELNIENIEM 2 KANALOW*', price: '1100 ZL', sort_order: 4, is_active: true },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPELNIENIEM 3 KANALOW*', price: '1500 ZL', sort_order: 5, is_active: true },
       { name: 'LECZENIE ENDODONTYCZNE Z WYPELNIENIEM 4 KANALOW*', price: '1800 ZL', sort_order: 6, is_active: true },
-      { name: 'POWTORNE LECZENIE KANALOWE', price: '+200 ZL / 1 KANAL', sort_order: 7, is_active: true }
+      { name: 'POWTORNE LECZENIE KANALOWE', price: '+200 ZL / 1 KANAL', sort_order: 7, is_active: true },
+      { name: 'WYMIANA OPATRUNKU', price: '300 ZL', sort_order: 8, is_active: true }
     ]
   },
   {
@@ -75,7 +77,7 @@ export const fallbackPriceCategories: PriceCategory[] = [
       { name: 'WAX UP (1PUNKT)', price: '150ZL', sort_order: 1, is_active: true },
       { name: 'DOSTAWIENIE ZEBA DO PROTEZY', price: '200 ZL', sort_order: 2, is_active: true },
       { name: 'POWTORNE ZACEMENTOWANIE KORONY/MOSTU (1 PUNKT)', price: '400 ZL', sort_order: 3, is_active: true },
-      { name: 'WKLAD KORONOWO-KORZENIOWY JEDNOCZESCIOWY CHROMO-KOBALT', price: '450 ZL', sort_order: 4, is_active: true },
+      { name: 'WKLAD KORONOWO-KORZENIOWY JEDNOCZESCIOWY CHROMO-KOBALT', price: '500 ZL', sort_order: 4, is_active: true },
       { name: 'WKLAD KORONOWO-KORZENIOWY ZLOZONY CHROMO-KOBALT', price: '600 ZL', sort_order: 5, is_active: true },
       { name: 'SZYNA RELAKSACYJNA', price: '800 ZL', sort_order: 6, is_active: true },
       { name: 'SZYNA DLA SPORTOWCOW', price: '800 ZL', sort_order: 7, is_active: true },
@@ -83,10 +85,10 @@ export const fallbackPriceCategories: PriceCategory[] = [
       { name: 'KORONA PELNOCERAMICZNA/CYRKONOWA', price: '2500 ZL', sort_order: 9, is_active: true },
       { name: 'KORONA TYMCZASOWA', price: 'W CENIE USLUGI', sort_order: 10, is_active: true },
       { name: 'LICOWKA PORCELANOWA', price: '2500 ZL', sort_order: 11, is_active: true },
-      { name: 'PROTEZA SZKIELETOWA', price: '3500 ZL', sort_order: 12, is_active: true },
+      { name: 'PROTEZA SZKIELETOWA', price: '4.000 ZL', sort_order: 12, is_active: true },
       { name: 'PROTEZA BEZKLAMROWA', price: 'WYCENA INDYWIDUALNA', sort_order: 13, is_active: true },
-      { name: 'PROTEZA AKRYLOWA', price: '2000 ZL', sort_order: 14, is_active: true },
-      { name: 'PROTEZA AKRONOWA', price: '3000 ZL', sort_order: 15, is_active: true }
+      { name: 'PROTEZA AKRYLOWA', price: '2.500 ZL', sort_order: 14, is_active: true },
+      { name: 'PROTEZA AKRONOWA', price: '3.500 ZL', sort_order: 15, is_active: true }
     ]
   },
   {
@@ -97,8 +99,10 @@ export const fallbackPriceCategories: PriceCategory[] = [
     services: [
       { name: 'ZNIECZULENIE KOMPUTEROWE DENTAPEN', price: 'Bezplatnie', sort_order: 1, is_active: true },
       { name: 'WYPELNIENIA TYMCZASOWE', price: '200 ZL', sort_order: 2, is_active: true },
-      { name: 'WYPELNIENIE ZEBA (W ZALEZNOSCI OD ROZLEGLOSCI UBYTKU)', price: '400-500 ZL', sort_order: 3, is_active: true },
-      { name: 'ODBUDOWA ZEBA NA WLOKNIE SZKLANYM', price: '600 ZL', sort_order: 4, is_active: true }
+      { name: 'WYPELNIENIE ZEBA (W ZALEZNOSCI OD ROZLEGLOSCI UBYTKU)', price: '400-600 ZL', sort_order: 3, is_active: true },
+      { name: 'ODBUDOWA ZEBA NA WLOKNIE SZKLANYM', price: '600 ZL', sort_order: 4, is_active: true },
+      { name: 'REKONSTRUKCJA ZEBA Z KOMPOZYTU', price: '800 ZL', sort_order: 5, is_active: true },
+      { name: 'LICOWKA KOMPOZYTOWA BEZPOSREDNIA', price: '700 ZL', sort_order: 6, is_active: true }
     ]
   },
   {
