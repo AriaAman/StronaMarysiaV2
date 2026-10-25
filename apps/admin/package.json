@@ -17,6 +17,7 @@
     "@supabase/supabase-js": "^2.87.1",
     "nuxt": "^4.4.2",
     "vue": "^3.5.33",
-    "vue-router": "^4.6.3"
+    "vue-router": "^4.6.3",
+    "xss": "^1.0.17"
   }
 }

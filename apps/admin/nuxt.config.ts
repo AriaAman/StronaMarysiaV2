@@ -16,12 +16,16 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      htmlAttrs: { lang: 'fr' },
-      title: 'Admin Pietruszczak',
+      htmlAttrs: { lang: 'pl' },
+      title: 'Panel strony · Pietruszczak',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'robots', content: 'noindex, nofollow' }
+      ],
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Aboreto&family=Inter:wght@400;500;600;700&display=swap' }
       ]
     }
   }

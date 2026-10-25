@@ -1,22 +1,22 @@
 <template>
-  <main class="auth-page">
-    <section class="auth-panel">
-      <p class="eyebrow">Pietruszczak Stomatologia</p>
+  <main class="ad-login-page">
+    <section class="ad-login-card">
+      <p class="ad-brand">PIETRUSZCZAK<small>Stomatologia · Panel strony</small></p>
       <h1>Logowanie do panelu</h1>
-      <p class="muted">Wpisz autoryzowany adres e-mail, aby otrzymać bezpieczny link logowania.</p>
+      <p class="ad-muted">Wpisz swój adres e-mail. Wyślemy na niego link: kliknij go, aby się zalogować. Bez hasła.</p>
 
-      <form class="form" @submit.prevent="sendLink">
-        <label>
-          Email
-          <input v-model.trim="email" type="email" required autocomplete="email" />
+      <form class="ad-stack" @submit.prevent="sendLink">
+        <label class="ad-field">
+          <span>Adres e-mail</span>
+          <input v-model.trim="email" class="ad-input" type="email" required autocomplete="email" placeholder="twoj@adres.pl">
         </label>
-        <button type="submit" :disabled="isLoading">
-          {{ isLoading ? 'Wysyłanie...' : 'Wyślij link' }}
+        <button type="submit" class="ad-btn ad-primary ad-wide" :disabled="isLoading">
+          {{ isLoading ? 'Wysyłanie…' : 'Wyślij link do logowania' }}
         </button>
       </form>
 
-      <p v-if="message" class="notice success">{{ message }}</p>
-      <p v-if="error" class="notice error">{{ error }}</p>
+      <p v-if="message" class="ad-ok-note" role="status">{{ message }}</p>
+      <p v-if="error" class="ad-banner" role="alert">{{ error }}</p>
     </section>
   </main>
 </template>
