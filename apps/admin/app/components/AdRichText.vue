@@ -1,30 +1,30 @@
 <template>
-  <div class="ad-rte">
-    <div class="ad-rte-bar" role="toolbar" aria-label="Formatowanie tekstu">
+  <div class="pp-rte">
+    <div class="pp-rte-bar" role="toolbar" aria-label="Formatowanie tekstu">
       <button type="button" title="Pogrubienie" aria-label="Pogrubienie" style="font-weight: 800" @mousedown.prevent @click="run('bold')">B</button>
       <button type="button" title="Kursywa" aria-label="Kursywa" style="font-style: italic" @mousedown.prevent @click="run('italic')">I</button>
       <button type="button" title="Lista" aria-label="Lista" @mousedown.prevent @click="run('insertUnorderedList')">• Lista</button>
       <button type="button" title="Link" aria-label="Link" @mousedown.prevent @click="openLink">Link</button>
       <button type="button" title="Usuń formatowanie" aria-label="Usuń formatowanie" @mousedown.prevent @click="run('removeFormat')">Wyczyść</button>
     </div>
-    <div v-if="linkOpen" class="ad-rte-link">
+    <div v-if="linkOpen" class="pp-rte-link">
       <input
         ref="linkInput"
         v-model="linkUrl"
-        class="ad-input"
+        class="pp-input"
         type="text"
         placeholder="https://… lub /kontakt"
         aria-label="Adres linku"
         @keydown.enter.prevent="addLink"
         @keydown.esc="linkOpen = false"
       >
-      <button type="button" class="ad-btn ad-primary" @click="addLink">Dodaj link</button>
-      <button type="button" class="ad-btn ad-secondary" @click="linkOpen = false">Anuluj</button>
+      <button type="button" class="pp-btn pp-primary" @click="addLink">Dodaj link</button>
+      <button type="button" class="pp-btn pp-secondary" @click="linkOpen = false">Anuluj</button>
     </div>
-    <p v-if="linkError" class="ad-err ad-rte-msg">{{ linkError }}</p>
+    <p v-if="linkError" class="pp-err pp-rte-msg">{{ linkError }}</p>
     <div
       ref="area"
-      class="ad-rte-area"
+      class="pp-rte-area"
       contenteditable="true"
       role="textbox"
       aria-multiline="true"

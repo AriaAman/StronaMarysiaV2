@@ -1,42 +1,42 @@
 <template>
-  <div class="ad-stack">
-    <p class="ad-muted">Kafelki na stronie Usługi, w tej kolejności. Kliknij „Edytuj”, aby zmienić nazwę lub opis.</p>
+  <div class="pp-stack">
+    <p class="pp-muted">Kafelki na stronie Usługi, w tej kolejności. Kliknij „Edytuj”, aby zmienić nazwę lub opis.</p>
 
-    <div class="ad-cards">
-      <article v-for="(service, index) in services" :key="service._key" class="ad-card" :class="{ 'ad-off': !service.is_active, 'ad-dirty': isChanged('services', service) }">
-        <div class="ad-thumb"><span class="ad-initials">{{ (service.caption || service.title || '?').slice(0, 2).toUpperCase() }}</span></div>
-        <div class="ad-card-body">
+    <div class="pp-cards">
+      <article v-for="(service, index) in services" :key="service._key" class="pp-card" :class="{ 'pp-off': !service.is_active, 'pp-dirty': isChanged('services', service) }">
+        <div class="pp-thumb"><span class="pp-initials">{{ (service.caption || service.title || '?').slice(0, 2).toUpperCase() }}</span></div>
+        <div class="pp-card-body">
           <b>{{ service.title || 'Nowa usługa' }}</b>
-          <span class="ad-muted">Na kafelku: {{ service.caption || '—' }}</span>
+          <span class="pp-muted">Na kafelku: {{ service.caption || '—' }}</span>
           <AdSwitch v-model="service.is_active" />
-          <div class="ad-row ad-between">
-            <button type="button" class="ad-btn ad-secondary" @click="editing = service"><AdIcon name="edit" /> Edytuj</button>
-            <div class="ad-row">
-              <button type="button" class="ad-icon-btn" title="Wcześniej" aria-label="Przesuń wcześniej" :disabled="index === 0" @click="move('services', services, index, index - 1)"><AdIcon name="up" /></button>
-              <button type="button" class="ad-icon-btn" title="Później" aria-label="Przesuń później" :disabled="index === services.length - 1" @click="move('services', services, index, index + 1)"><AdIcon name="down" /></button>
+          <div class="pp-row pp-between">
+            <button type="button" class="pp-btn pp-secondary" @click="editing = service"><AdIcon name="edit" /> Edytuj</button>
+            <div class="pp-row">
+              <button type="button" class="pp-icon-btn" title="Wcześniej" aria-label="Przesuń wcześniej" :disabled="index === 0" @click="move('services', services, index, index - 1)"><AdIcon name="up" /></button>
+              <button type="button" class="pp-icon-btn" title="Później" aria-label="Przesuń później" :disabled="index === services.length - 1" @click="move('services', services, index, index + 1)"><AdIcon name="down" /></button>
             </div>
           </div>
         </div>
       </article>
     </div>
 
-    <button type="button" class="ad-add ad-add-big" @click="addService"><AdIcon name="plus" /> Dodaj usługę</button>
+    <button type="button" class="pp-add pp-add-big" @click="addService"><AdIcon name="plus" /> Dodaj usługę</button>
 
     <AdDrawer :open="!!editing" :title="editing?.title || 'Nowa usługa'" @close="editing = null">
       <template v-if="editing">
-        <label class="ad-field"><span>Nazwa usługi</span><input v-model="editing.title" class="ad-input" type="text" placeholder="np. Implantologia dentystyczna"></label>
-        <label class="ad-field"><span>Krótka nazwa <small>(na kafelku)</small></span><input v-model="editing.caption" class="ad-input" type="text" placeholder="np. Implanty"></label>
-        <div class="ad-field"><span>Opis</span><AdRichText v-model="editing.description" label="Opis usługi" /></div>
-        <p class="ad-note">Zdjęcia usług: wkrótce. Na razie zdjęcie jest dobierane automatycznie do klucza usługi.</p>
-        <details class="ad-advanced">
+        <label class="pp-field"><span>Nazwa usługi</span><input v-model="editing.title" class="pp-input" type="text" placeholder="np. Implantologia dentystyczna"></label>
+        <label class="pp-field"><span>Krótka nazwa <small>(na kafelku)</small></span><input v-model="editing.caption" class="pp-input" type="text" placeholder="np. Implanty"></label>
+        <div class="pp-field"><span>Opis</span><AdRichText v-model="editing.description" label="Opis usługi" /></div>
+        <p class="pp-note">Zdjęcia usług: wkrótce. Na razie zdjęcie jest dobierane automatycznie do klucza usługi.</p>
+        <details class="pp-advanced">
           <summary>Ustawienia zaawansowane</summary>
-          <label class="ad-field">
+          <label class="pp-field">
             <span>Klucz usługi <small>(techniczny, bez spacji)</small></span>
-            <input v-model="editing.category" class="ad-input" type="text" placeholder="np. implanty">
+            <input v-model="editing.category" class="pp-input" type="text" placeholder="np. implanty">
           </label>
-          <p class="ad-note ad-warn">Zmiana klucza istniejącej usługi powoduje, że jej zdjęcie znika ze strony.</p>
+          <p class="pp-note pp-warn">Zmiana klucza istniejącej usługi powoduje, że jej zdjęcie znika ze strony.</p>
         </details>
-        <button type="button" class="ad-btn ad-danger-ghost" @click="removeService(editing)"><AdIcon name="trash" /> Usuń usługę</button>
+        <button type="button" class="pp-btn pp-danger-ghost" @click="removeService(editing)"><AdIcon name="trash" /> Usuń usługę</button>
       </template>
     </AdDrawer>
   </div>

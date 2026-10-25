@@ -1,16 +1,16 @@
 <template>
-  <div class="ad-price">
-    <select v-model="price.kind" class="ad-input" aria-label="Rodzaj ceny" @change="onKind">
+  <div class="pp-price">
+    <select v-model="price.kind" class="pp-input" aria-label="Rodzaj ceny" @change="onKind">
       <option value="kwota">Kwota</option>
       <option value="od">Od</option>
       <option value="zakres">Od–do</option>
       <option value="tekst">Tekst</option>
     </select>
-    <div class="ad-price-vals">
+    <div class="pp-price-vals">
       <template v-if="price.kind === 'tekst'">
         <input
           v-model="price.t"
-          class="ad-input"
+          class="pp-input"
           type="text"
           aria-label="Cena jako tekst"
           placeholder="np. Wycena indywidualna"
@@ -18,10 +18,10 @@
         >
       </template>
       <template v-else>
-        <span class="ad-money">
+        <span class="pp-money">
           <input
             :value="price.a ?? ''"
-            class="ad-input"
+            class="pp-input"
             type="text"
             inputmode="numeric"
             :aria-label="price.kind === 'zakres' ? 'Cena od' : 'Cena w złotych'"
@@ -31,10 +31,10 @@
         </span>
         <template v-if="price.kind === 'zakres'">
           <span aria-hidden="true">–</span>
-          <span class="ad-money">
+          <span class="pp-money">
             <input
               :value="price.b ?? ''"
-              class="ad-input"
+              class="pp-input"
               type="text"
               inputmode="numeric"
               aria-label="Cena do"
@@ -45,8 +45,8 @@
         </template>
       </template>
     </div>
-    <p class="ad-price-prev">
-      <span v-if="error" class="ad-err">{{ error }}</span>
+    <p class="pp-price-prev">
+      <span v-if="error" class="pp-err">{{ error }}</span>
       <template v-else>Na stronie: <b>{{ modelValue || '—' }}</b></template>
     </p>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <svg class="ad-icon-svg" viewBox="0 0 24 24" aria-hidden="true" v-html="paths[name]" />
+  <svg class="pp-icon-svg" viewBox="0 0 24 24" aria-hidden="true" v-html="paths[name]" />
 </template>
 
 <script setup lang="ts">
@@ -26,5 +26,5 @@ const paths: Record<string, string> = {
 </script>
 
 <style scoped>
-.ad-icon-svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pp-icon-svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 </style>

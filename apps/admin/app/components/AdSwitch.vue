@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    class="ad-switch"
+    class="pp-switch"
     role="switch"
     :aria-checked="modelValue"
     @click="emit('update:modelValue', !modelValue)"

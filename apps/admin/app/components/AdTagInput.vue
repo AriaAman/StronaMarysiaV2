@@ -1,6 +1,6 @@
 <template>
-  <div class="ad-tags" @click.self="input?.focus()">
-    <span v-for="(tag, index) in modelValue" :key="tag" class="ad-tag">
+  <div class="pp-tags" @click.self="input?.focus()">
+    <span v-for="(tag, index) in modelValue" :key="tag" class="pp-tag">
       {{ tag }}
       <button type="button" :aria-label="`Usuń ${tag}`" @click="removeAt(index)">×</button>
     </span>

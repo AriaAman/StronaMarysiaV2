@@ -1,18 +1,18 @@
 <template>
-  <div class="ad-stack">
-    <p class="ad-hello">Dzień dobry! Co chcesz dziś zmienić?</p>
+  <div class="pp-stack">
+    <p class="pp-hello">Dzień dobry! Co chcesz dziś zmienić?</p>
 
-    <div class="ad-shortcuts">
-      <NuxtLink v-for="card in cards" :key="card.to" :to="card.to" class="ad-shortcut">
+    <div class="pp-shortcuts">
+      <NuxtLink v-for="card in cards" :key="card.to" :to="card.to" class="pp-shortcut">
         <AdIcon :name="card.icon" />
         <b>{{ card.title }}</b>
         <span>{{ card.text }}</span>
       </NuxtLink>
     </div>
 
-    <section class="ad-panel">
-      <header class="ad-panel-head"><b>Jak to działa</b></header>
-      <ol class="ad-howto">
+    <section class="pp-panel">
+      <header class="pp-panel-head"><b>Jak to działa</b></header>
+      <ol class="pp-howto">
         <li>Zmieniasz teksty i ceny bezpośrednio w polach. Zmienione miejsca są podświetlone.</li>
         <li>Na dole licznik pokazuje, ile zmian czeka. Kliknij <b>„Zapisz zmiany”</b>, aby opublikować je na stronie.</li>
         <li>Usunięcie można cofnąć przyciskiem <b>„Cofnij”</b>, dopóki nie zapiszesz. <b>„Anuluj zmiany”</b> przywraca ostatnią zapisaną wersję.</li>

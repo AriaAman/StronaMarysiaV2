@@ -1,22 +1,22 @@
 <template>
-  <main class="ad-login-page">
-    <section class="ad-login-card">
-      <p class="ad-brand">PIETRUSZCZAK<small>Stomatologia · Panel strony</small></p>
+  <main class="pp-login-page">
+    <section class="pp-login-card">
+      <p class="pp-brand">PIETRUSZCZAK<small>Stomatologia · Panel strony</small></p>
       <h1>Logowanie do panelu</h1>
-      <p class="ad-muted">Wpisz swój adres e-mail. Wyślemy na niego link: kliknij go, aby się zalogować. Bez hasła.</p>
+      <p class="pp-muted">Wpisz swój adres e-mail. Wyślemy na niego link: kliknij go, aby się zalogować. Bez hasła.</p>
 
-      <form class="ad-stack" @submit.prevent="sendLink">
-        <label class="ad-field">
+      <form class="pp-stack" @submit.prevent="sendLink">
+        <label class="pp-field">
           <span>Adres e-mail</span>
-          <input v-model.trim="email" class="ad-input" type="email" required autocomplete="email" placeholder="twoj@adres.pl">
+          <input v-model.trim="email" class="pp-input" type="email" required autocomplete="email" placeholder="twoj@adres.pl">
         </label>
-        <button type="submit" class="ad-btn ad-primary ad-wide" :disabled="isLoading">
+        <button type="submit" class="pp-btn pp-primary pp-wide" :disabled="isLoading">
           {{ isLoading ? 'Wysyłanie…' : 'Wyślij link do logowania' }}
         </button>
       </form>
 
-      <p v-if="message" class="ad-ok-note" role="status">{{ message }}</p>
-      <p v-if="error" class="ad-banner" role="alert">{{ error }}</p>
+      <p v-if="message" class="pp-ok-note" role="status">{{ message }}</p>
+      <p v-if="error" class="pp-banner" role="alert">{{ error }}</p>
     </section>
   </main>
 </template>

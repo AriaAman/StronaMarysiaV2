@@ -1,27 +1,27 @@
 <template>
-  <div class="ad-stack">
-    <div class="ad-row ad-between">
-      <input v-model="query" class="ad-input ad-search" type="search" placeholder="Szukaj usługi…" aria-label="Szukaj usługi">
-      <span class="ad-muted">Przeciągnij ⠿, aby zmienić kolejność. Strzałki ↑↓ działają z klawiatury.</span>
+  <div class="pp-stack">
+    <div class="pp-row pp-between">
+      <input v-model="query" class="pp-input pp-search" type="search" placeholder="Szukaj usługi…" aria-label="Szukaj usługi">
+      <span class="pp-muted">Przeciągnij ⠿, aby zmienić kolejność. Strzałki ↑↓ działają z klawiatury.</span>
     </div>
 
     <section
       v-for="(category, catIndex) in categories"
       v-show="visibleCategory(category)"
       :key="category._key"
-      class="ad-panel"
-      :class="{ 'ad-off': !category.is_active }"
+      class="pp-panel"
+      :class="{ 'pp-off': !category.is_active }"
     >
-      <header class="ad-panel-head ad-cat-head">
-        <div class="ad-cat-fields">
-          <input v-model="category.title" class="ad-input ad-strong" type="text" aria-label="Nazwa kategorii" placeholder="Nazwa kategorii, np. PROTETYKA" :class="{ 'ad-dirty': isChanged('categories', category) }">
-          <input v-model="category.description" class="ad-input" type="text" aria-label="Opis kategorii" placeholder="Krótki opis pod nazwą kategorii" :class="{ 'ad-dirty': isChanged('categories', category) }">
+      <header class="pp-panel-head pp-cat-head">
+        <div class="pp-cat-fields">
+          <input v-model="category.title" class="pp-input pp-strong" type="text" aria-label="Nazwa kategorii" placeholder="Nazwa kategorii, np. PROTETYKA" :class="{ 'pp-dirty': isChanged('categories', category) }">
+          <input v-model="category.description" class="pp-input" type="text" aria-label="Opis kategorii" placeholder="Krótki opis pod nazwą kategorii" :class="{ 'pp-dirty': isChanged('categories', category) }">
         </div>
-        <div class="ad-row">
+        <div class="pp-row">
           <AdSwitch v-model="category.is_active" :labels="['Widoczna', 'Ukryta']" />
-          <button type="button" class="ad-icon-btn" title="Wyżej" aria-label="Przesuń kategorię wyżej" :disabled="catIndex === 0" @click="move('categories', categories, catIndex, catIndex - 1)"><AdIcon name="up" /></button>
-          <button type="button" class="ad-icon-btn" title="Niżej" aria-label="Przesuń kategorię niżej" :disabled="catIndex === categories.length - 1" @click="move('categories', categories, catIndex, catIndex + 1)"><AdIcon name="down" /></button>
-          <button type="button" class="ad-icon-btn" title="Usuń kategorię" :aria-label="`Usuń kategorię ${category.title}`" @click="removeCategory(category)"><AdIcon name="trash" /></button>
+          <button type="button" class="pp-icon-btn" title="Wyżej" aria-label="Przesuń kategorię wyżej" :disabled="catIndex === 0" @click="move('categories', categories, catIndex, catIndex - 1)"><AdIcon name="up" /></button>
+          <button type="button" class="pp-icon-btn" title="Niżej" aria-label="Przesuń kategorię niżej" :disabled="catIndex === categories.length - 1" @click="move('categories', categories, catIndex, catIndex + 1)"><AdIcon name="down" /></button>
+          <button type="button" class="pp-icon-btn" title="Usuń kategorię" :aria-label="`Usuń kategorię ${category.title}`" @click="removeCategory(category)"><AdIcon name="trash" /></button>
         </div>
       </header>
 
@@ -29,14 +29,14 @@
         v-for="(item, index) in itemsOf(category._key)"
         v-show="matches(item)"
         :key="item._key"
-        class="ad-prow"
-        :class="{ 'ad-dirty': isChanged('items', item), 'ad-off': !item.is_active, dragging: dragging === item }"
+        class="pp-prow"
+        :class="{ 'pp-dirty': isChanged('items', item), 'pp-off': !item.is_active, dragging: dragging === item }"
         @dragover="onDragOver($event, category)"
         @drop="onDrop($event, category, index)"
       >
         <button
           type="button"
-          class="ad-handle"
+          class="pp-handle"
           draggable="true"
           :aria-label="`Przeciągnij lub użyj strzałek, aby zmienić kolejność: ${item.name}`"
           @dragstart="onDragStart($event, item)"
@@ -44,20 +44,20 @@
           @keydown.up.prevent="moveItem(category, index, index - 1, $event)"
           @keydown.down.prevent="moveItem(category, index, index + 1, $event)"
         />
-        <input v-model="item.name" class="ad-input ad-pname" type="text" aria-label="Nazwa usługi" placeholder="Nazwa usługi">
+        <input v-model="item.name" class="pp-input pp-pname" type="text" aria-label="Nazwa usługi" placeholder="Nazwa usługi">
         <AdPriceInput v-model="item.price" />
         <AdSwitch v-model="item.is_active" :labels="['Widoczna', 'Ukryta']" />
-        <button type="button" class="ad-icon-btn ad-prow-del" title="Usuń" :aria-label="`Usuń ${item.name}`" @click="remove('items', item)"><AdIcon name="trash" /></button>
+        <button type="button" class="pp-icon-btn pp-prow-del" title="Usuń" :aria-label="`Usuń ${item.name}`" @click="remove('items', item)"><AdIcon name="trash" /></button>
       </div>
 
-      <button v-show="!query" type="button" class="ad-add" @click="addItem(category)">
+      <button v-show="!query" type="button" class="pp-add" @click="addItem(category)">
         <AdIcon name="plus" /> Dodaj usługę do „{{ category.title || 'nowej kategorii' }}”
       </button>
     </section>
 
-    <p v-if="query && !anyMatch" class="ad-empty">Brak usług pasujących do „{{ query }}”.</p>
+    <p v-if="query && !anyMatch" class="pp-empty">Brak usług pasujących do „{{ query }}”.</p>
 
-    <button v-show="!query" type="button" class="ad-add ad-add-big" @click="addCategory">
+    <button v-show="!query" type="button" class="pp-add pp-add-big" @click="addCategory">
       <AdIcon name="plus" /> Dodaj kategorię
     </button>
   </div>
@@ -82,8 +82,8 @@ const focusLast = async (selector: string) => {
   fields[fields.length - 1]?.focus()
 }
 
-const addItem = (category: Row) => { add('items', category._key); focusLast(`.ad-pname`) }
-const addCategory = () => { add('categories'); focusLast('.ad-cat-fields .ad-strong') }
+const addItem = (category: Row) => { add('items', category._key); focusLast(`.pp-pname`) }
+const addCategory = () => { add('categories'); focusLast('.pp-cat-fields .pp-strong') }
 
 const removeCategory = async (category: Row) => {
   const count = itemsOf(category._key).length
@@ -95,9 +95,9 @@ const moveItem = async (category: Row, from: number, to: number, event: Keyboard
   const group = itemsOf(category._key)
   if (to < 0 || to >= group.length) return
   move('items', group, from, to)
-  const panel = (event.target as HTMLElement).closest('.ad-panel')
+  const panel = (event.target as HTMLElement).closest('.pp-panel')
   await nextTick()
-  panel?.querySelectorAll<HTMLButtonElement>('.ad-prow .ad-handle')[to]?.focus()
+  panel?.querySelectorAll<HTMLButtonElement>('.pp-prow .pp-handle')[to]?.focus()
 }
 
 const dragging = ref<Row | null>(null)

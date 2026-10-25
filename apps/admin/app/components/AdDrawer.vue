@@ -1,12 +1,12 @@
 <template>
   <Teleport to="body">
-    <div v-if="open" class="ad-drawer-wrap" @click.self="emit('close')" @keydown.esc="emit('close')">
-      <div class="ad-drawer" role="dialog" aria-modal="true" :aria-label="title">
-        <div class="ad-drawer-head">
+    <div v-if="open" class="pp-drawer-wrap" @click.self="emit('close')" @keydown.esc="emit('close')">
+      <div class="pp-drawer" role="dialog" aria-modal="true" :aria-label="title">
+        <div class="pp-drawer-head">
           <h2>{{ title }}</h2>
-          <button ref="closeButton" type="button" class="ad-btn ad-primary" @click="emit('close')">Gotowe</button>
+          <button ref="closeButton" type="button" class="pp-btn pp-primary" @click="emit('close')">Gotowe</button>
         </div>
-        <div class="ad-drawer-body">
+        <div class="pp-drawer-body">
           <slot />
         </div>
       </div>

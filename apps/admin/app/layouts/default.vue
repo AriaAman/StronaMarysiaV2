@@ -1,71 +1,71 @@
 <template>
-  <div class="ad-app">
-    <aside class="ad-side">
-      <div class="ad-logo">PIETRUSZCZAK<small>Panel strony</small></div>
-      <nav class="ad-nav" aria-label="Menu panelu">
-        <NuxtLink v-for="link in links" :key="link.to" :to="link.to" class="ad-nav-link" :class="{ active: isActive(link.to) }">
+  <div class="pp-app">
+    <aside class="pp-side">
+      <div class="pp-logo">PIETRUSZCZAK<small>Panel strony</small></div>
+      <nav class="pp-nav" aria-label="Menu panelu">
+        <NuxtLink v-for="link in links" :key="link.to" :to="link.to" class="pp-nav-link" :class="{ active: isActive(link.to) }">
           <AdIcon :name="link.icon" />
           <span>{{ link.label }}</span>
         </NuxtLink>
       </nav>
-      <div class="ad-user">
-        <span class="ad-avatar" aria-hidden="true">{{ initials }}</span>
+      <div class="pp-user">
+        <span class="pp-avatar" aria-hidden="true">{{ initials }}</span>
         <div>
           <b>{{ email || 'Podgląd' }}</b>
-          <button type="button" class="ad-link" @click="logout">Wyloguj</button>
+          <button type="button" class="pp-link" @click="logout">Wyloguj</button>
         </div>
       </div>
     </aside>
 
-    <div class="ad-main">
-      <header class="ad-top">
+    <div class="pp-main">
+      <header class="pp-top">
         <div>
-          <p class="ad-crumb">Panel strony</p>
+          <p class="pp-crumb">Panel strony</p>
           <h1>{{ current.label }}</h1>
         </div>
-        <div class="ad-row">
-          <button type="button" class="ad-btn ad-secondary" :disabled="state.loading" @click="load(true)">
+        <div class="pp-row">
+          <button type="button" class="pp-btn pp-secondary" :disabled="state.loading" @click="load(true)">
             <AdIcon name="refresh" /> Odśwież
           </button>
-          <a class="ad-btn ad-secondary" :href="`https://pietruszczak.pl/${current.site}`" target="_blank" rel="noopener">
+          <a class="pp-btn pp-secondary" :href="`https://pietruszczak.pl/${current.site}`" target="_blank" rel="noopener">
             Zobacz na stronie <AdIcon name="external" />
           </a>
         </div>
       </header>
 
-      <p v-if="state.demo" class="ad-banner ad-banner-info">Tryb podglądu: prawdziwe treści ze strony, ale nic nie jest zapisywane w bazie.</p>
-      <p v-if="state.error" class="ad-banner" role="alert">{{ state.error }}</p>
+      <p v-if="state.demo" class="pp-banner pp-banner-info">Tryb podglądu: prawdziwe treści ze strony, ale nic nie jest zapisywane w bazie.</p>
+      <p v-if="state.error" class="pp-banner" role="alert">{{ state.error }}</p>
 
-      <main class="ad-content">
-        <div v-if="state.loading && !state.loaded" class="ad-skeleton" aria-label="Wczytywanie">
-          <div class="ad-skel" style="width: 40%" /><div class="ad-skel" /><div class="ad-skel" style="width: 80%" /><div class="ad-skel" style="width: 60%" />
+      <main class="pp-content">
+        <div v-if="state.loading && !state.loaded" class="pp-skeleton" aria-label="Wczytywanie">
+          <div class="pp-skel" style="width: 40%" /><div class="pp-skel" /><div class="pp-skel" style="width: 80%" /><div class="pp-skel" style="width: 60%" />
         </div>
         <slot v-else-if="state.loaded" />
       </main>
 
-      <div class="ad-savebar" :data-state="changeCount ? 'dirty' : 'clean'">
+      <div class="pp-savebar" :data-state="changeCount ? 'dirty' : 'clean'">
         <span>{{ saveText }}</span>
-        <div class="ad-row">
-          <button type="button" class="ad-btn ad-ghost" :disabled="!changeCount || state.saving" @click="discard">Anuluj zmiany</button>
-          <button type="button" class="ad-btn ad-primary" :disabled="!changeCount || state.saving" @click="save">
+        <div class="pp-row">
+          <button type="button" class="pp-btn pp-ghost" :disabled="!changeCount || state.saving" @click="discard">Anuluj zmiany</button>
+          <button type="button" class="pp-btn pp-primary" :disabled="!changeCount || state.saving" @click="save">
             {{ state.saving ? 'Zapisywanie…' : 'Zapisz zmiany' }}
           </button>
         </div>
       </div>
     </div>
 
-    <div v-if="state.toast.text" :key="state.toast.id" class="ad-toast" role="status">
+    <div v-if="state.toast.text" :key="state.toast.id" class="pp-toast" role="status">
       <span>{{ state.toast.text }}</span>
       <button v-if="state.toast.undo" type="button" @click="undo">Cofnij</button>
     </div>
 
-    <div v-if="state.confirm" class="ad-modal-wrap" @keydown.esc="answer(false)">
-      <div class="ad-modal" role="alertdialog" aria-modal="true" aria-labelledby="ad-confirm-title">
-        <h2 id="ad-confirm-title">{{ state.confirm.title }}</h2>
+    <div v-if="state.confirm" class="pp-modal-wrap" @keydown.esc="answer(false)">
+      <div class="pp-modal" role="alertdialog" aria-modal="true" aria-labelledby="pp-confirm-title">
+        <h2 id="pp-confirm-title">{{ state.confirm.title }}</h2>
         <p>{{ state.confirm.text }}</p>
-        <div class="ad-row ad-end">
-          <button ref="cancelButton" type="button" class="ad-btn ad-secondary" @click="answer(false)">Wróć</button>
-          <button type="button" class="ad-btn" :class="state.confirm.danger ? 'ad-danger' : 'ad-primary'" @click="answer(true)">{{ state.confirm.okLabel }}</button>
+        <div class="pp-row pp-end">
+          <button ref="cancelButton" type="button" class="pp-btn pp-secondary" @click="answer(false)">Wróć</button>
+          <button type="button" class="pp-btn" :class="state.confirm.danger ? 'pp-danger' : 'pp-primary'" @click="answer(true)">{{ state.confirm.okLabel }}</button>
         </div>
       </div>
     </div>
