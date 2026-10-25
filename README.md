@@ -9,7 +9,7 @@
 
 ## Local commands
 
-Use Node `20.19+`.
+Use Node `24.x` (same as Vercel, set by `engines` in `package.json`).
 
 ```bash
 npm install
