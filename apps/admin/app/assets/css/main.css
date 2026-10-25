@@ -43,11 +43,11 @@ button, input, textarea, select { font: inherit; }
 .pp-avatar { width: 36px; height: 36px; border-radius: 50%; background: #d2a469; color: var(--navy); display: grid; place-items: center; font-weight: 700; font-size: 0.8rem; flex: none; }
 .pp-link { background: none; border: 0; padding: 0; color: inherit; opacity: 0.85; text-decoration: underline; cursor: pointer; }
 
-.pp-main { display: grid; grid-template-rows: auto auto auto 1fr auto; min-width: 0; min-height: 100vh; }
+.pp-main { display: flex; flex-direction: column; min-width: 0; min-height: 100vh; }
 .pp-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 28px; border-bottom: 1px solid var(--line); background: var(--surface); flex-wrap: wrap; }
 .pp-top h1 { font-size: 1.5rem; }
 .pp-crumb { font-size: 0.8rem; color: var(--muted); }
-.pp-content { padding: 24px 28px 40px; min-width: 0; max-width: 1180px; width: 100%; }
+.pp-content { flex: 1; padding: 24px 28px 40px; min-width: 0; max-width: 1180px; width: 100%; }
 .pp-stack { display: grid; gap: 16px; align-content: start; }
 .pp-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .pp-nowrap { flex-wrap: nowrap; }
