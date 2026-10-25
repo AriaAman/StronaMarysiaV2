@@ -69,13 +69,26 @@
                 :disabled="isSubmitting"
               />
             </div>
-            <div class="contact-form__group">
-              <input 
-                v-model="formData.phone" 
-                type="tel" 
-                maxlength="30"
-                placeholder="Numer telefonu (Opcjonalnie)"
+            <div class="contact-form__group contact-form__phone">
+              <select
+                v-model="formData.dialCode"
+                aria-label="Numer kierunkowy kraju"
                 :disabled="isSubmitting"
+              >
+                <option v-for="country in dialCodes" :key="country.code" :value="country.code">
+                  {{ country.label }} {{ country.code }}
+                </option>
+              </select>
+              <input 
+                :value="formData.phone" 
+                type="tel" 
+                inputmode="numeric"
+                autocomplete="tel-national"
+                maxlength="15"
+                placeholder="Numer telefonu (Opcjonalnie)"
+                aria-label="Numer telefonu"
+                :disabled="isSubmitting"
+                @input="onPhoneInput"
               />
             </div>
             <div class="contact-form__group">
@@ -163,10 +176,35 @@ const scrollToMap = () => {
   }
 }
 
+// Indicatifs proposés (Pologne par défaut)
+const dialCodes = [
+  { label: 'PL', code: '+48' },
+  { label: 'DE', code: '+49' },
+  { label: 'UA', code: '+380' },
+  { label: 'LT', code: '+370' },
+  { label: 'CZ', code: '+420' },
+  { label: 'SK', code: '+421' },
+  { label: 'GB', code: '+44' },
+  { label: 'IE', code: '+353' },
+  { label: 'NL', code: '+31' },
+  { label: 'FR', code: '+33' },
+  { label: 'NO', code: '+47' },
+  { label: 'SE', code: '+46' },
+  { label: 'US/CA', code: '+1' }
+];
+
+// Le numéro ne garde que les chiffres, même en cas de copier-coller
+const onPhoneInput = (event) => {
+  const digits = event.target.value.replace(/\D/g, '').slice(0, 15);
+  event.target.value = digits;
+  formData.value.phone = digits;
+};
+
 // État du formulaire
 const formData = ref({
   name: '',
   email: '',
+  dialCode: '+48',
   phone: '',
   message: '',
   consent: false,
@@ -182,6 +220,13 @@ const handleSubmit = async () => {
   // Réinitialiser les messages
   formStatus.value = null;
   errorMessage.value = '';
+
+  if (formData.value.phone && formData.value.phone.length < 6) {
+    formStatus.value = 'error';
+    errorMessage.value = 'Numer telefonu jest za krótki.';
+    return;
+  }
+
   isSubmitting.value = true;
 
   try {
@@ -191,7 +236,7 @@ const handleSubmit = async () => {
       body: {
         name: formData.value.name,
         email: formData.value.email,
-        phone: formData.value.phone,
+        phone: formData.value.phone ? `${formData.value.dialCode} ${formData.value.phone}` : '',
         message: formData.value.message,
         consent: formData.value.consent,
         website: formData.value.website
@@ -204,6 +249,7 @@ const handleSubmit = async () => {
       formData.value = {
         name: '',
         email: '',
+        dialCode: '+48',
         phone: '',
         message: '',
         consent: false,
@@ -438,6 +484,26 @@ const handleSubmit = async () => {
 
 .contact-form__group {
   margin-bottom: 16px;
+}
+.contact-form__phone {
+  display: flex;
+  gap: 8px;
+}
+.contact-form__phone select {
+  flex: none;
+  padding: 18px 12px;
+  border-radius: 1px;
+  border: 1px solid #E4D5C2;
+  background: #f8f4f0;
+  font-size: 18px;
+  font-family: 'Satoshi Variable', 'Satoshi Variable';
+  color: #0b162b;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.contact-form__phone input {
+  flex: 1;
+  min-width: 0;
 }
 .contact-form__group input,
 .contact-form__group textarea {

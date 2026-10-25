@@ -127,6 +127,14 @@ export default defineEventHandler(async (event) => {
       };
     }
 
+    // Téléphone facultatif : indicatif « +48 » suivi de 6 à 15 chiffres
+    if (safePhoneRaw && !/^\+\d{1,4} \d{6,15}$/.test(safePhoneRaw)) {
+      return {
+        success: false,
+        error: 'Nieprawidłowy numer telefonu'
+      };
+    }
+
     // Destinataire et expéditeur : boîte du cabinet et expéditeur vérifié dans Brevo
     const contactTo = process.env.CONTACT_TO;
     const contactFrom = process.env.CONTACT_FROM;
@@ -174,7 +182,7 @@ export default defineEventHandler(async (event) => {
             <tr><td style="height:24px;line-height:24px;font-size:0;">&nbsp;</td></tr>
             ${field('Imię i nazwisko', safeNameHtml)}
             ${field('Adres e-mail', `<a href="mailto:${safeEmailHtml}" style="color:#122548;">${safeEmailHtml}</a>`)}
-            ${safePhoneRaw ? field('Numer telefonu', `<a href="tel:${safePhoneHtml}" style="color:#122548;">${safePhoneHtml}</a>`) : ''}
+            ${safePhoneRaw ? field('Numer telefonu', `<a href="tel:${safePhoneHtml.replace(/\s/g, '')}" style="color:#122548;">${safePhoneHtml}</a>`) : ''}
             ${field('Wiadomość', safeMessageHtml)}
             ${consent ? field('Zgoda marketingowa', 'Pacjent wyraził zgodę na otrzymywanie treści marketingowych.') : ''}
             <tr>

@@ -13,6 +13,15 @@ onMounted(async () => {
   const L = await import('leaflet');
   await import('leaflet/dist/leaflet.css');
 
+  // Leaflet guesses its marker images from its CSS path, which breaks once bundled (404 on marker-icon.png):
+  // give it the bundled URLs instead.
+  const [{ default: iconUrl }, { default: iconRetinaUrl }, { default: shadowUrl }] = await Promise.all([
+    import('leaflet/dist/images/marker-icon.png'),
+    import('leaflet/dist/images/marker-icon-2x.png'),
+    import('leaflet/dist/images/marker-shadow.png')
+  ]);
+  L.Icon.Default.mergeOptions({ iconUrl, iconRetinaUrl, shadowUrl, imagePath: '' });
+
   const map = L.map('mapa').setView([53.72497, 20.47331], 17); // Coordinates for Stawigudzka 8c/c, Olsztyn
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
