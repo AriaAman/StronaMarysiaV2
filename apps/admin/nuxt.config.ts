@@ -11,8 +11,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL || 'https://tvgwuvqsbgupgceylarl.supabase.co',
-      supabasePublishableKey: process.env.NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_Fmr6cMrPQ4DiU7mo2rl2Dw_DBbwubxC',
-      adminEmail: process.env.NUXT_PUBLIC_ADMIN_EMAIL || 'ariaaman@outlook.fr'
+      supabasePublishableKey: process.env.NUXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_Fmr6cMrPQ4DiU7mo2rl2Dw_DBbwubxC'
     }
   },
   app: {

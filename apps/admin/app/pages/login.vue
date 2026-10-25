@@ -25,10 +25,9 @@
 definePageMeta({ layout: false })
 
 const supabase = useSupabase()
-const config = useRuntimeConfig()
 const route = useRoute()
 
-const email = ref(config.public.adminEmail)
+const email = ref('')
 const isLoading = ref(false)
 const message = ref('')
 const error = ref(route.query.error === 'unauthorized'
@@ -39,25 +38,28 @@ const sendLink = async () => {
   message.value = ''
   error.value = ''
 
-  if (email.value.toLowerCase() !== config.public.adminEmail.toLowerCase()) {
-    error.value = 'Użyj autoryzowanego adresu e-mail administratora.'
-    return
-  }
-
   isLoading.value = true
+  // shouldCreateUser: false — an unknown e-mail never creates an account.
   const { error: authError } = await supabase.auth.signInWithOtp({
     email: email.value,
     options: {
-      emailRedirectTo: window.location.origin
+      emailRedirectTo: window.location.origin,
+      shouldCreateUser: false
     }
   })
   isLoading.value = false
 
-  if (authError) {
-    error.value = authError.message
+  if (authError?.status === 429) {
+    error.value = 'Zbyt wiele prób. Spróbuj ponownie za kilka minut.'
     return
   }
 
-  message.value = 'Link został wysłany. Otwórz skrzynkę e-mail, aby się zalogować.'
+  if (authError?.name === 'AuthRetryableFetchError') {
+    error.value = 'Brak połączenia z serwerem. Sprawdź internet i spróbuj ponownie.'
+    return
+  }
+
+  // Same answer whether the address exists or not, so the page does not reveal admin e-mails.
+  message.value = 'Jeśli ten adres ma dostęp do panelu, wysłaliśmy na niego link. Otwórz skrzynkę e-mail, aby się zalogować.'
 }
 </script>

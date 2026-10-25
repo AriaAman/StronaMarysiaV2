@@ -21,7 +21,7 @@
         <div class="tech-card">
           <div class="tech-card-num">{{ tech.num }}</div>
           <h2>{{ tech.titre }}</h2>
-          <p class="tech-intro" v-html="tech.intro"></p>
+          <p class="tech-intro" v-html="safeHtml(tech.intro)"></p>
           <ul>
             <li v-for="point in tech.points" :key="point.title">
               <b>{{ point.title }}</b>
@@ -35,6 +35,8 @@
 </template>
 
 <script setup>
+const safeHtml = useSafeHtml()
+
 const fallbackTechnologies = [
   {
     titre: "TOMOGRAF CS 9600",

@@ -1,11 +1,13 @@
 create extension if not exists pgcrypto;
 
+-- Placeholder so the policies below can be created on a fresh database.
+-- The real check (public.site_admins) comes in 202610250001_site_admins.sql.
 create or replace function public.is_site_admin()
 returns boolean
 language sql
 stable
 as $$
-  select lower(coalesce(auth.jwt() ->> 'email', '')) = 'ariaaman@outlook.fr'
+  select false
 $$;
 
 create table if not exists public.price_categories (

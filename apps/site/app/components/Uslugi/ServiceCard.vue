@@ -12,12 +12,14 @@
     <div class="content">
       <span class="idx-square">{{ idxStr }}</span>
       <h3 class="heading">{{ service.title }}</h3>
-      <div class="description" v-html="service.description" />
+      <div class="description" v-html="safeHtml(service.description)" />
     </div>
   </article>
 </template>
 
 <script setup lang="ts">
+const safeHtml = useSafeHtml()
+
 const props = defineProps<{
   service: {
     title: string
@@ -177,6 +179,10 @@ ul {
 
 .description p:last-child {
   margin-bottom: 0;
+}
+
+.description li > span:first-child {
+  color: #A9722D;
 }
 
 .description ul li::marker {

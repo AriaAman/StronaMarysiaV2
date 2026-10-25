@@ -21,16 +21,27 @@ npm run admin:build
 
 ## Supabase setup
 
-Run `supabase/migrations/202604260001_prices_v1.sql` in the Supabase SQL Editor.
+Run the files in `supabase/migrations/` in order in the Supabase SQL Editor.
 
-The first admin email is:
+Admins are listed in `public.site_admins` (by auth user id). To give someone access:
 
-```txt
-ariaaman@outlook.fr
+1. Supabase > Authentication > Users > Invite user (their e-mail).
+2. In the SQL Editor:
+
+```sql
+insert into public.site_admins (user_id)
+select id from auth.users where lower(email) = lower('adres@gabinetu.pl')
+on conflict do nothing;
 ```
+
+Keep public sign-ups disabled: Authentication > Sign In / Providers > "Allow new users to sign up" off.
 
 The admin app uses magic-link login. In Supabase Auth, add the deployed admin URL to the allowed redirect URLs when deploying:
 
 ```txt
 https://admin.pietruszczak.pl
 ```
+
+## Contact form
+
+`apps/site/server/api/contact.post.js` sends through Brevo's transactional API. It needs `BREVO_API_KEY`, `CONTACT_TO` (clinic inbox) and `CONTACT_FROM` (a sender verified in Brevo > Senders, Domains). Without them the form answers with an error and logs which variable is missing.

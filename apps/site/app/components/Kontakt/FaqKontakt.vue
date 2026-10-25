@@ -35,7 +35,7 @@
               :class="{ 'active': activeItem === index }"
               v-show="activeItem === index"
             >
-              <p v-html="item.answer"></p>
+              <p v-html="safeHtml(item.answer)"></p>
             </div>
           </div>
         </div>
@@ -45,6 +45,7 @@
   </template>
 
   <script setup>
+  const safeHtml = useSafeHtml();
 
 
   const activeItem = ref(0);

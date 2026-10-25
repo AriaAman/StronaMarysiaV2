@@ -34,7 +34,7 @@
                 :src="service.icon"
                 :alt="(service.alt || service.title).replace(/<br\s*\/?>/gi, ' ')"
               />
-              <h3 class="label" v-html="service.title"></h3>
+              <h3 class="label" v-html="safeHtml(service.title)"></h3>
             </div>
             <div class="cell-right">
               <p class="desc">{{ service.description }}</p>
@@ -46,6 +46,7 @@
   </template>
   
   <script setup>
+  const safeHtml = useSafeHtml();
   const mainImage = '/static/HomePage/HomePageOlekEtDentiste.avif';
   const services = [
     {

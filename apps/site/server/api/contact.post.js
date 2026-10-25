@@ -1,11 +1,8 @@
-import { Resend } from 'resend';
-import createDOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
+// Logo served by the public site (apps/site/public/email)
+const LOGO_URL = 'https://pietruszczak.pl/email/logo-pietruszczak.png';
 
-// Simple, explicit DOMPurify initialization on server using JSDOM
-const window = new JSDOM('').window;
-const DOMPurify = createDOMPurify(window);
-const dompurifySanitize = (dirty, options) => DOMPurify.sanitize(dirty, options);
+// Maximum lengths accepted from the form (characters)
+const MAX_LENGTH = { name: 100, email: 254, phone: 30, message: 5000 };
 
 // Escape text for safe HTML insertion (elements/text nodes, not attributes requiring URLs)
 function escapeHtml(str = '') {
@@ -80,29 +77,41 @@ export default defineEventHandler(async (event) => {
     }
 
   // Récupérer les données du formulaire
-    const body = await readBody(event);
-  const { name, email, phone, message, consent } = body;
+    const body = (await readBody(event)) || {};
+  const { name, email, phone, message, consent, website } = body;
 
-  // Sanitize inputs (strip all markup); then prepare safe HTML/text
-  const safeNameRaw = dompurifySanitize(name || '', { ALLOWED_TAGS: [], ALLOWED_ATTR: [] }).trim();
-  const safeEmailRaw = dompurifySanitize(email || '', { ALLOWED_TAGS: [], ALLOWED_ATTR: [] }).trim();
-  const safePhoneRaw = dompurifySanitize(phone || '', { ALLOWED_TAGS: [], ALLOWED_ATTR: [] }).trim();
-  // For message, allow only <br> after converting newlines
-  const messageNoTags = dompurifySanitize(message || '', { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
-  const messageWithBr = messageNoTags.replace(/\n/g, '<br>');
-  const safeMessageHtml = dompurifySanitize(messageWithBr, { ALLOWED_TAGS: ['br'], ALLOWED_ATTR: [] });
+    // Honeypot: the hidden "website" field is only filled by bots. Pretend it worked.
+    if (website) {
+      return { success: true, message: 'Twoja wiadomość została wysłana pomyślnie!' };
+    }
 
-  // Escape for HTML interpolation where needed
+    const tooLong = Object.entries(MAX_LENGTH).some(([key, max]) => String(body[key] ?? '').length > max);
+    if (tooLong) {
+      setResponseStatus(event, 400);
+      return {
+        success: false,
+        error: 'Wiadomość jest zbyt długa. Skróć ją i spróbuj ponownie.'
+      };
+    }
+
+  // Every field is plain text: escaped once for the HTML email, never interpreted.
+  // Anything that looks like HTML (<b>, <script>, links) shows up as visible text.
+  const safeNameRaw = String(name ?? '').trim();
+  const safeEmailRaw = String(email ?? '').trim();
+  const safePhoneRaw = String(phone ?? '').trim();
+  const messageRaw = String(message ?? '').trim();
+
   const safeNameHtml = escapeHtml(safeNameRaw);
   const safeEmailHtml = escapeHtml(safeEmailRaw);
   const safePhoneHtml = escapeHtml(safePhoneRaw);
+  const safeMessageHtml = escapeHtml(messageRaw).replace(/\r?\n/g, '<br>');
 
   // Prevent header injection in subject/replyTo
   const headerSafeName = safeNameRaw.replace(/[\r\n]/g, ' ').trim();
   const headerSafeEmail = safeEmailRaw.replace(/[\r\n]/g, '').trim();
 
     // Validation des champs requis
-    if (!safeNameRaw || !headerSafeEmail || !messageNoTags) {
+    if (!safeNameRaw || !headerSafeEmail || !messageRaw) {
       return {
         success: false,
         error: 'Wszystkie wymagane pola muszą być wypełnione'
@@ -118,117 +127,87 @@ export default defineEventHandler(async (event) => {
       };
     }
 
-    // Initialiser Resend avec votre clé API
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    // Destinataire et expéditeur : boîte du cabinet et expéditeur vérifié dans Brevo
+    const contactTo = process.env.CONTACT_TO;
+    const contactFrom = process.env.CONTACT_FROM;
+    const brevoApiKey = process.env.BREVO_API_KEY;
+    if (!contactTo || !contactFrom || !brevoApiKey) {
+      console.error('Formulaire de contact : BREVO_API_KEY, CONTACT_TO ou CONTACT_FROM manquant');
+      return {
+        success: false,
+        error: 'Błąd podczas wysyłania wiadomości e-mail'
+      };
+    }
 
-    // Créer le contenu HTML de l'email
-    const htmlContent = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <style>
-            body {
-              font-family: Arial, sans-serif;
-              line-height: 1.6;
-              color: #333;
-            }
-            .container {
-              max-width: 600px;
-              margin: 0 auto;
-              padding: 20px;
-              background-color: #f9f9f9;
-            }
-            .header {
-              background-color: #122548;
-              color: white;
-              padding: 20px;
-              text-align: center;
-            }
-            .content {
-              background-color: white;
-              padding: 30px;
-              margin-top: 20px;
-              border-radius: 5px;
-            }
-            .field {
-              margin-bottom: 15px;
-            }
-            .label {
-              font-weight: bold;
-              color: #A9722D;
-              text-transform: uppercase;
-              font-size: 12px;
-              letter-spacing: 1px;
-            }
-            .value {
-              margin-top: 5px;
-              padding: 10px;
-              background-color: #f8f4f0;
-              border-left: 3px solid #BC9667;
-            }
-            .footer {
-              text-align: center;
-              margin-top: 20px;
-              padding-top: 20px;
-              border-top: 1px solid #ddd;
-              color: #666;
-              font-size: 12px;
-            }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>Nowa wiadomość kontaktowa</h1>
-              <p>Pietruszczak Stomatologia</p>
-            </div>
-            <div class="content">
-              <div class="field">
-                <div class="label">Imię i nazwisko</div>
-                <div class="value">${safeNameHtml}</div>
-              </div>
-              <div class="field">
-                <div class="label">Adres e-mail</div>
-                <div class="value"><a href="mailto:${safeEmailHtml}">${safeEmailHtml}</a></div>
-              </div>
-              ${phone ? `
-              <div class="field">
-                <div class="label">Numer telefonu</div>
-                <div class="value">${safePhoneHtml}</div>
-              </div>
-              ` : ''}
-              <div class="field">
-                <div class="label">Wiadomość</div>
-                <div class="value">${safeMessageHtml}</div>
-              </div>
-              ${consent ? `
-              <div class="field">
-                <div class="label">Zgoda marketingowa</div>
-                <div class="value">✓ Klient wyraził zgodę na otrzymywanie treści marketingowych</div>
-              </div>
-              ` : ''}
-            </div>
-            <div class="footer">
-              <p>Ta wiadomość została wysłana z formularza kontaktowego na stronie internetowej</p>
-              <p>Data: ${new Date().toLocaleString('pl-PL', { timeZone: 'Europe/Warsaw' })}</p>
-            </div>
-          </div>
-        </body>
-      </html>
-    `;
+    // Créer le contenu HTML de l'email (tableaux + styles en ligne : rendu fiable dans Gmail, Outlook, Apple Mail)
+    const field = (label, valueHtml) => `
+              <tr>
+                <td style="padding:0 32px 18px;">
+                  <div style="font:600 11px/1.4 Arial,Helvetica,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#A9722D;">${label}</div>
+                  <div style="margin-top:6px;padding:12px 14px;background:#F8F4F0;border-left:3px solid #BC9667;font:15px/1.6 Arial,Helvetica,sans-serif;color:#122548;">${valueHtml}</div>
+                </td>
+              </tr>`;
+    const sentAt = new Date().toLocaleString('pl-PL', { timeZone: 'Europe/Warsaw' });
+    const htmlContent = `<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nowa wiadomość kontaktowa</title>
+  </head>
+  <body style="margin:0;padding:0;background:#EEEBEA;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EEEBEA;">
+      <tr>
+        <td align="center" style="padding:32px 12px;">
+          <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#FFFFFF;border-radius:8px;">
+            <tr>
+              <td align="center" style="padding:32px 32px 20px;">
+                <img src="${LOGO_URL}" width="200" alt="Pietruszczak Stomatologia" style="display:block;width:200px;max-width:100%;height:auto;border:0;">
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:0 32px 24px;border-bottom:1px solid #E4D5C2;">
+                <h1 style="margin:0;font:600 20px/1.3 Arial,Helvetica,sans-serif;color:#122548;">Nowa wiadomość z formularza kontaktowego</h1>
+                <p style="margin:8px 0 0;font:14px/1.5 Arial,Helvetica,sans-serif;color:#5B6475;">Kliknij „Odpowiedz”, aby odpisać bezpośrednio pacjentowi.</p>
+              </td>
+            </tr>
+            <tr><td style="height:24px;line-height:24px;font-size:0;">&nbsp;</td></tr>
+            ${field('Imię i nazwisko', safeNameHtml)}
+            ${field('Adres e-mail', `<a href="mailto:${safeEmailHtml}" style="color:#122548;">${safeEmailHtml}</a>`)}
+            ${safePhoneRaw ? field('Numer telefonu', `<a href="tel:${safePhoneHtml}" style="color:#122548;">${safePhoneHtml}</a>`) : ''}
+            ${field('Wiadomość', safeMessageHtml)}
+            ${consent ? field('Zgoda marketingowa', 'Pacjent wyraził zgodę na otrzymywanie treści marketingowych.') : ''}
+            <tr>
+              <td style="padding:8px 32px 28px;font:12px/1.5 Arial,Helvetica,sans-serif;color:#7F8BA6;">
+                Wysłano z formularza na stronie pietruszczak.pl · ${sentAt}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
 
-    // Envoyer l'email
-    const { data, error } = await resend.emails.send({
-      from: 'Pietruszczak Stomatologia <onboarding@resend.dev>', // À remplacer par votre domaine vérifié
-      to: 'ariaaman@outlook.fr', // Email de réception
-      replyTo: headerSafeEmail, // Permet de répondre directement au client
-      subject: `Nowa wiadomość kontaktowa - ${headerSafeName}`,
-      html: htmlContent,
+    // Envoyer l'email via l'API transactionnelle de Brevo
+    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'api-key': brevoApiKey,
+        'content-type': 'application/json',
+        accept: 'application/json'
+      },
+      body: JSON.stringify({
+        sender: { name: 'Pietruszczak Stomatologia', email: contactFrom },
+        to: [{ email: contactTo }],
+        replyTo: { email: headerSafeEmail, name: headerSafeName || headerSafeEmail }, // Permet de répondre directement au client
+        subject: `Nowa wiadomość kontaktowa - ${headerSafeName}`,
+        htmlContent: htmlContent
+      })
     });
 
-    if (error) {
-      console.error('Erreur Resend:', error);
+    if (!response.ok) {
+      console.error('Erreur Brevo:', response.status, await response.text());
       return {
         success: false,
         error: 'Błąd podczas wysyłania wiadomości e-mail'
@@ -237,8 +216,7 @@ export default defineEventHandler(async (event) => {
 
     return {
       success: true,
-      message: 'Twoja wiadomość została wysłana pomyślnie!',
-      data
+      message: 'Twoja wiadomość została wysłana pomyślnie!'
     };
 
   } catch (error) {

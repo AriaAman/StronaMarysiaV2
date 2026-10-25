@@ -16,7 +16,7 @@
             <h2 class="specialist-name">{{ name }}</h2>
           </div>
           <div class="specialist-text">
-            <p v-html="bio"></p>
+            <p v-html="safeHtml(bio)"></p>
             <p v-if="personal">{{ personal }}</p>
           </div>
           <div class="specialist-tags">
@@ -31,6 +31,8 @@
 </template>
 
 <script setup>
+const safeHtml = useSafeHtml()
+
 defineProps({
   title: {
     type: String,

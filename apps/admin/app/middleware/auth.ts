@@ -4,15 +4,16 @@ export default defineNuxtRouteMiddleware(async (to) => {
   }
 
   const supabase = useSupabase()
-  const config = useRuntimeConfig()
   const { data } = await supabase.auth.getSession()
-  const email = data.session?.user.email
 
-  if (!email) {
+  if (!data.session) {
     return navigateTo('/login')
   }
 
-  if (email.toLowerCase() !== config.public.adminEmail.toLowerCase()) {
+  // The database decides who is an admin (public.site_admins), the same check RLS uses.
+  const { data: isAdmin, error } = await supabase.rpc('is_site_admin')
+
+  if (error || !isAdmin) {
     await supabase.auth.signOut()
     return navigateTo('/login?error=unauthorized')
   }

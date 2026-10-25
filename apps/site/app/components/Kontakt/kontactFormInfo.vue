@@ -54,6 +54,7 @@
                 v-model="formData.name" 
                 type="text" 
                 required 
+                maxlength="100"
                 placeholder="Imię i nazwisko*"
                 :disabled="isSubmitting"
               />
@@ -63,6 +64,7 @@
                 v-model="formData.email" 
                 type="email" 
                 required 
+                maxlength="254"
                 placeholder="Adres e-mail*"
                 :disabled="isSubmitting"
               />
@@ -71,6 +73,7 @@
               <input 
                 v-model="formData.phone" 
                 type="tel" 
+                maxlength="30"
                 placeholder="Numer telefonu (Opcjonalnie)"
                 :disabled="isSubmitting"
               />
@@ -80,9 +83,14 @@
                 v-model="formData.message" 
                 rows="4" 
                 required
+                maxlength="5000"
                 placeholder="Dzień dobry! Chciałbym umówić wizytę..."
                 :disabled="isSubmitting"
               ></textarea>
+            </div>
+            <!-- Champ piège anti-robot : invisible pour les humains -->
+            <div class="contact-form__trap" aria-hidden="true">
+              <label>Strona internetowa <input v-model="formData.website" type="text" tabindex="-1" autocomplete="off" /></label>
             </div>
             <div class="contact-form__consent">
               <input 
@@ -161,7 +169,8 @@ const formData = ref({
   email: '',
   phone: '',
   message: '',
-  consent: false
+  consent: false,
+  website: ''
 });
 
 const isSubmitting = ref(false);
@@ -184,7 +193,8 @@ const handleSubmit = async () => {
         email: formData.value.email,
         phone: formData.value.phone,
         message: formData.value.message,
-        consent: formData.value.consent
+        consent: formData.value.consent,
+        website: formData.value.website
       }
     });
 
@@ -196,7 +206,8 @@ const handleSubmit = async () => {
         email: '',
         phone: '',
         message: '',
-        consent: false
+        consent: false,
+        website: ''
       };
       
       // Faire disparaître le message après 5 secondes
@@ -205,12 +216,12 @@ const handleSubmit = async () => {
       }, 5000);
     } else {
       formStatus.value = 'error';
-      errorMessage.value = response.error || 'Une erreur est survenue';
+      errorMessage.value = response.error || 'Wystąpił błąd. Spróbuj ponownie.';
     }
   } catch (error) {
     console.error('Erreur lors de l\'envoi:', error);
     formStatus.value = 'error';
-    errorMessage.value = 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.';
+    errorMessage.value = error?.data?.error || 'Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.';
   } finally {
     isSubmitting.value = false;
   }
@@ -218,6 +229,14 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
+.contact-form__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact-section {
   background: #f4f4f4;
   padding: 40px 0 0 0;
