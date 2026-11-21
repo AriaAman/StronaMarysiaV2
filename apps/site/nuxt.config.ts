@@ -183,7 +183,7 @@ export default defineNuxtConfig({
         { name: 'google-site-verification', content: '6IyiuZ--CvhtZamM6Gtv5M4Xf8iMWSqZVteGIhSnKcA' },
         { name: 'theme-color', content: '#122548' },
         // Aperçu des liens partagés (Facebook, WhatsApp, Messenger)
-        { property: 'og:site_name', content: 'Pietruszczak Stomatologia' },
+        { property: 'og:site_name', content: 'Piotr Pietruszczak - Stomatolog Olsztyn' },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'pl_PL' },
         { property: 'og:image', content: 'https://pietruszczak.pl/og-image.jpg' },

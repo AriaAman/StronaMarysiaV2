@@ -20,8 +20,8 @@ const structuredData = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Pietruszczak Stomatologia',
-    alternateName: ['Stomatologia Implantologia Pietruszczak', 'Pietruszczak'],
+    name: 'Piotr Pietruszczak - Stomatolog Olsztyn',
+    alternateName: ['Pietruszczak Stomatologia', 'Stomatologia Implantologia Pietruszczak'],
     url: `${SITE_URL}/`,
     inLanguage: 'pl-PL'
   },
@@ -29,8 +29,9 @@ const structuredData = [
     '@context': 'https://schema.org',
     '@type': 'Dentist',
     '@id': `${SITE_URL}/#gabinet`,
-    name: 'Pietruszczak Stomatologia',
-    alternateName: 'Stomatologia Implantologia Pietruszczak',
+    // Même nom que la fiche Google Business Profile
+    name: 'Stomatologia Implantologia Pietruszczak',
+    alternateName: 'Piotr Pietruszczak - Stomatolog Olsztyn',
     url: `${SITE_URL}/`,
     logo: `${SITE_URL}/icon-512.png`,
     image: `${SITE_URL}/og-image.jpg`,
