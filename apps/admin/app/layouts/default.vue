@@ -83,7 +83,7 @@ const links = [
   { to: '/', label: 'Pulpit', icon: 'home', site: '' },
   { to: '/cennik', label: 'Cennik', icon: 'price', site: 'cennik' },
   { to: '/uslugi', label: 'Usługi', icon: 'tooth', site: 'uslugi' },
-  { to: '/zespol', label: 'Zespół', icon: 'team', site: 'oNas' },
+  { to: '/zespol', label: 'Zespół', icon: 'team', site: 'o-nas' },
   { to: '/faq', label: 'FAQ', icon: 'faq', site: 'kontakt' },
   { to: '/technologie', label: 'Technologie', icon: 'tech', site: 'technologie' }
 ]

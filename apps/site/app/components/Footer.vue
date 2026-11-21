@@ -36,7 +36,7 @@
           <nav>
             <a href="/" class="a">START</a>
             <a href="/uslugi" class="a">USŁUGI</a>
-            <a href="/oNas" class="a">O NAS</a>
+            <a href="/o-nas" class="a">O NAS</a>
             <a href="/cennik" class="a">CENNIK</a>
             <a href="/technologie" class="a">TECHNOLOGIE</a>
             <a href="/kontakt" class="a">KONTAKT</a>

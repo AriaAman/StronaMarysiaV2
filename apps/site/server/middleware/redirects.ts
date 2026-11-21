@@ -2,7 +2,8 @@
 // Redirections permanentes (301), uniquement pour les visites de pages (GET/HEAD) :
 //  1. anciennes adresses de l'ancien site → accueil ;
 //  2. « / » final retiré : /kontakt/ → /kontakt ;
-//  3. majuscules/minuscules corrigées : /onas, /ONAS → /oNas.
+//  3. majuscules/minuscules corrigées : /Cennik → /cennik ;
+//  4. ancienne adresse de l'équipe : /oNas, /onas, /ONAS → /o-nas.
 // Les fichiers (images, scripts), l'API du formulaire et le plan du site ne sont pas concernés.
 
 const OLD_ADDRESSES = new Set([
@@ -16,8 +17,10 @@ const OLD_ADDRESSES = new Set([
 ])
 
 // Adresses officielles des pages (celles du plan du site et des balises canonical)
-const PAGES = ['/cennik', '/kontakt', '/oNas', '/technologie', '/uslugi', '/reservation', '/reservation/success']
+const PAGES = ['/cennik', '/kontakt', '/o-nas', '/technologie', '/uslugi', '/reservation', '/reservation/success']
 const PAGE_BY_LOWERCASE = new Map(PAGES.map((path) => [path.toLowerCase(), path]))
+// Anciennes adresses d'une page renommée (en minuscules)
+PAGE_BY_LOWERCASE.set('/onas', '/o-nas')
 
 export default defineEventHandler((event) => {
   const method = event.method

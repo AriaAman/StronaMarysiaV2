@@ -81,7 +81,7 @@ useHead(() => ({
         ...(member.tags?.length ? { knowsAbout: member.tags.map(capitalize) } : {}),
         ...(member.photo_src ? { image: `${SITE_URL}${member.photo_src}` } : {}),
         worksFor: { '@id': `${SITE_URL}/#gabinet` },
-        url: `${SITE_URL}/oNas`
+        url: `${SITE_URL}/o-nas`
       }))
     })
   }]

@@ -15,7 +15,7 @@
             <nav class="main-nav">
                 <ul>
                     <li><NuxtLink to="/" class="header-link">START</NuxtLink></li>
-                    <li><a href="/oNas" class="header-link">O NAS</a></li>
+                    <li><a href="/o-nas" class="header-link">O NAS</a></li>
                     <li><NuxtLink to="/uslugi" class="header-link">USŁUGI</NuxtLink></li>
                     <!-- <li><a class="reservation-btn" href="/reservation">REZERWACJA ONLINE</a></li> -->
                     <li><a href="/technologie" class="header-link">TECHNOLOGIE</a></li>
@@ -55,7 +55,7 @@
                 </div>
                 <ul class="mobile-nav-list">
                     <li><NuxtLink to="/" class="mobile-link" @click="closeMobileMenu">START</NuxtLink></li>
-                    <li><a href="/oNas" class="mobile-link" @click="closeMobileMenu">O NAS</a></li>
+                    <li><a href="/o-nas" class="mobile-link" @click="closeMobileMenu">O NAS</a></li>
                     <li><NuxtLink to="/uslugi" class="mobile-link" @click="closeMobileMenu">USŁUGI</NuxtLink></li>
                     <li><a href="/technologie" class="mobile-link" @click="closeMobileMenu">TECHNOLOGIE</a></li>
                     <li><a href="/cennik" class="mobile-link" @click="closeMobileMenu">CENNIK</a></li>
