@@ -4,6 +4,7 @@
       <br />
       Profesjonalne <br />
       <span class="title-italic">leczenie&nbsp;stomatologiczne</span>
+      <span class="title-city">w Olsztynie</span>
     </h1>
 
     <div class="tagline-box">
@@ -94,6 +95,14 @@ const categories = [
   max-width: 1440px;
   margin: 0 auto 32px;
   padding: 40px 40px 0;
+}
+
+.title-city {
+  display: block;
+  font-size: max(0.42em, 18px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-top: 0.3em;
 }
 
 .title {

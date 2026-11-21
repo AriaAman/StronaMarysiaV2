@@ -60,6 +60,32 @@ const { data } = useAsyncData('team-members', async () => {
 })
 
 const teamMembers = computed(() => data.value || fallbackTeamMembers)
+
+// Fiche de chaque membre de l'équipe pour Google (invisible à l'écran),
+// rattachée à la fiche du cabinet déclarée dans app.vue (#gabinet).
+const SITE_URL = 'https://pietruszczak.pl'
+const capitalize = (text = '') => {
+  const lower = String(text).trim().toLowerCase()
+  return lower.charAt(0).toUpperCase() + lower.slice(1)
+}
+useHead(() => ({
+  script: [{
+    key: 'team-ld',
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': teamMembers.value.map((member) => ({
+        '@type': 'Person',
+        name: member.name,
+        jobTitle: capitalize(member.title),
+        ...(member.tags?.length ? { knowsAbout: member.tags.map(capitalize) } : {}),
+        ...(member.photo_src ? { image: `${SITE_URL}${member.photo_src}` } : {}),
+        worksFor: { '@id': `${SITE_URL}/#gabinet` },
+        url: `${SITE_URL}/oNas`
+      }))
+    })
+  }]
+}))
 </script>
 
 <style scoped>

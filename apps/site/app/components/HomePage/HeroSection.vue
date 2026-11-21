@@ -28,10 +28,11 @@
         <div class="overlay-panel"></div>
 
         <div class="hero-content">
-            <h1 class="hero-title">
+            <h1 class="hero-eyebrow">Gabinet stomatologiczny Piotr Pietruszczak · Olsztyn</h1>
+            <p class="hero-title">
                 Odkryj miejsce gdzie zdrowie <br>& estetyka tworzą idealny uśmiech 
                 <span class="hero-title-italic">- Twój uśmiech</span>
-            </h1>
+            </p>
             <div class="hero-text">
                 <p>Twoje zdrowie i piękny uśmiech w rękach specjalistów, którym możesz zaufać.</p>
                 <p>Przekonaj się, jak kompleksowa opieka może odmienić Twój uśmiech!</p>
@@ -123,6 +124,17 @@
     color: #0B162B;
     text-transform: uppercase;
     margin-bottom: 8px;
+}
+
+.hero-eyebrow {
+    font-family: 'Satoshi', 'Satoshi';
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    color: inherit;
+    margin: 0 0 20px;
 }
 
 .hero-title {
