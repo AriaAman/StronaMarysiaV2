@@ -4,7 +4,7 @@
       <img
         :src="service.image"
         :alt="`${service.caption} - Usługi stomatologiczne Olsztyn`"
-        loading="eager"
+        loading="lazy"
         fetchpriority="high"
       />
     </figure>

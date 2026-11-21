@@ -7,7 +7,7 @@
           alt="Gabinet stomatologiczny Pietruszczak - Wnętrze kliniki"
           width="1920"
           height="1080"
-          loading="eager"
+          loading="lazy"
         />
       </div>
       <div class="team-intro-content">
@@ -19,7 +19,7 @@
             class="team-image"
             width="960"
             height="640"
-            loading="eager"
+            loading="lazy"
           />
         </div>
 

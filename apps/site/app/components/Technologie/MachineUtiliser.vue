@@ -12,7 +12,7 @@
           :src="tech.image"
           :alt="tech.titre"
           class="tech-img"
-          loading="eager"
+          loading="lazy"
           fetchpriority="high"
         />
       </div>

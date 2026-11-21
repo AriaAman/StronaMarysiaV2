@@ -10,7 +10,7 @@
         <img 
           src="/static/kontakt/imageGabinetLocation.avif" 
           alt="Mapa parkingu - Lokalizacja gabinetu stomatologicznego Dr. Pietruszczak"
-          loading="eager"
+          loading="lazy"
         />
       </div>
     </div>

@@ -2,13 +2,27 @@
 <template>
     <div class="services-container">
         <div class="services-background">
-            <img
-                src="/static/HomePage/FondHomePageCat.avif"
-                alt="Usługi stomatologiczne Olsztyn - Profesjonalna opieka dentystyczna"
-                width="1920"
-                height="1080"
-                loading="eager"
-            />
+            <picture>
+                <source
+                    media="(max-width: 767px)"
+                    type="image/avif"
+                    srcset="/static/HomePage/uslugi-bg-portrait-720.avif 720w, /static/HomePage/uslugi-bg-portrait-1080.avif 1080w"
+                    sizes="100vw"
+                />
+                <source
+                    type="image/avif"
+                    srcset="/static/HomePage/uslugi-bg-1280.avif 1280w, /static/HomePage/uslugi-bg-1920.avif 1920w, /static/HomePage/uslugi-bg-2560.avif 2560w"
+                    sizes="100vw"
+                />
+                <img
+                    src="/static/HomePage/uslugi-bg-1920.avif"
+                    alt="Usługi stomatologiczne Olsztyn - Profesjonalna opieka dentystyczna"
+                    width="1920"
+                    height="1264"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </picture>
         </div>
         <div class="services-grid">
             <div v-for="(service, index) in services" :key="index" class="service-card">
@@ -72,6 +86,10 @@ const services = [
     height: 100%;
     z-index: -1;
     opacity: 0.5;
+}
+
+.services-background picture {
+    display: contents;
 }
 
 .services-background img {

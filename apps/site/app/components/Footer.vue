@@ -6,7 +6,7 @@
         <img 
           src="/static/footer/logoPiotrFooter.svg" 
           alt="Pietruszczak Stomatologia Olsztyn - Kontakt i lokalizacja" 
-          loading="eager"
+          loading="lazy"
         />
         <div class="mobile-divider" aria-hidden="true"></div>
         <div class="social-title">OBSERWUJ NAS</div>

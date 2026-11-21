@@ -13,7 +13,7 @@
                     <!-- Première carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <img src="/static/HomePage/DentVector.svg" alt="Ikona zęba - Nowoczesna stomatologia Olsztyn" width="30" height="34" loading="eager" />
+                            <img src="/static/HomePage/DentVector.svg" alt="Ikona zęba - Nowoczesna stomatologia Olsztyn" width="30" height="34" loading="lazy" />
                         </div>
                         <h3 class="card-title">Nowoczesna stomatologia dla wymagających</h3>
                         <p class="card-text">
@@ -24,7 +24,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <img src="/static/HomePage/PiotrWrapper.svg" alt="Dr Piotr Pietruszczak - Stomatolog implantolog Olsztyn" width="60" height="60" loading="eager" />
+                                <img src="/static/HomePage/avatar-piotr.webp" alt="Dr Piotr Pietruszczak - Stomatolog implantolog Olsztyn" width="60" height="60" loading="lazy" decoding="async" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">PIOTR PIETRUSZCZAK</h4>
@@ -36,7 +36,7 @@
                     <!-- Troisième carte -->
                     <div class="card">
                         <div class="card-icon">
-                            <img src="/static/HomePage/DentVector.svg" alt="Ikona zęba - Opieka stomatologiczna" width="30" height="34" loading="eager" />
+                            <img src="/static/HomePage/DentVector.svg" alt="Ikona zęba - Opieka stomatologiczna" width="30" height="34" loading="lazy" />
                         </div>
                         <h3 class="card-title">Wsparcie w każdej sytuacji</h3>
                         <p class="card-text">
@@ -46,7 +46,7 @@
                         </p>
                         <div class="doctor-card">
                             <div class="doctor-photo">
-                                <img src="/static/HomePage/AmandaWrapper.svg" alt="Amanda Duszak - Higienistka stomatologiczna Olsztyn" width="60" height="60" loading="eager" />
+                                <img src="/static/HomePage/avatar-amanda.webp" alt="Amanda Duszak - Higienistka stomatologiczna Olsztyn" width="60" height="60" loading="lazy" decoding="async" />
                             </div>
                             <div class="doctor-info">
                                 <h4 class="doctor-name">AMANDA DUSZAK</h4>
@@ -89,7 +89,7 @@
                             zdrowia i samopoczucie.
                         </p>
                         <div class="patient-image">
-                            <img src="/static/HomePage/OlekAvecDame.avif" alt="Stomatolog z pacjentką - Gabinet dentystyczny Olsztyn" loading="eager" />
+                            <img src="/static/HomePage/OlekAvecDame.avif" alt="Stomatolog z pacjentką - Gabinet dentystyczny Olsztyn" loading="lazy" />
                         </div>
                     </div>
                 </div>

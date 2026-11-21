@@ -169,6 +169,9 @@ export default defineNuxtConfig({
     // Pas de réservation en ligne (rendez-vous par téléphone) : page gardée mais hors de Google
     '/reservation': { robots: 'noindex, nofollow' },
     '/reservation/**': { robots: 'noindex, nofollow' },
+    // Images, icônes, polices : gardées 7 jours par le navigateur (rafraîchies en arrière-plan ensuite).
+    // Pas « immutable » : les noms de fichiers ne changent pas quand une image est remplacée.
+    '/static/**': { headers: { 'cache-control': 'public, max-age=604800, stale-while-revalidate=86400' } },
   },
 
   // Configuration de l'application

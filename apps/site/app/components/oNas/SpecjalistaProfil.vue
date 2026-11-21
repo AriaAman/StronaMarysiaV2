@@ -7,7 +7,7 @@
             v-if="photoSrc"
             :src="photoSrc"
             :alt="`${name} - ${title} - Gabinet stomatologiczny Olsztyn`"
-            loading="eager"
+            loading="lazy"
           />
         </div>
         <div class="specialist-details">

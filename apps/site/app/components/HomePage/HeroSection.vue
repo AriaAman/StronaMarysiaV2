@@ -1,14 +1,28 @@
 <template>
     <section class="hero-section">
         <div class="background-image">
-            <img
-                src="/static/HomePage/FirstImageHomepage.avif"
-                alt="Gabinet stomatologiczny Olsztyn - Nowoczesna klinika dentystyczna"
-                loading="eager"
-                width="1920"
-                height="1080"
-                fetchpriority="high"
-            />
+            <!-- Téléphone : recadrage vertical léger ; ordinateur : taille adaptée à l'écran -->
+            <picture>
+                <source
+                    media="(max-aspect-ratio: 1/1)"
+                    type="image/avif"
+                    srcset="/static/HomePage/hero-portrait-720.avif 720w, /static/HomePage/hero-portrait-1080.avif 1080w"
+                    sizes="67vh"
+                />
+                <source
+                    type="image/avif"
+                    srcset="/static/HomePage/hero-1280.avif 1280w, /static/HomePage/hero-1920.avif 1920w, /static/HomePage/hero-2560.avif 2560w"
+                    sizes="100vw"
+                />
+                <img
+                    src="/static/HomePage/hero-1920.avif"
+                    alt="Gabinet stomatologiczny Olsztyn - Nowoczesna klinika dentystyczna"
+                    loading="eager"
+                    width="1920"
+                    height="1280"
+                    fetchpriority="high"
+                />
+            </picture>
         </div>
 
         <div class="overlay-panel"></div>
@@ -68,6 +82,10 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+.background-image picture {
+    display: contents;
 }
 
 .background-image img {

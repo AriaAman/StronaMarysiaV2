@@ -11,9 +11,9 @@
                     Czas na pierwszy krok do perfekcyjnego uśmiechu.<br />
                     Umów swoją wizytę i zacznij dbać o zdrowie jamy ustnej.
                 </p>
-                <img src="/static/uslugi/circle-pietrus.avif" alt="Logo Pietruszczak - Rezerwacja wizyty stomatologicznej" class="btn-circle" loading="eager" />
+                <img src="/static/uslugi/circle-pietrus.avif" alt="Logo Pietruszczak - Rezerwacja wizyty stomatologicznej" class="btn-circle" loading="lazy" />
                 <!-- <NuxtLink to="/reservation" class="reservation-btn">
-                    <img src="/static/icons/online-icon.png" alt="" class="btn-icon" loading="eager" />
+                    <img src="/static/icons/online-icon.png" alt="" class="btn-icon" loading="lazy" />
                     REZERWACJA ONLINE
                 </NuxtLink> -->
             </div>
