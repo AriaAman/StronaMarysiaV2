@@ -78,12 +78,6 @@
               <a>10-687 OLSZTYN</a>
             </address>
             <p class="map-link"><a href="/kontakt#mapa" @click.prevent="scrollToMap">WSKAZÓWKI DOJAZDU (MAPA)</a></p>
-            <p class="mini-title">TAGI:</p>
-            <div class="footer-tags">
-              <span class="footer-tag">STOMATOLOGIA OLSZTYN</span>
-              <span class="footer-tag">IMPLANTY OLSZTYN</span>
-              <span class="footer-tag">STOMATOLOG OLSZTYN</span>
-            </div>
           </div>
         </div>
       </div>
@@ -91,7 +85,7 @@
 
     <div class="footer-bottom">
       <div class="copyright">
-        <p>© 2025 PIETRUSZCZAK STOMATOLOGIA & IMPLANTOLOGIA - Wszelkie prawa zastrzeżone | Design by Daria Georgie | Developer Aria Aman</p>
+        <p>© {{ year }} PIETRUSZCZAK STOMATOLOGIA & IMPLANTOLOGIA - Wszelkie prawa zastrzeżone | Design by Daria Georgie | Developer Aria Aman</p>
       </div>
       <a href="#" class="back-to-top" @click.prevent="scrollToTop">
         <span>DO GÓRY</span>
@@ -108,6 +102,9 @@
 <script>
 export default {
   name: 'Footer',
+  data() {
+    return { year: new Date().getFullYear() }
+  },
   methods: {
     scrollToTop() {
       window.scrollTo({
@@ -322,24 +319,6 @@ address {
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
-
-/* Footer tags (based on oNas specialist-tag styles) */
-.footer-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
-}
-.footer-tag {
-  padding: 8px 10px;
-  background-color: #F8F4F0;
-  border: 1px solid #E4D5C2;
-  color: #A9722D;
-  font-family: 'Aboreto', 'Aboreto';
-  font-size: 12px;
-  text-transform: uppercase;
-  border-radius: 4px;
 }
 
 .map-link {

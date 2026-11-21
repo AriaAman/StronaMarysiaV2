@@ -12,9 +12,9 @@ import GoogleMaps from '../components/Kontakt/GoogleMaps.vue'
 import FaqKontakt from '~/components/Kontakt/FaqKontakt.vue';
 
 useSeoMeta({
-  title: 'Kontakt - Gabinet Dentystyczny Piotr Pietruszczak Olsztyn',
-  ogTitle: 'Kontakt - Gabinet Dentystyczny Piotr Pietruszczak Olsztyn',
-  description: 'Skontaktuj się z nami. Gabinet Dentystyczny Piotra Pietruszczaka w Olsztynie. Adres, telefon, godziny otwarcia, formularz kontaktowy i mapa dojazdu.',
-  ogDescription: 'Skontaktuj się z nami. Gabinet Dentystyczny Piotra Pietruszczaka w Olsztynie. Adres, telefon, godziny otwarcia, formularz kontaktowy i mapa dojazdu.',
+  title: 'Kontakt i dojazd | Pietruszczak Stomatologia',
+  ogTitle: 'Kontakt i dojazd | Pietruszczak Stomatologia',
+  description: 'Stawigudzka 8c/e, 10-687 Olsztyn. Zadzwoń: +48 503 529 023 lub napisz przez formularz kontaktowy. Mapa dojazdu i informacje o parkingu.',
+  ogDescription: 'Stawigudzka 8c/e, 10-687 Olsztyn. Zadzwoń: +48 503 529 023 lub napisz przez formularz kontaktowy. Mapa dojazdu i informacje o parkingu.',
 })
 </script>

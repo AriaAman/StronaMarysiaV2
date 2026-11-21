@@ -19,10 +19,10 @@ import ServiceCard from '../components/Uslugi/ServiceCard.vue'
 import ServicesHero from '../components/Uslugi/ServicesHero.vue'
 
 useSeoMeta({
-  title: 'Usługi stomatologiczne - Gabinet Dentystyczny Olsztyn',
-  ogTitle: 'Usługi stomatologiczne - Gabinet Dentystyczny Olsztyn',
-  description: 'Kompleksowe usługi stomatologiczne: Implanty, leczenie kanałowe, protetyka, stomatologia estetyczna, chirurgia stomatologiczna, stomatologia zachowawcza. Gabinet Piotra Pietruszczaka.',
-  ogDescription: 'Kompleksowe usługi stomatologiczne: Implanty, leczenie kanałowe, protetyka, stomatologia estetyczna, chirurgia stomatologiczna, stomatologia zachowawcza. Gabinet Piotra Pietruszczaka.',
+  title: 'Usługi stomatologiczne w Olsztynie | Pietruszczak',
+  ogTitle: 'Usługi stomatologiczne w Olsztynie | Pietruszczak',
+  description: 'Implanty, leczenie kanałowe pod mikroskopem, protetyka, stomatologia estetyczna i zachowawcza oraz chirurgia stomatologiczna w Olsztynie.',
+  ogDescription: 'Implanty, leczenie kanałowe pod mikroskopem, protetyka, stomatologia estetyczna i zachowawcza oraz chirurgia stomatologiczna w Olsztynie.',
 })
 
 const activeCat = ref('')

@@ -20,10 +20,10 @@ import TeamSection from '~/components/HomePage/TeamSection.vue';
 import TheWholeTeam from '~/components/HomePage/TheWholeTeam.vue';
 
 useSeoMeta({
-  title: 'Piotr Pietruszczak - Stomatolog Olsztyn | Gabinet Dentystyczny',
-  ogTitle: 'Piotr Pietruszczak - Stomatolog Olsztyn | Gabinet Dentystyczny',
-  description: 'Nowoczesna praktyka stomatologiczna w Olsztynie. Implanty, leczenie kanałowe, protetyka, stomatologia estetyczna. Profesjonalna opieka dentystyczna w przyjaznej atmosferze.',
-  ogDescription: 'Nowoczesna praktyka stomatologiczna w Olsztynie. Implanty, leczenie kanałowe, protetyka, stomatologia estetyczna. Profesjonalna opieka dentystyczna w przyjaznej atmosferze.',
+  title: 'Piotr Pietruszczak – Stomatolog Olsztyn | Gabinet Dentystyczny',
+  ogTitle: 'Piotr Pietruszczak – Stomatolog Olsztyn | Gabinet Dentystyczny',
+  description: 'Gabinet stomatologiczny w Olsztynie: implanty, leczenie kanałowe pod mikroskopem, protetyka i estetyka. Umów wizytę telefonicznie: +48 503 529 023.',
+  ogDescription: 'Gabinet stomatologiczny w Olsztynie: implanty, leczenie kanałowe pod mikroskopem, protetyka i estetyka. Umów wizytę telefonicznie: +48 503 529 023.',
 })
 </script>
 

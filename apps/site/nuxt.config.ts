@@ -21,6 +21,7 @@ export default defineNuxtConfig({
   sitemap: {
     // Exclure les pages non pertinentes
     exclude: [
+      '/reservation',
       '/reservation/success'
     ],
   },
@@ -165,6 +166,9 @@ export default defineNuxtConfig({
   // Règles d'indexation explicites
   routeRules: {
     '/**': { robots: 'index, follow' },
+    // Pas de réservation en ligne (rendez-vous par téléphone) : page gardée mais hors de Google
+    '/reservation': { robots: 'noindex, nofollow' },
+    '/reservation/**': { robots: 'noindex, nofollow' },
   },
 
   // Configuration de l'application
@@ -176,10 +180,24 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Nowoczesna praktyka stomatologiczna w Olsztynie. Specjaliści stomatologii i implantologii. Piotr Pietruszczak.' },
-        { name: 'google-site-verification', content: '6IyiuZ--CvhtZamM6Gtv5M4Xf8iMWSqZVteGIhSnKcA' }
+        { name: 'google-site-verification', content: '6IyiuZ--CvhtZamM6Gtv5M4Xf8iMWSqZVteGIhSnKcA' },
+        { name: 'theme-color', content: '#122548' },
+        // Aperçu des liens partagés (Facebook, WhatsApp, Messenger)
+        { property: 'og:site_name', content: 'Pietruszczak Stomatologia' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:locale', content: 'pl_PL' },
+        { property: 'og:image', content: 'https://pietruszczak.pl/og-image.jpg' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { name: 'twitter:card', content: 'summary_large_image' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+        // Icône du site : carrée, comme Google l'exige (multiple de 48 px)
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/icon-96.png' },
+        { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon-192.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
         // Preconnect pour accélérer le chargement des polices
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },

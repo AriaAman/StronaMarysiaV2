@@ -10,9 +10,9 @@ import SpecjalisciGlowny from '~/components/oNas/SpecjalisciGlowny.vue';
 import Values from '~/components/oNas/Values.vue';
 
 useSeoMeta({
-  title: 'O nas - Zespół Specjalistów | Gabinet Dentystyczny Olsztyn',
-  ogTitle: 'O nas - Zespół Specjalistów | Gabinet Dentystyczny Olsztyn',
-  description: 'Poznaj nasz zespół doświadczonych specjalistów stomatologii. Profesjonalna opieka dentystyczna w przyjaznej atmosferze. Gabinet Piotra Pietruszczaka w Olsztynie.',
-  ogDescription: 'Poznaj nasz zespół doświadczonych specjalistów stomatologii. Profesjonalna opieka dentystyczna w przyjaznej atmosferze. Gabinet Piotra Pietruszczaka w Olsztynie.',
+  title: 'Zespół | Pietruszczak Stomatologia',
+  ogTitle: 'Zespół | Pietruszczak Stomatologia',
+  description: 'Poznaj lekarzy, higienistkę i asystentki gabinetu Pietruszczak w Olsztynie: ich doświadczenie, specjalizacje i podejście do pacjenta.',
+  ogDescription: 'Poznaj lekarzy, higienistkę i asystentki gabinetu Pietruszczak w Olsztynie: ich doświadczenie, specjalizacje i podejście do pacjenta.',
 })
 </script>

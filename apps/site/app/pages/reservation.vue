@@ -29,6 +29,7 @@
 
 <script setup>
 useSeoMeta({
+  robots: 'noindex, nofollow',
   title: 'Rezerwacja online - Gabinet Dentystyczny Piotr Pietruszczak',
   ogTitle: 'Rezerwacja online - Gabinet Dentystyczny Piotr Pietruszczak',
   description: 'Zarezerwuj wizytę online w gabinecie dentystycznym Piotra Pietruszczaka w Olsztynie. Szybka i wygodna rezerwacja przez kalendarz online.',
